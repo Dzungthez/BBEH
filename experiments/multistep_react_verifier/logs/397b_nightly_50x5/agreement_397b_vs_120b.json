@@ -1,0 +1,725 @@
+{
+  "agreement_397b": {
+    "label": "397B-nightly",
+    "num_runs": 5,
+    "num_steps_common": 286,
+    "incomplete_keys": 0,
+    "unanimous_steps": 198,
+    "unanimous_rate": 0.6923076923076923,
+    "mean_majority_fraction": 0.9097902097902097,
+    "ensemble_majority_distribution": {
+      "correct": 180,
+      "neutral": 102,
+      "incorrect": 4
+    },
+    "run_verdict_distribution": [
+      {
+        "correct": 180,
+        "neutral": 102,
+        "incorrect": 4
+      },
+      {
+        "correct": 179,
+        "neutral": 102,
+        "incorrect": 5
+      },
+      {
+        "correct": 171,
+        "neutral": 112,
+        "incorrect": 3
+      },
+      {
+        "correct": 172,
+        "neutral": 108,
+        "incorrect": 6
+      },
+      {
+        "correct": 175,
+        "neutral": 106,
+        "incorrect": 5
+      }
+    ]
+  },
+  "agreement_120b": {
+    "label": "120B",
+    "num_runs": 7,
+    "num_steps_common": 286,
+    "incomplete_keys": 0,
+    "unanimous_steps": 212,
+    "unanimous_rate": 0.7412587412587412,
+    "mean_majority_fraction": 0.9250749250749251,
+    "ensemble_majority_distribution": {
+      "neutral": 95,
+      "correct": 172,
+      "incorrect": 19
+    },
+    "run_verdict_distribution": [
+      {
+        "neutral": 99,
+        "correct": 167,
+        "incorrect": 20
+      },
+      {
+        "neutral": 96,
+        "correct": 172,
+        "incorrect": 18
+      },
+      {
+        "neutral": 106,
+        "correct": 163,
+        "incorrect": 17
+      },
+      {
+        "correct": 171,
+        "neutral": 96,
+        "incorrect": 19
+      },
+      {
+        "neutral": 96,
+        "correct": 170,
+        "incorrect": 20
+      },
+      {
+        "correct": 167,
+        "neutral": 98,
+        "incorrect": 21
+      },
+      {
+        "correct": 166,
+        "neutral": 101,
+        "incorrect": 19
+      }
+    ]
+  },
+  "cross_model": {
+    "label_a": "397B-nightly",
+    "label_b": "120B",
+    "num_steps_common": 286,
+    "agree_steps": 185,
+    "agree_rate": 0.6468531468531469,
+    "confusion_matrix": {
+      "correct": {
+        "neutral": 41,
+        "correct": 131,
+        "incorrect": 8
+      },
+      "neutral": {
+        "neutral": 52,
+        "correct": 41,
+        "incorrect": 9
+      },
+      "incorrect": {
+        "neutral": 2,
+        "incorrect": 2
+      }
+    }
+  },
+  "cross_model_disagreements": [
+    {
+      "dataset_index": 3,
+      "step_id": 1,
+      "397B-nightly": "correct",
+      "120B": "neutral"
+    },
+    {
+      "dataset_index": 6,
+      "step_id": 5,
+      "397B-nightly": "neutral",
+      "120B": "correct"
+    },
+    {
+      "dataset_index": 6,
+      "step_id": 6,
+      "397B-nightly": "neutral",
+      "120B": "correct"
+    },
+    {
+      "dataset_index": 6,
+      "step_id": 9,
+      "397B-nightly": "correct",
+      "120B": "neutral"
+    },
+    {
+      "dataset_index": 8,
+      "step_id": 2,
+      "397B-nightly": "correct",
+      "120B": "neutral"
+    },
+    {
+      "dataset_index": 8,
+      "step_id": 4,
+      "397B-nightly": "correct",
+      "120B": "neutral"
+    },
+    {
+      "dataset_index": 8,
+      "step_id": 6,
+      "397B-nightly": "correct",
+      "120B": "neutral"
+    },
+    {
+      "dataset_index": 13,
+      "step_id": 1,
+      "397B-nightly": "neutral",
+      "120B": "correct"
+    },
+    {
+      "dataset_index": 13,
+      "step_id": 8,
+      "397B-nightly": "correct",
+      "120B": "incorrect"
+    },
+    {
+      "dataset_index": 23,
+      "step_id": 3,
+      "397B-nightly": "neutral",
+      "120B": "correct"
+    },
+    {
+      "dataset_index": 23,
+      "step_id": 5,
+      "397B-nightly": "correct",
+      "120B": "neutral"
+    },
+    {
+      "dataset_index": 23,
+      "step_id": 6,
+      "397B-nightly": "correct",
+      "120B": "neutral"
+    },
+    {
+      "dataset_index": 26,
+      "step_id": 3,
+      "397B-nightly": "neutral",
+      "120B": "correct"
+    },
+    {
+      "dataset_index": 26,
+      "step_id": 5,
+      "397B-nightly": "neutral",
+      "120B": "correct"
+    },
+    {
+      "dataset_index": 28,
+      "step_id": 1,
+      "397B-nightly": "neutral",
+      "120B": "correct"
+    },
+    {
+      "dataset_index": 28,
+      "step_id": 3,
+      "397B-nightly": "correct",
+      "120B": "neutral"
+    },
+    {
+      "dataset_index": 28,
+      "step_id": 4,
+      "397B-nightly": "neutral",
+      "120B": "correct"
+    },
+    {
+      "dataset_index": 28,
+      "step_id": 5,
+      "397B-nightly": "neutral",
+      "120B": "incorrect"
+    },
+    {
+      "dataset_index": 29,
+      "step_id": 5,
+      "397B-nightly": "correct",
+      "120B": "neutral"
+    },
+    {
+      "dataset_index": 29,
+      "step_id": 6,
+      "397B-nightly": "correct",
+      "120B": "incorrect"
+    },
+    {
+      "dataset_index": 45,
+      "step_id": 1,
+      "397B-nightly": "correct",
+      "120B": "neutral"
+    },
+    {
+      "dataset_index": 51,
+      "step_id": 2,
+      "397B-nightly": "correct",
+      "120B": "neutral"
+    },
+    {
+      "dataset_index": 51,
+      "step_id": 3,
+      "397B-nightly": "correct",
+      "120B": "neutral"
+    },
+    {
+      "dataset_index": 51,
+      "step_id": 5,
+      "397B-nightly": "incorrect",
+      "120B": "neutral"
+    },
+    {
+      "dataset_index": 56,
+      "step_id": 4,
+      "397B-nightly": "correct",
+      "120B": "neutral"
+    },
+    {
+      "dataset_index": 56,
+      "step_id": 6,
+      "397B-nightly": "correct",
+      "120B": "incorrect"
+    },
+    {
+      "dataset_index": 58,
+      "step_id": 6,
+      "397B-nightly": "neutral",
+      "120B": "correct"
+    },
+    {
+      "dataset_index": 62,
+      "step_id": 4,
+      "397B-nightly": "neutral",
+      "120B": "correct"
+    },
+    {
+      "dataset_index": 62,
+      "step_id": 9,
+      "397B-nightly": "correct",
+      "120B": "incorrect"
+    },
+    {
+      "dataset_index": 67,
+      "step_id": 1,
+      "397B-nightly": "correct",
+      "120B": "neutral"
+    },
+    {
+      "dataset_index": 77,
+      "step_id": 4,
+      "397B-nightly": "correct",
+      "120B": "neutral"
+    },
+    {
+      "dataset_index": 77,
+      "step_id": 6,
+      "397B-nightly": "correct",
+      "120B": "neutral"
+    },
+    {
+      "dataset_index": 77,
+      "step_id": 8,
+      "397B-nightly": "correct",
+      "120B": "neutral"
+    },
+    {
+      "dataset_index": 79,
+      "step_id": 1,
+      "397B-nightly": "neutral",
+      "120B": "correct"
+    },
+    {
+      "dataset_index": 79,
+      "step_id": 2,
+      "397B-nightly": "correct",
+      "120B": "neutral"
+    },
+    {
+      "dataset_index": 79,
+      "step_id": 3,
+      "397B-nightly": "neutral",
+      "120B": "correct"
+    },
+    {
+      "dataset_index": 100,
+      "step_id": 8,
+      "397B-nightly": "neutral",
+      "120B": "correct"
+    },
+    {
+      "dataset_index": 102,
+      "step_id": 1,
+      "397B-nightly": "correct",
+      "120B": "neutral"
+    },
+    {
+      "dataset_index": 103,
+      "step_id": 7,
+      "397B-nightly": "correct",
+      "120B": "neutral"
+    },
+    {
+      "dataset_index": 122,
+      "step_id": 2,
+      "397B-nightly": "neutral",
+      "120B": "correct"
+    },
+    {
+      "dataset_index": 122,
+      "step_id": 3,
+      "397B-nightly": "neutral",
+      "120B": "incorrect"
+    },
+    {
+      "dataset_index": 122,
+      "step_id": 4,
+      "397B-nightly": "correct",
+      "120B": "neutral"
+    },
+    {
+      "dataset_index": 126,
+      "step_id": 2,
+      "397B-nightly": "correct",
+      "120B": "neutral"
+    },
+    {
+      "dataset_index": 126,
+      "step_id": 3,
+      "397B-nightly": "neutral",
+      "120B": "correct"
+    },
+    {
+      "dataset_index": 126,
+      "step_id": 4,
+      "397B-nightly": "neutral",
+      "120B": "incorrect"
+    },
+    {
+      "dataset_index": 135,
+      "step_id": 5,
+      "397B-nightly": "neutral",
+      "120B": "correct"
+    },
+    {
+      "dataset_index": 137,
+      "step_id": 1,
+      "397B-nightly": "correct",
+      "120B": "neutral"
+    },
+    {
+      "dataset_index": 138,
+      "step_id": 2,
+      "397B-nightly": "correct",
+      "120B": "neutral"
+    },
+    {
+      "dataset_index": 138,
+      "step_id": 6,
+      "397B-nightly": "correct",
+      "120B": "incorrect"
+    },
+    {
+      "dataset_index": 140,
+      "step_id": 2,
+      "397B-nightly": "neutral",
+      "120B": "correct"
+    },
+    {
+      "dataset_index": 140,
+      "step_id": 4,
+      "397B-nightly": "neutral",
+      "120B": "correct"
+    },
+    {
+      "dataset_index": 140,
+      "step_id": 5,
+      "397B-nightly": "neutral",
+      "120B": "correct"
+    },
+    {
+      "dataset_index": 141,
+      "step_id": 1,
+      "397B-nightly": "correct",
+      "120B": "neutral"
+    },
+    {
+      "dataset_index": 141,
+      "step_id": 2,
+      "397B-nightly": "neutral",
+      "120B": "correct"
+    },
+    {
+      "dataset_index": 141,
+      "step_id": 5,
+      "397B-nightly": "neutral",
+      "120B": "correct"
+    },
+    {
+      "dataset_index": 141,
+      "step_id": 6,
+      "397B-nightly": "neutral",
+      "120B": "correct"
+    },
+    {
+      "dataset_index": 146,
+      "step_id": 1,
+      "397B-nightly": "correct",
+      "120B": "neutral"
+    },
+    {
+      "dataset_index": 146,
+      "step_id": 4,
+      "397B-nightly": "correct",
+      "120B": "neutral"
+    },
+    {
+      "dataset_index": 152,
+      "step_id": 7,
+      "397B-nightly": "neutral",
+      "120B": "correct"
+    },
+    {
+      "dataset_index": 154,
+      "step_id": 1,
+      "397B-nightly": "correct",
+      "120B": "neutral"
+    },
+    {
+      "dataset_index": 154,
+      "step_id": 5,
+      "397B-nightly": "neutral",
+      "120B": "correct"
+    },
+    {
+      "dataset_index": 154,
+      "step_id": 7,
+      "397B-nightly": "neutral",
+      "120B": "correct"
+    },
+    {
+      "dataset_index": 154,
+      "step_id": 9,
+      "397B-nightly": "correct",
+      "120B": "neutral"
+    },
+    {
+      "dataset_index": 155,
+      "step_id": 1,
+      "397B-nightly": "correct",
+      "120B": "neutral"
+    },
+    {
+      "dataset_index": 155,
+      "step_id": 5,
+      "397B-nightly": "correct",
+      "120B": "neutral"
+    },
+    {
+      "dataset_index": 155,
+      "step_id": 6,
+      "397B-nightly": "neutral",
+      "120B": "incorrect"
+    },
+    {
+      "dataset_index": 157,
+      "step_id": 1,
+      "397B-nightly": "neutral",
+      "120B": "correct"
+    },
+    {
+      "dataset_index": 157,
+      "step_id": 3,
+      "397B-nightly": "neutral",
+      "120B": "correct"
+    },
+    {
+      "dataset_index": 157,
+      "step_id": 8,
+      "397B-nightly": "correct",
+      "120B": "incorrect"
+    },
+    {
+      "dataset_index": 158,
+      "step_id": 1,
+      "397B-nightly": "neutral",
+      "120B": "correct"
+    },
+    {
+      "dataset_index": 158,
+      "step_id": 3,
+      "397B-nightly": "neutral",
+      "120B": "correct"
+    },
+    {
+      "dataset_index": 158,
+      "step_id": 4,
+      "397B-nightly": "neutral",
+      "120B": "incorrect"
+    },
+    {
+      "dataset_index": 161,
+      "step_id": 1,
+      "397B-nightly": "correct",
+      "120B": "neutral"
+    },
+    {
+      "dataset_index": 161,
+      "step_id": 5,
+      "397B-nightly": "correct",
+      "120B": "neutral"
+    },
+    {
+      "dataset_index": 161,
+      "step_id": 6,
+      "397B-nightly": "correct",
+      "120B": "neutral"
+    },
+    {
+      "dataset_index": 161,
+      "step_id": 7,
+      "397B-nightly": "incorrect",
+      "120B": "neutral"
+    },
+    {
+      "dataset_index": 161,
+      "step_id": 8,
+      "397B-nightly": "neutral",
+      "120B": "incorrect"
+    },
+    {
+      "dataset_index": 169,
+      "step_id": 7,
+      "397B-nightly": "neutral",
+      "120B": "correct"
+    },
+    {
+      "dataset_index": 169,
+      "step_id": 8,
+      "397B-nightly": "neutral",
+      "120B": "correct"
+    },
+    {
+      "dataset_index": 169,
+      "step_id": 9,
+      "397B-nightly": "neutral",
+      "120B": "incorrect"
+    },
+    {
+      "dataset_index": 170,
+      "step_id": 1,
+      "397B-nightly": "neutral",
+      "120B": "correct"
+    },
+    {
+      "dataset_index": 170,
+      "step_id": 2,
+      "397B-nightly": "neutral",
+      "120B": "correct"
+    },
+    {
+      "dataset_index": 173,
+      "step_id": 4,
+      "397B-nightly": "neutral",
+      "120B": "correct"
+    },
+    {
+      "dataset_index": 173,
+      "step_id": 8,
+      "397B-nightly": "correct",
+      "120B": "incorrect"
+    },
+    {
+      "dataset_index": 181,
+      "step_id": 1,
+      "397B-nightly": "neutral",
+      "120B": "correct"
+    },
+    {
+      "dataset_index": 190,
+      "step_id": 2,
+      "397B-nightly": "correct",
+      "120B": "neutral"
+    },
+    {
+      "dataset_index": 190,
+      "step_id": 3,
+      "397B-nightly": "neutral",
+      "120B": "correct"
+    },
+    {
+      "dataset_index": 190,
+      "step_id": 5,
+      "397B-nightly": "neutral",
+      "120B": "incorrect"
+    },
+    {
+      "dataset_index": 191,
+      "step_id": 1,
+      "397B-nightly": "correct",
+      "120B": "neutral"
+    },
+    {
+      "dataset_index": 191,
+      "step_id": 8,
+      "397B-nightly": "correct",
+      "120B": "neutral"
+    },
+    {
+      "dataset_index": 194,
+      "step_id": 2,
+      "397B-nightly": "correct",
+      "120B": "neutral"
+    },
+    {
+      "dataset_index": 194,
+      "step_id": 3,
+      "397B-nightly": "neutral",
+      "120B": "correct"
+    },
+    {
+      "dataset_index": 194,
+      "step_id": 4,
+      "397B-nightly": "neutral",
+      "120B": "correct"
+    },
+    {
+      "dataset_index": 194,
+      "step_id": 6,
+      "397B-nightly": "neutral",
+      "120B": "correct"
+    },
+    {
+      "dataset_index": 194,
+      "step_id": 7,
+      "397B-nightly": "neutral",
+      "120B": "correct"
+    },
+    {
+      "dataset_index": 194,
+      "step_id": 9,
+      "397B-nightly": "correct",
+      "120B": "neutral"
+    },
+    {
+      "dataset_index": 195,
+      "step_id": 3,
+      "397B-nightly": "neutral",
+      "120B": "correct"
+    },
+    {
+      "dataset_index": 195,
+      "step_id": 4,
+      "397B-nightly": "correct",
+      "120B": "incorrect"
+    },
+    {
+      "dataset_index": 195,
+      "step_id": 5,
+      "397B-nightly": "correct",
+      "120B": "neutral"
+    },
+    {
+      "dataset_index": 196,
+      "step_id": 1,
+      "397B-nightly": "correct",
+      "120B": "neutral"
+    },
+    {
+      "dataset_index": 196,
+      "step_id": 8,
+      "397B-nightly": "neutral",
+      "120B": "incorrect"
+    }
+  ]
+}

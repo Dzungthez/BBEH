@@ -1,0 +1,1831 @@
+{
+  "summary": {
+    "runs": [
+      "experiments/multistep_react_verifier/logs/verify_5samples_20260319_160524.json",
+      "experiments/multistep_react_verifier/logs/verify_5samples_20260319_160704.json",
+      "experiments/multistep_react_verifier/logs/verify_5samples_20260319_160839.json",
+      "experiments/multistep_react_verifier/logs/verify_5samples_20260319_161021.json",
+      "experiments/multistep_react_verifier/logs/verify_5samples_20260319_161200.json"
+    ],
+    "num_runs": 5,
+    "num_steps_common": 82,
+    "incomplete_keys": 0,
+    "unanimous_steps": 65,
+    "unanimous_rate": 0.7926829268292683,
+    "mean_majority_fraction": 0.9365853658536586,
+    "ensemble_majority_distribution": {
+      "neutral": 31,
+      "correct": 34,
+      "incorrect": 17
+    },
+    "run_verdict_distribution": [
+      {
+        "neutral": 30,
+        "correct": 35,
+        "incorrect": 17
+      },
+      {
+        "neutral": 30,
+        "correct": 33,
+        "incorrect": 19
+      },
+      {
+        "neutral": 34,
+        "correct": 33,
+        "incorrect": 15
+      },
+      {
+        "neutral": 31,
+        "correct": 36,
+        "incorrect": 15
+      },
+      {
+        "neutral": 30,
+        "correct": 34,
+        "incorrect": 18
+      }
+    ],
+    "max_react_turn_failures_per_run": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "pairwise_agreement": [
+      {
+        "run_i": 1,
+        "run_j": 2,
+        "agreement": 0.926829268292683
+      },
+      {
+        "run_i": 1,
+        "run_j": 3,
+        "agreement": 0.8536585365853658
+      },
+      {
+        "run_i": 1,
+        "run_j": 4,
+        "agreement": 0.9390243902439024
+      },
+      {
+        "run_i": 1,
+        "run_j": 5,
+        "agreement": 0.9024390243902439
+      },
+      {
+        "run_i": 2,
+        "run_j": 3,
+        "agreement": 0.8780487804878049
+      },
+      {
+        "run_i": 2,
+        "run_j": 4,
+        "agreement": 0.9024390243902439
+      },
+      {
+        "run_i": 2,
+        "run_j": 5,
+        "agreement": 0.8780487804878049
+      },
+      {
+        "run_i": 3,
+        "run_j": 4,
+        "agreement": 0.8658536585365854
+      },
+      {
+        "run_i": 3,
+        "run_j": 5,
+        "agreement": 0.9024390243902439
+      },
+      {
+        "run_i": 4,
+        "run_j": 5,
+        "agreement": 0.8902439024390244
+      }
+    ]
+  },
+  "disagreements_top30": [
+    {
+      "dataset_index": 59,
+      "source_step_index": 4,
+      "votes": [
+        "neutral",
+        "neutral",
+        "incorrect",
+        "neutral",
+        "incorrect"
+      ],
+      "vote_counts": {
+        "neutral": 3,
+        "incorrect": 2
+      },
+      "majority_label": "neutral",
+      "majority_count": 3,
+      "unanimous": false
+    },
+    {
+      "dataset_index": 59,
+      "source_step_index": 5,
+      "votes": [
+        "incorrect",
+        "incorrect",
+        "neutral",
+        "neutral",
+        "incorrect"
+      ],
+      "vote_counts": {
+        "incorrect": 3,
+        "neutral": 2
+      },
+      "majority_label": "incorrect",
+      "majority_count": 3,
+      "unanimous": false
+    },
+    {
+      "dataset_index": 60,
+      "source_step_index": 2,
+      "votes": [
+        "correct",
+        "neutral",
+        "neutral",
+        "correct",
+        "correct"
+      ],
+      "vote_counts": {
+        "correct": 3,
+        "neutral": 2
+      },
+      "majority_label": "correct",
+      "majority_count": 3,
+      "unanimous": false
+    },
+    {
+      "dataset_index": 60,
+      "source_step_index": 7,
+      "votes": [
+        "neutral",
+        "incorrect",
+        "neutral",
+        "correct",
+        "neutral"
+      ],
+      "vote_counts": {
+        "neutral": 3,
+        "incorrect": 1,
+        "correct": 1
+      },
+      "majority_label": "neutral",
+      "majority_count": 3,
+      "unanimous": false
+    },
+    {
+      "dataset_index": 77,
+      "source_step_index": 4,
+      "votes": [
+        "neutral",
+        "neutral",
+        "incorrect",
+        "neutral",
+        "incorrect"
+      ],
+      "vote_counts": {
+        "neutral": 3,
+        "incorrect": 2
+      },
+      "majority_label": "neutral",
+      "majority_count": 3,
+      "unanimous": false
+    },
+    {
+      "dataset_index": 77,
+      "source_step_index": 6,
+      "votes": [
+        "incorrect",
+        "incorrect",
+        "neutral",
+        "neutral",
+        "neutral"
+      ],
+      "vote_counts": {
+        "incorrect": 2,
+        "neutral": 3
+      },
+      "majority_label": "neutral",
+      "majority_count": 3,
+      "unanimous": false
+    },
+    {
+      "dataset_index": 77,
+      "source_step_index": 8,
+      "votes": [
+        "incorrect",
+        "incorrect",
+        "neutral",
+        "incorrect",
+        "neutral"
+      ],
+      "vote_counts": {
+        "incorrect": 3,
+        "neutral": 2
+      },
+      "majority_label": "incorrect",
+      "majority_count": 3,
+      "unanimous": false
+    },
+    {
+      "dataset_index": 77,
+      "source_step_index": 14,
+      "votes": [
+        "correct",
+        "neutral",
+        "neutral",
+        "correct",
+        "neutral"
+      ],
+      "vote_counts": {
+        "correct": 2,
+        "neutral": 3
+      },
+      "majority_label": "neutral",
+      "majority_count": 3,
+      "unanimous": false
+    },
+    {
+      "dataset_index": 99,
+      "source_step_index": 13,
+      "votes": [
+        "neutral",
+        "incorrect",
+        "incorrect",
+        "neutral",
+        "neutral"
+      ],
+      "vote_counts": {
+        "neutral": 3,
+        "incorrect": 2
+      },
+      "majority_label": "neutral",
+      "majority_count": 3,
+      "unanimous": false
+    },
+    {
+      "dataset_index": 59,
+      "source_step_index": 14,
+      "votes": [
+        "incorrect",
+        "incorrect",
+        "neutral",
+        "incorrect",
+        "incorrect"
+      ],
+      "vote_counts": {
+        "incorrect": 4,
+        "neutral": 1
+      },
+      "majority_label": "incorrect",
+      "majority_count": 4,
+      "unanimous": false
+    },
+    {
+      "dataset_index": 59,
+      "source_step_index": 15,
+      "votes": [
+        "neutral",
+        "incorrect",
+        "incorrect",
+        "incorrect",
+        "incorrect"
+      ],
+      "vote_counts": {
+        "neutral": 1,
+        "incorrect": 4
+      },
+      "majority_label": "incorrect",
+      "majority_count": 4,
+      "unanimous": false
+    },
+    {
+      "dataset_index": 59,
+      "source_step_index": 16,
+      "votes": [
+        "incorrect",
+        "neutral",
+        "incorrect",
+        "incorrect",
+        "incorrect"
+      ],
+      "vote_counts": {
+        "incorrect": 4,
+        "neutral": 1
+      },
+      "majority_label": "incorrect",
+      "majority_count": 4,
+      "unanimous": false
+    },
+    {
+      "dataset_index": 77,
+      "source_step_index": 5,
+      "votes": [
+        "incorrect",
+        "incorrect",
+        "incorrect",
+        "neutral",
+        "incorrect"
+      ],
+      "vote_counts": {
+        "incorrect": 4,
+        "neutral": 1
+      },
+      "majority_label": "incorrect",
+      "majority_count": 4,
+      "unanimous": false
+    },
+    {
+      "dataset_index": 77,
+      "source_step_index": 7,
+      "votes": [
+        "incorrect",
+        "incorrect",
+        "neutral",
+        "incorrect",
+        "incorrect"
+      ],
+      "vote_counts": {
+        "incorrect": 4,
+        "neutral": 1
+      },
+      "majority_label": "incorrect",
+      "majority_count": 4,
+      "unanimous": false
+    },
+    {
+      "dataset_index": 99,
+      "source_step_index": 5,
+      "votes": [
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral",
+        "incorrect"
+      ],
+      "vote_counts": {
+        "neutral": 4,
+        "incorrect": 1
+      },
+      "majority_label": "neutral",
+      "majority_count": 4,
+      "unanimous": false
+    },
+    {
+      "dataset_index": 99,
+      "source_step_index": 6,
+      "votes": [
+        "incorrect",
+        "incorrect",
+        "neutral",
+        "incorrect",
+        "incorrect"
+      ],
+      "vote_counts": {
+        "incorrect": 4,
+        "neutral": 1
+      },
+      "majority_label": "incorrect",
+      "majority_count": 4,
+      "unanimous": false
+    },
+    {
+      "dataset_index": 145,
+      "source_step_index": 4,
+      "votes": [
+        "incorrect",
+        "incorrect",
+        "incorrect",
+        "incorrect",
+        "neutral"
+      ],
+      "vote_counts": {
+        "incorrect": 4,
+        "neutral": 1
+      },
+      "majority_label": "incorrect",
+      "majority_count": 4,
+      "unanimous": false
+    }
+  ],
+  "all_steps": [
+    {
+      "dataset_index": 59,
+      "source_step_index": 1,
+      "votes": [
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral"
+      ],
+      "vote_counts": {
+        "neutral": 5
+      },
+      "majority_label": "neutral",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 59,
+      "source_step_index": 2,
+      "votes": [
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct"
+      ],
+      "vote_counts": {
+        "correct": 5
+      },
+      "majority_label": "correct",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 59,
+      "source_step_index": 3,
+      "votes": [
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct"
+      ],
+      "vote_counts": {
+        "correct": 5
+      },
+      "majority_label": "correct",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 59,
+      "source_step_index": 4,
+      "votes": [
+        "neutral",
+        "neutral",
+        "incorrect",
+        "neutral",
+        "incorrect"
+      ],
+      "vote_counts": {
+        "neutral": 3,
+        "incorrect": 2
+      },
+      "majority_label": "neutral",
+      "majority_count": 3,
+      "unanimous": false
+    },
+    {
+      "dataset_index": 59,
+      "source_step_index": 5,
+      "votes": [
+        "incorrect",
+        "incorrect",
+        "neutral",
+        "neutral",
+        "incorrect"
+      ],
+      "vote_counts": {
+        "incorrect": 3,
+        "neutral": 2
+      },
+      "majority_label": "incorrect",
+      "majority_count": 3,
+      "unanimous": false
+    },
+    {
+      "dataset_index": 59,
+      "source_step_index": 6,
+      "votes": [
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct"
+      ],
+      "vote_counts": {
+        "correct": 5
+      },
+      "majority_label": "correct",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 59,
+      "source_step_index": 7,
+      "votes": [
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct"
+      ],
+      "vote_counts": {
+        "correct": 5
+      },
+      "majority_label": "correct",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 59,
+      "source_step_index": 8,
+      "votes": [
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct"
+      ],
+      "vote_counts": {
+        "correct": 5
+      },
+      "majority_label": "correct",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 59,
+      "source_step_index": 9,
+      "votes": [
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct"
+      ],
+      "vote_counts": {
+        "correct": 5
+      },
+      "majority_label": "correct",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 59,
+      "source_step_index": 10,
+      "votes": [
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct"
+      ],
+      "vote_counts": {
+        "correct": 5
+      },
+      "majority_label": "correct",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 59,
+      "source_step_index": 11,
+      "votes": [
+        "incorrect",
+        "incorrect",
+        "incorrect",
+        "incorrect",
+        "incorrect"
+      ],
+      "vote_counts": {
+        "incorrect": 5
+      },
+      "majority_label": "incorrect",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 59,
+      "source_step_index": 12,
+      "votes": [
+        "incorrect",
+        "incorrect",
+        "incorrect",
+        "incorrect",
+        "incorrect"
+      ],
+      "vote_counts": {
+        "incorrect": 5
+      },
+      "majority_label": "incorrect",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 59,
+      "source_step_index": 13,
+      "votes": [
+        "incorrect",
+        "incorrect",
+        "incorrect",
+        "incorrect",
+        "incorrect"
+      ],
+      "vote_counts": {
+        "incorrect": 5
+      },
+      "majority_label": "incorrect",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 59,
+      "source_step_index": 14,
+      "votes": [
+        "incorrect",
+        "incorrect",
+        "neutral",
+        "incorrect",
+        "incorrect"
+      ],
+      "vote_counts": {
+        "incorrect": 4,
+        "neutral": 1
+      },
+      "majority_label": "incorrect",
+      "majority_count": 4,
+      "unanimous": false
+    },
+    {
+      "dataset_index": 59,
+      "source_step_index": 15,
+      "votes": [
+        "neutral",
+        "incorrect",
+        "incorrect",
+        "incorrect",
+        "incorrect"
+      ],
+      "vote_counts": {
+        "neutral": 1,
+        "incorrect": 4
+      },
+      "majority_label": "incorrect",
+      "majority_count": 4,
+      "unanimous": false
+    },
+    {
+      "dataset_index": 59,
+      "source_step_index": 16,
+      "votes": [
+        "incorrect",
+        "neutral",
+        "incorrect",
+        "incorrect",
+        "incorrect"
+      ],
+      "vote_counts": {
+        "incorrect": 4,
+        "neutral": 1
+      },
+      "majority_label": "incorrect",
+      "majority_count": 4,
+      "unanimous": false
+    },
+    {
+      "dataset_index": 59,
+      "source_step_index": 17,
+      "votes": [
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct"
+      ],
+      "vote_counts": {
+        "correct": 5
+      },
+      "majority_label": "correct",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 59,
+      "source_step_index": 18,
+      "votes": [
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct"
+      ],
+      "vote_counts": {
+        "correct": 5
+      },
+      "majority_label": "correct",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 60,
+      "source_step_index": 1,
+      "votes": [
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral"
+      ],
+      "vote_counts": {
+        "neutral": 5
+      },
+      "majority_label": "neutral",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 60,
+      "source_step_index": 2,
+      "votes": [
+        "correct",
+        "neutral",
+        "neutral",
+        "correct",
+        "correct"
+      ],
+      "vote_counts": {
+        "correct": 3,
+        "neutral": 2
+      },
+      "majority_label": "correct",
+      "majority_count": 3,
+      "unanimous": false
+    },
+    {
+      "dataset_index": 60,
+      "source_step_index": 3,
+      "votes": [
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct"
+      ],
+      "vote_counts": {
+        "correct": 5
+      },
+      "majority_label": "correct",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 60,
+      "source_step_index": 4,
+      "votes": [
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct"
+      ],
+      "vote_counts": {
+        "correct": 5
+      },
+      "majority_label": "correct",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 60,
+      "source_step_index": 5,
+      "votes": [
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct"
+      ],
+      "vote_counts": {
+        "correct": 5
+      },
+      "majority_label": "correct",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 60,
+      "source_step_index": 6,
+      "votes": [
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct"
+      ],
+      "vote_counts": {
+        "correct": 5
+      },
+      "majority_label": "correct",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 60,
+      "source_step_index": 7,
+      "votes": [
+        "neutral",
+        "incorrect",
+        "neutral",
+        "correct",
+        "neutral"
+      ],
+      "vote_counts": {
+        "neutral": 3,
+        "incorrect": 1,
+        "correct": 1
+      },
+      "majority_label": "neutral",
+      "majority_count": 3,
+      "unanimous": false
+    },
+    {
+      "dataset_index": 60,
+      "source_step_index": 8,
+      "votes": [
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct"
+      ],
+      "vote_counts": {
+        "correct": 5
+      },
+      "majority_label": "correct",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 60,
+      "source_step_index": 9,
+      "votes": [
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct"
+      ],
+      "vote_counts": {
+        "correct": 5
+      },
+      "majority_label": "correct",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 60,
+      "source_step_index": 10,
+      "votes": [
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct"
+      ],
+      "vote_counts": {
+        "correct": 5
+      },
+      "majority_label": "correct",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 60,
+      "source_step_index": 11,
+      "votes": [
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct"
+      ],
+      "vote_counts": {
+        "correct": 5
+      },
+      "majority_label": "correct",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 60,
+      "source_step_index": 12,
+      "votes": [
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct"
+      ],
+      "vote_counts": {
+        "correct": 5
+      },
+      "majority_label": "correct",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 60,
+      "source_step_index": 13,
+      "votes": [
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct"
+      ],
+      "vote_counts": {
+        "correct": 5
+      },
+      "majority_label": "correct",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 60,
+      "source_step_index": 14,
+      "votes": [
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral"
+      ],
+      "vote_counts": {
+        "neutral": 5
+      },
+      "majority_label": "neutral",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 60,
+      "source_step_index": 15,
+      "votes": [
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct"
+      ],
+      "vote_counts": {
+        "correct": 5
+      },
+      "majority_label": "correct",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 60,
+      "source_step_index": 16,
+      "votes": [
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral"
+      ],
+      "vote_counts": {
+        "neutral": 5
+      },
+      "majority_label": "neutral",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 77,
+      "source_step_index": 1,
+      "votes": [
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral"
+      ],
+      "vote_counts": {
+        "neutral": 5
+      },
+      "majority_label": "neutral",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 77,
+      "source_step_index": 2,
+      "votes": [
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct"
+      ],
+      "vote_counts": {
+        "correct": 5
+      },
+      "majority_label": "correct",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 77,
+      "source_step_index": 3,
+      "votes": [
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct"
+      ],
+      "vote_counts": {
+        "correct": 5
+      },
+      "majority_label": "correct",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 77,
+      "source_step_index": 4,
+      "votes": [
+        "neutral",
+        "neutral",
+        "incorrect",
+        "neutral",
+        "incorrect"
+      ],
+      "vote_counts": {
+        "neutral": 3,
+        "incorrect": 2
+      },
+      "majority_label": "neutral",
+      "majority_count": 3,
+      "unanimous": false
+    },
+    {
+      "dataset_index": 77,
+      "source_step_index": 5,
+      "votes": [
+        "incorrect",
+        "incorrect",
+        "incorrect",
+        "neutral",
+        "incorrect"
+      ],
+      "vote_counts": {
+        "incorrect": 4,
+        "neutral": 1
+      },
+      "majority_label": "incorrect",
+      "majority_count": 4,
+      "unanimous": false
+    },
+    {
+      "dataset_index": 77,
+      "source_step_index": 6,
+      "votes": [
+        "incorrect",
+        "incorrect",
+        "neutral",
+        "neutral",
+        "neutral"
+      ],
+      "vote_counts": {
+        "incorrect": 2,
+        "neutral": 3
+      },
+      "majority_label": "neutral",
+      "majority_count": 3,
+      "unanimous": false
+    },
+    {
+      "dataset_index": 77,
+      "source_step_index": 7,
+      "votes": [
+        "incorrect",
+        "incorrect",
+        "neutral",
+        "incorrect",
+        "incorrect"
+      ],
+      "vote_counts": {
+        "incorrect": 4,
+        "neutral": 1
+      },
+      "majority_label": "incorrect",
+      "majority_count": 4,
+      "unanimous": false
+    },
+    {
+      "dataset_index": 77,
+      "source_step_index": 8,
+      "votes": [
+        "incorrect",
+        "incorrect",
+        "neutral",
+        "incorrect",
+        "neutral"
+      ],
+      "vote_counts": {
+        "incorrect": 3,
+        "neutral": 2
+      },
+      "majority_label": "incorrect",
+      "majority_count": 3,
+      "unanimous": false
+    },
+    {
+      "dataset_index": 77,
+      "source_step_index": 9,
+      "votes": [
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral"
+      ],
+      "vote_counts": {
+        "neutral": 5
+      },
+      "majority_label": "neutral",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 77,
+      "source_step_index": 10,
+      "votes": [
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct"
+      ],
+      "vote_counts": {
+        "correct": 5
+      },
+      "majority_label": "correct",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 77,
+      "source_step_index": 11,
+      "votes": [
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct"
+      ],
+      "vote_counts": {
+        "correct": 5
+      },
+      "majority_label": "correct",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 77,
+      "source_step_index": 12,
+      "votes": [
+        "incorrect",
+        "incorrect",
+        "incorrect",
+        "incorrect",
+        "incorrect"
+      ],
+      "vote_counts": {
+        "incorrect": 5
+      },
+      "majority_label": "incorrect",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 77,
+      "source_step_index": 13,
+      "votes": [
+        "incorrect",
+        "incorrect",
+        "incorrect",
+        "incorrect",
+        "incorrect"
+      ],
+      "vote_counts": {
+        "incorrect": 5
+      },
+      "majority_label": "incorrect",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 77,
+      "source_step_index": 14,
+      "votes": [
+        "correct",
+        "neutral",
+        "neutral",
+        "correct",
+        "neutral"
+      ],
+      "vote_counts": {
+        "correct": 2,
+        "neutral": 3
+      },
+      "majority_label": "neutral",
+      "majority_count": 3,
+      "unanimous": false
+    },
+    {
+      "dataset_index": 77,
+      "source_step_index": 15,
+      "votes": [
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct"
+      ],
+      "vote_counts": {
+        "correct": 5
+      },
+      "majority_label": "correct",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 77,
+      "source_step_index": 16,
+      "votes": [
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct"
+      ],
+      "vote_counts": {
+        "correct": 5
+      },
+      "majority_label": "correct",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 77,
+      "source_step_index": 17,
+      "votes": [
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral"
+      ],
+      "vote_counts": {
+        "neutral": 5
+      },
+      "majority_label": "neutral",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 77,
+      "source_step_index": 18,
+      "votes": [
+        "incorrect",
+        "incorrect",
+        "incorrect",
+        "incorrect",
+        "incorrect"
+      ],
+      "vote_counts": {
+        "incorrect": 5
+      },
+      "majority_label": "incorrect",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 99,
+      "source_step_index": 1,
+      "votes": [
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral"
+      ],
+      "vote_counts": {
+        "neutral": 5
+      },
+      "majority_label": "neutral",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 99,
+      "source_step_index": 2,
+      "votes": [
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct"
+      ],
+      "vote_counts": {
+        "correct": 5
+      },
+      "majority_label": "correct",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 99,
+      "source_step_index": 3,
+      "votes": [
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct"
+      ],
+      "vote_counts": {
+        "correct": 5
+      },
+      "majority_label": "correct",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 99,
+      "source_step_index": 4,
+      "votes": [
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral"
+      ],
+      "vote_counts": {
+        "neutral": 5
+      },
+      "majority_label": "neutral",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 99,
+      "source_step_index": 5,
+      "votes": [
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral",
+        "incorrect"
+      ],
+      "vote_counts": {
+        "neutral": 4,
+        "incorrect": 1
+      },
+      "majority_label": "neutral",
+      "majority_count": 4,
+      "unanimous": false
+    },
+    {
+      "dataset_index": 99,
+      "source_step_index": 6,
+      "votes": [
+        "incorrect",
+        "incorrect",
+        "neutral",
+        "incorrect",
+        "incorrect"
+      ],
+      "vote_counts": {
+        "incorrect": 4,
+        "neutral": 1
+      },
+      "majority_label": "incorrect",
+      "majority_count": 4,
+      "unanimous": false
+    },
+    {
+      "dataset_index": 99,
+      "source_step_index": 7,
+      "votes": [
+        "incorrect",
+        "incorrect",
+        "incorrect",
+        "incorrect",
+        "incorrect"
+      ],
+      "vote_counts": {
+        "incorrect": 5
+      },
+      "majority_label": "incorrect",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 99,
+      "source_step_index": 8,
+      "votes": [
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral"
+      ],
+      "vote_counts": {
+        "neutral": 5
+      },
+      "majority_label": "neutral",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 99,
+      "source_step_index": 9,
+      "votes": [
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct"
+      ],
+      "vote_counts": {
+        "correct": 5
+      },
+      "majority_label": "correct",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 99,
+      "source_step_index": 10,
+      "votes": [
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct"
+      ],
+      "vote_counts": {
+        "correct": 5
+      },
+      "majority_label": "correct",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 99,
+      "source_step_index": 11,
+      "votes": [
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct"
+      ],
+      "vote_counts": {
+        "correct": 5
+      },
+      "majority_label": "correct",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 99,
+      "source_step_index": 12,
+      "votes": [
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral"
+      ],
+      "vote_counts": {
+        "neutral": 5
+      },
+      "majority_label": "neutral",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 99,
+      "source_step_index": 13,
+      "votes": [
+        "neutral",
+        "incorrect",
+        "incorrect",
+        "neutral",
+        "neutral"
+      ],
+      "vote_counts": {
+        "neutral": 3,
+        "incorrect": 2
+      },
+      "majority_label": "neutral",
+      "majority_count": 3,
+      "unanimous": false
+    },
+    {
+      "dataset_index": 99,
+      "source_step_index": 14,
+      "votes": [
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct"
+      ],
+      "vote_counts": {
+        "correct": 5
+      },
+      "majority_label": "correct",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 145,
+      "source_step_index": 1,
+      "votes": [
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral"
+      ],
+      "vote_counts": {
+        "neutral": 5
+      },
+      "majority_label": "neutral",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 145,
+      "source_step_index": 2,
+      "votes": [
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct"
+      ],
+      "vote_counts": {
+        "correct": 5
+      },
+      "majority_label": "correct",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 145,
+      "source_step_index": 3,
+      "votes": [
+        "incorrect",
+        "incorrect",
+        "incorrect",
+        "incorrect",
+        "incorrect"
+      ],
+      "vote_counts": {
+        "incorrect": 5
+      },
+      "majority_label": "incorrect",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 145,
+      "source_step_index": 4,
+      "votes": [
+        "incorrect",
+        "incorrect",
+        "incorrect",
+        "incorrect",
+        "neutral"
+      ],
+      "vote_counts": {
+        "incorrect": 4,
+        "neutral": 1
+      },
+      "majority_label": "incorrect",
+      "majority_count": 4,
+      "unanimous": false
+    },
+    {
+      "dataset_index": 145,
+      "source_step_index": 5,
+      "votes": [
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral"
+      ],
+      "vote_counts": {
+        "neutral": 5
+      },
+      "majority_label": "neutral",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 145,
+      "source_step_index": 6,
+      "votes": [
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral"
+      ],
+      "vote_counts": {
+        "neutral": 5
+      },
+      "majority_label": "neutral",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 145,
+      "source_step_index": 7,
+      "votes": [
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral"
+      ],
+      "vote_counts": {
+        "neutral": 5
+      },
+      "majority_label": "neutral",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 145,
+      "source_step_index": 8,
+      "votes": [
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral"
+      ],
+      "vote_counts": {
+        "neutral": 5
+      },
+      "majority_label": "neutral",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 145,
+      "source_step_index": 9,
+      "votes": [
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral"
+      ],
+      "vote_counts": {
+        "neutral": 5
+      },
+      "majority_label": "neutral",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 145,
+      "source_step_index": 10,
+      "votes": [
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral"
+      ],
+      "vote_counts": {
+        "neutral": 5
+      },
+      "majority_label": "neutral",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 145,
+      "source_step_index": 11,
+      "votes": [
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral"
+      ],
+      "vote_counts": {
+        "neutral": 5
+      },
+      "majority_label": "neutral",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 145,
+      "source_step_index": 12,
+      "votes": [
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral"
+      ],
+      "vote_counts": {
+        "neutral": 5
+      },
+      "majority_label": "neutral",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 145,
+      "source_step_index": 13,
+      "votes": [
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral"
+      ],
+      "vote_counts": {
+        "neutral": 5
+      },
+      "majority_label": "neutral",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 145,
+      "source_step_index": 14,
+      "votes": [
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral"
+      ],
+      "vote_counts": {
+        "neutral": 5
+      },
+      "majority_label": "neutral",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 145,
+      "source_step_index": 15,
+      "votes": [
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral"
+      ],
+      "vote_counts": {
+        "neutral": 5
+      },
+      "majority_label": "neutral",
+      "majority_count": 5,
+      "unanimous": true
+    },
+    {
+      "dataset_index": 145,
+      "source_step_index": 16,
+      "votes": [
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral"
+      ],
+      "vote_counts": {
+        "neutral": 5
+      },
+      "majority_label": "neutral",
+      "majority_count": 5,
+      "unanimous": true
+    }
+  ]
+}

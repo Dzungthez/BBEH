@@ -1,0 +1,11 @@
+=== RUN verifier-seed=3 ===
+Traceback (most recent call last):
+  File "/prj/corp/airesearch/lasvegas/vol11-scratch/huudnguy/code/repos/bbeh/experiments/multistep_react_verifier/run_verify_5_samples.py", line 409, in <module>
+    main()
+    ~~~~^^
+  File "/prj/corp/airesearch/lasvegas/vol11-scratch/huudnguy/code/repos/bbeh/experiments/multistep_react_verifier/run_verify_5_samples.py", line 282, in main
+    wait_for_server(args.base_url, timeout_sec=1800)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/prj/corp/airesearch/lasvegas/vol11-scratch/huudnguy/code/repos/bbeh/experiments/multistep_react_verifier/react_verifier.py", line 246, in wait_for_server
+    raise TimeoutError(f"vLLM server not ready at {base_url} within {timeout_sec}s")
+TimeoutError: vLLM server not ready at http://127.0.0.1:8000/v1 within 1800s

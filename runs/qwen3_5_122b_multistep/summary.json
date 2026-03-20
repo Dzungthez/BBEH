@@ -1,0 +1,12 @@
+{
+  "task": "bbeh_multistep_arithmetic",
+  "model": "Qwen/Qwen3.5-122B-A10B",
+  "num_predictions": 200,
+  "correct": 15,
+  "wrong": 185,
+  "accuracy": 0.075,
+  "elapsed_sec": 392.893,
+  "avg_sec_per_response_wallclock": 1.964,
+  "avg_sec_per_request": 30.477,
+  "output_jsonl": "runs/qwen3_5_122b_multistep/predictions.jsonl"
+}

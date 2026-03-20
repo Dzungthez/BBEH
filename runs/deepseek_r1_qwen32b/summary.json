@@ -1,0 +1,59 @@
+{
+  "model": "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
+  "concurrency": 32,
+  "max_tokens": 4096,
+  "num_predictions": 270,
+  "correct": 56,
+  "accuracy": 0.2074074074074074,
+  "elapsed_sec": 232.086,
+  "avg_sec_per_response": 0.86,
+  "avg_sec_per_successful_request": 25.781,
+  "by_task": {
+    "bbeh_boardgame_qa": {
+      "correct": 5,
+      "total": 30,
+      "accuracy": 0.16666666666666666
+    },
+    "bbeh_boolean_expressions": {
+      "correct": 2,
+      "total": 30,
+      "accuracy": 0.06666666666666667
+    },
+    "bbeh_causal_understanding": {
+      "correct": 15,
+      "total": 30,
+      "accuracy": 0.5
+    },
+    "bbeh_dyck_languages": {
+      "correct": 6,
+      "total": 30,
+      "accuracy": 0.2
+    },
+    "bbeh_multistep_arithmetic": {
+      "correct": 3,
+      "total": 30,
+      "accuracy": 0.1
+    },
+    "bbeh_spatial_reasoning": {
+      "correct": 4,
+      "total": 30,
+      "accuracy": 0.13333333333333333
+    },
+    "bbeh_time_arithmetic": {
+      "correct": 11,
+      "total": 30,
+      "accuracy": 0.36666666666666664
+    },
+    "bbeh_web_of_lies": {
+      "correct": 1,
+      "total": 30,
+      "accuracy": 0.03333333333333333
+    },
+    "bbeh_word_sorting": {
+      "correct": 9,
+      "total": 30,
+      "accuracy": 0.3
+    }
+  },
+  "output_jsonl": "runs/deepseek_r1_qwen32b/predictions.jsonl"
+}

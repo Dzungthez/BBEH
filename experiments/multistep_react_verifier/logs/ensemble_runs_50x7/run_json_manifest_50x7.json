@@ -1,0 +1,37 @@
+{
+  "runs": {
+    "run_1": {
+      "json": "experiments/multistep_react_verifier/logs/verify_5samples_20260319_164238.json"
+    },
+    "run_2": {
+      "json": "experiments/multistep_react_verifier/logs/verify_5samples_20260319_164852.json"
+    },
+    "run_3": {
+      "json": "experiments/multistep_react_verifier/logs/verify_5samples_20260319_165447.json"
+    },
+    "run_4": {
+      "json": "experiments/multistep_react_verifier/logs/verify_5samples_20260319_170058.json"
+    },
+    "run_5": {
+      "json": "experiments/multistep_react_verifier/logs/verify_5samples_20260319_170657.json"
+    },
+    "run_6": {
+      "json": "experiments/multistep_react_verifier/logs/verify_5samples_20260319_171252.json"
+    },
+    "run_7": {
+      "json": "experiments/multistep_react_verifier/logs/verify_5samples_20260319_171842.json"
+    }
+  },
+  "note": "Each run JSON contains full per-step data (step_text, verdict, reason, react_trace, prev/next context).",
+  "step_record_schema_preview": {
+    "step_id": "int",
+    "step_text": "str",
+    "prev_step_text": "str",
+    "next_step_text": "str",
+    "verdict": "str",
+    "reason": "str",
+    "claim": "str",
+    "react_trace": "list",
+    "source_step_index": "int"
+  }
+}

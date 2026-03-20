@@ -1,0 +1,337 @@
+True
+False
+True
+False
+True
+False
+True
+False
+[001/270] bbeh_boardgame_qa#166 correct=True task_acc=1/1 dur=7.794
+[002/270] bbeh_boardgame_qa#40 correct=True task_acc=2/2 dur=9.24
+[003/270] bbeh_boardgame_qa#24 correct=False task_acc=2/3 dur=11.315
+[004/270] bbeh_boardgame_qa#61 correct=False task_acc=2/4 dur=13.79
+[005/270] bbeh_boardgame_qa#50 correct=False task_acc=2/5 dur=15.486
+[006/270] bbeh_boardgame_qa#52 correct=False task_acc=2/6 dur=20.37
+[007/270] bbeh_boardgame_qa#31 correct=True task_acc=3/7 dur=21.644
+[008/270] bbeh_boardgame_qa#126 correct=False task_acc=3/8 dur=22.786
+[009/270] bbeh_boardgame_qa#109 correct=True task_acc=4/9 dur=25.204
+[010/270] bbeh_boardgame_qa#0 correct=False task_acc=4/10 dur=26.917
+[011/270] bbeh_boardgame_qa#174 correct=False task_acc=4/11 dur=27.63
+[012/270] bbeh_boardgame_qa#18 correct=True task_acc=5/12 dur=28.112
+[013/270] bbeh_boardgame_qa#129 correct=False task_acc=5/13 dur=29.601
+[014/270] bbeh_boardgame_qa#78 correct=False task_acc=5/14 dur=33.753
+[015/270] bbeh_boardgame_qa#55 correct=False task_acc=5/15 dur=33.765
+[016/270] bbeh_boardgame_qa#88 correct=False task_acc=5/16 dur=33.771
+[017/270] bbeh_boardgame_qa#54 correct=False task_acc=5/17 dur=33.767
+[018/270] bbeh_boardgame_qa#183 correct=False task_acc=5/18 dur=33.77
+[019/270] bbeh_boardgame_qa#170 correct=False task_acc=5/19 dur=33.782
+[020/270] bbeh_boardgame_qa#127 correct=False task_acc=5/20 dur=33.773
+[021/270] bbeh_boardgame_qa#64 correct=False task_acc=5/21 dur=33.778
+[022/270] bbeh_boardgame_qa#131 correct=False task_acc=5/22 dur=33.776
+[023/270] bbeh_boardgame_qa#95 correct=False task_acc=5/23 dur=33.782
+[024/270] bbeh_boardgame_qa#74 correct=False task_acc=5/24 dur=33.787
+[025/270] bbeh_boardgame_qa#195 correct=False task_acc=5/25 dur=33.778
+[026/270] bbeh_boardgame_qa#155 correct=False task_acc=5/26 dur=33.783
+[027/270] bbeh_boardgame_qa#93 correct=False task_acc=5/27 dur=33.781
+[028/270] bbeh_boardgame_qa#67 correct=False task_acc=5/28 dur=33.782
+[029/270] bbeh_boardgame_qa#17 correct=False task_acc=5/29 dur=33.787
+[030/270] bbeh_boolean_expressions#72 correct=False task_acc=0/1 dur=33.781
+[031/270] bbeh_boolean_expressions#165 correct=False task_acc=0/2 dur=33.781
+[032/270] bbeh_boardgame_qa#2 correct=False task_acc=5/30 dur=33.785
+[033/270] bbeh_causal_understanding#178 correct=True task_acc=1/1 dur=2.523
+[034/270] bbeh_boolean_expressions#138 correct=True task_acc=1/3 dur=28.639
+[035/270] bbeh_causal_understanding#106 correct=False task_acc=1/2 dur=4.451
+[036/270] bbeh_causal_understanding#75 correct=False task_acc=1/3 dur=7.508
+[037/270] bbeh_causal_understanding#86 correct=False task_acc=1/4 dur=7.909
+[038/270] bbeh_boolean_expressions#196 correct=False task_acc=1/4 dur=33.832
+[039/270] bbeh_causal_understanding#173 correct=True task_acc=2/5 dur=4.867
+[040/270] bbeh_causal_understanding#158 correct=False task_acc=2/6 dur=6.853
+[041/270] bbeh_causal_understanding#74 correct=False task_acc=2/7 dur=7.698
+[042/270] bbeh_causal_understanding#25 correct=False task_acc=2/8 dur=3.064
+[043/270] bbeh_boolean_expressions#134 correct=False task_acc=1/5 dur=33.82
+[044/270] bbeh_causal_understanding#28 correct=True task_acc=3/9 dur=2.153
+[045/270] bbeh_causal_understanding#21 correct=True task_acc=4/10 dur=3.532
+[046/270] bbeh_boolean_expressions#50 correct=False task_acc=1/6 dur=33.787
+[047/270] bbeh_causal_understanding#171 correct=True task_acc=5/11 dur=3.418
+[048/270] bbeh_causal_understanding#84 correct=True task_acc=6/12 dur=6.148
+[049/270] bbeh_boolean_expressions#181 correct=False task_acc=1/7 dur=33.767
+[050/270] bbeh_causal_understanding#83 correct=False task_acc=6/13 dur=4.196
+[051/270] bbeh_causal_understanding#135 correct=True task_acc=7/14 dur=4.504
+[052/270] bbeh_causal_understanding#59 correct=True task_acc=8/15 dur=3.048
+[053/270] bbeh_causal_understanding#168 correct=True task_acc=9/16 dur=3.669
+[054/270] bbeh_causal_understanding#151 correct=True task_acc=10/17 dur=4.75
+[055/270] bbeh_causal_understanding#193 correct=False task_acc=10/18 dur=4.453
+[056/270] bbeh_causal_understanding#2 correct=True task_acc=11/19 dur=9.154
+[057/270] bbeh_causal_understanding#56 correct=True task_acc=12/20 dur=4.676
+[058/270] bbeh_boolean_expressions#122 correct=False task_acc=1/8 dur=33.658
+[059/270] bbeh_causal_understanding#29 correct=False task_acc=12/21 dur=4.091
+[060/270] bbeh_causal_understanding#17 correct=False task_acc=12/22 dur=5.314
+[061/270] bbeh_causal_understanding#140 correct=False task_acc=12/23 dur=4.109
+[062/270] bbeh_boolean_expressions#8 correct=False task_acc=1/9 dur=33.617
+[063/270] bbeh_causal_understanding#79 correct=False task_acc=12/24 dur=4.7
+[064/270] bbeh_boolean_expressions#74 correct=False task_acc=1/10 dur=33.579
+[065/270] bbeh_causal_understanding#45 correct=True task_acc=13/25 dur=3.431
+[066/270] bbeh_causal_understanding#161 correct=True task_acc=14/26 dur=4.557
+[067/270] bbeh_causal_understanding#111 correct=False task_acc=14/27 dur=6.098
+[068/270] bbeh_causal_understanding#103 correct=False task_acc=14/28 dur=4.275
+[069/270] bbeh_causal_understanding#157 correct=False task_acc=14/29 dur=4.546
+[070/270] bbeh_boolean_expressions#172 correct=False task_acc=1/11 dur=33.493
+[071/270] bbeh_causal_understanding#156 correct=True task_acc=15/30 dur=17.257
+[072/270] bbeh_boolean_expressions#68 correct=False task_acc=1/12 dur=33.425
+[073/270] bbeh_boolean_expressions#1 correct=False task_acc=1/13 dur=33.408
+[074/270] bbeh_boolean_expressions#87 correct=False task_acc=1/14 dur=33.389
+[075/270] bbeh_boolean_expressions#91 correct=True task_acc=2/15 dur=28.448
+[076/270] bbeh_dyck_languages#181 correct=True task_acc=1/1 dur=6.007
+[077/270] bbeh_boolean_expressions#13 correct=False task_acc=2/16 dur=33.325
+[078/270] bbeh_dyck_languages#173 correct=False task_acc=1/2 dur=8.715
+[079/270] bbeh_dyck_languages#14 correct=False task_acc=1/3 dur=6.998
+[080/270] bbeh_dyck_languages#99 correct=False task_acc=1/4 dur=6.334
+[081/270] bbeh_boolean_expressions#66 correct=False task_acc=2/17 dur=33.069
+[082/270] bbeh_boolean_expressions#16 correct=False task_acc=2/18 dur=33.065
+[083/270] bbeh_boolean_expressions#35 correct=False task_acc=2/19 dur=33.065
+[084/270] bbeh_boolean_expressions#70 correct=False task_acc=2/20 dur=33.074
+[085/270] bbeh_boolean_expressions#115 correct=False task_acc=2/21 dur=33.073
+[086/270] bbeh_boolean_expressions#95 correct=False task_acc=2/22 dur=33.083
+[087/270] bbeh_boolean_expressions#190 correct=False task_acc=2/23 dur=33.085
+[088/270] bbeh_boolean_expressions#125 correct=False task_acc=2/24 dur=33.085
+[089/270] bbeh_boolean_expressions#184 correct=False task_acc=2/25 dur=33.083
+[090/270] bbeh_boolean_expressions#155 correct=False task_acc=2/26 dur=33.086
+[091/270] bbeh_boolean_expressions#21 correct=False task_acc=2/27 dur=33.085
+[092/270] bbeh_boolean_expressions#189 correct=False task_acc=2/28 dur=33.073
+[093/270] bbeh_boolean_expressions#22 correct=False task_acc=2/29 dur=33.074
+[094/270] bbeh_boolean_expressions#53 correct=False task_acc=2/30 dur=33.076
+[095/270] bbeh_dyck_languages#32 correct=True task_acc=2/5 dur=11.155
+[096/270] bbeh_dyck_languages#189 correct=False task_acc=2/6 dur=9.34
+[097/270] bbeh_dyck_languages#90 correct=True task_acc=3/7 dur=14.469
+[098/270] bbeh_dyck_languages#38 correct=False task_acc=3/8 dur=16.849
+[099/270] bbeh_dyck_languages#158 correct=True task_acc=4/9 dur=7.248
+[100/270] bbeh_dyck_languages#23 correct=True task_acc=5/10 dur=7.585
+[101/270] bbeh_dyck_languages#110 correct=False task_acc=5/11 dur=8.606
+[102/270] bbeh_dyck_languages#124 correct=False task_acc=5/12 dur=8.697
+[103/270] bbeh_dyck_languages#78 correct=False task_acc=5/13 dur=13.913
+[104/270] bbeh_dyck_languages#141 correct=True task_acc=6/14 dur=12.411
+[105/270] bbeh_dyck_languages#172 correct=False task_acc=6/15 dur=15.474
+[106/270] bbeh_dyck_languages#139 correct=False task_acc=6/16 dur=28.881
+[107/270] bbeh_dyck_languages#80 correct=False task_acc=6/17 dur=33.069
+[108/270] bbeh_dyck_languages#65 correct=False task_acc=6/18 dur=33.106
+[109/270] bbeh_dyck_languages#44 correct=False task_acc=6/19 dur=33.119
+[110/270] bbeh_dyck_languages#128 correct=False task_acc=6/20 dur=33.151
+[111/270] bbeh_dyck_languages#160 correct=False task_acc=6/21 dur=29.789
+[112/270] bbeh_dyck_languages#156 correct=False task_acc=6/22 dur=31.072
+[113/270] bbeh_dyck_languages#47 correct=False task_acc=6/23 dur=33.186
+[114/270] bbeh_dyck_languages#106 correct=False task_acc=6/24 dur=33.175
+[115/270] bbeh_dyck_languages#88 correct=False task_acc=6/25 dur=33.202
+[116/270] bbeh_dyck_languages#85 correct=False task_acc=6/26 dur=33.242
+[117/270] bbeh_dyck_languages#25 correct=False task_acc=6/27 dur=33.252
+[118/270] bbeh_dyck_languages#180 correct=False task_acc=6/28 dur=33.252
+[119/270] bbeh_dyck_languages#62 correct=False task_acc=6/29 dur=33.252
+[120/270] bbeh_multistep_arithmetic#127 correct=False task_acc=0/1 dur=33.317
+[121/270] bbeh_multistep_arithmetic#134 correct=False task_acc=0/2 dur=33.315
+[122/270] bbeh_multistep_arithmetic#60 correct=False task_acc=0/3 dur=33.32
+[123/270] bbeh_multistep_arithmetic#105 correct=False task_acc=0/4 dur=33.315
+[124/270] bbeh_multistep_arithmetic#162 correct=False task_acc=0/5 dur=33.321
+[125/270] bbeh_multistep_arithmetic#55 correct=False task_acc=0/6 dur=33.321
+[126/270] bbeh_dyck_languages#69 correct=False task_acc=6/30 dur=33.323
+[127/270] bbeh_multistep_arithmetic#50 correct=False task_acc=0/7 dur=33.416
+[128/270] bbeh_multistep_arithmetic#118 correct=False task_acc=0/8 dur=33.453
+[129/270] bbeh_multistep_arithmetic#99 correct=False task_acc=0/9 dur=33.516
+[130/270] bbeh_multistep_arithmetic#124 correct=False task_acc=0/10 dur=33.637
+[131/270] bbeh_spatial_reasoning#136 correct=True task_acc=1/1 dur=7.499
+[132/270] bbeh_multistep_arithmetic#75 correct=False task_acc=0/11 dur=33.72
+[133/270] bbeh_multistep_arithmetic#85 correct=False task_acc=0/12 dur=33.725
+[134/270] bbeh_multistep_arithmetic#18 correct=True task_acc=1/13 dur=33.682
+[135/270] bbeh_multistep_arithmetic#49 correct=False task_acc=1/14 dur=33.776
+[136/270] bbeh_multistep_arithmetic#112 correct=False task_acc=1/15 dur=33.816
+[137/270] bbeh_multistep_arithmetic#40 correct=True task_acc=2/16 dur=30.653
+[138/270] bbeh_spatial_reasoning#125 correct=True task_acc=2/2 dur=10.742
+[139/270] bbeh_multistep_arithmetic#148 correct=False task_acc=2/17 dur=33.949
+[140/270] bbeh_multistep_arithmetic#145 correct=False task_acc=2/18 dur=34.068
+[141/270] bbeh_spatial_reasoning#80 correct=True task_acc=3/3 dur=12.433
+[142/270] bbeh_multistep_arithmetic#25 correct=False task_acc=2/19 dur=34.115
+[143/270] bbeh_multistep_arithmetic#5 correct=False task_acc=2/20 dur=34.085
+[144/270] bbeh_multistep_arithmetic#77 correct=False task_acc=2/21 dur=34.121
+[145/270] bbeh_multistep_arithmetic#146 correct=False task_acc=2/22 dur=34.108
+[146/270] bbeh_multistep_arithmetic#59 correct=False task_acc=2/23 dur=34.149
+[147/270] bbeh_multistep_arithmetic#71 correct=False task_acc=2/24 dur=34.153
+[148/270] bbeh_multistep_arithmetic#26 correct=False task_acc=2/25 dur=33.979
+[149/270] bbeh_multistep_arithmetic#163 correct=False task_acc=2/26 dur=34.246
+[150/270] bbeh_multistep_arithmetic#117 correct=False task_acc=2/27 dur=34.283
+[151/270] bbeh_spatial_reasoning#0 correct=True task_acc=4/4 dur=13.248
+[152/270] bbeh_multistep_arithmetic#150 correct=True task_acc=3/28 dur=34.378
+[153/270] bbeh_multistep_arithmetic#152 correct=False task_acc=3/29 dur=34.384
+[154/270] bbeh_multistep_arithmetic#31 correct=False task_acc=3/30 dur=34.385
+[155/270] bbeh_spatial_reasoning#44 correct=False task_acc=4/5 dur=34.385
+[156/270] bbeh_spatial_reasoning#198 correct=False task_acc=4/6 dur=34.374
+[157/270] bbeh_spatial_reasoning#165 correct=False task_acc=4/7 dur=34.383
+[158/270] bbeh_spatial_reasoning#35 correct=False task_acc=4/8 dur=34.384
+[159/270] bbeh_spatial_reasoning#141 correct=False task_acc=4/9 dur=34.385
+[160/270] bbeh_spatial_reasoning#116 correct=False task_acc=4/10 dur=34.386
+[161/270] bbeh_spatial_reasoning#1 correct=False task_acc=4/11 dur=34.308
+[162/270] bbeh_spatial_reasoning#30 correct=False task_acc=4/12 dur=34.276
+[163/270] bbeh_spatial_reasoning#199 correct=False task_acc=4/13 dur=34.262
+[164/270] bbeh_spatial_reasoning#3 correct=False task_acc=4/14 dur=34.304
+[165/270] bbeh_spatial_reasoning#50 correct=False task_acc=4/15 dur=30.738
+[166/270] bbeh_spatial_reasoning#33 correct=False task_acc=4/16 dur=34.299
+[167/270] bbeh_spatial_reasoning#162 correct=False task_acc=4/17 dur=34.271
+[168/270] bbeh_spatial_reasoning#61 correct=False task_acc=4/18 dur=34.232
+[169/270] bbeh_spatial_reasoning#146 correct=False task_acc=4/19 dur=34.203
+[170/270] bbeh_spatial_reasoning#131 correct=False task_acc=4/20 dur=34.216
+[171/270] bbeh_spatial_reasoning#25 correct=False task_acc=4/21 dur=34.136
+[172/270] bbeh_spatial_reasoning#95 correct=False task_acc=4/22 dur=34.116
+[173/270] bbeh_time_arithmetic#135 correct=True task_acc=1/1 dur=11.759
+[174/270] bbeh_time_arithmetic#10 correct=False task_acc=1/2 dur=13.126
+[175/270] bbeh_time_arithmetic#114 correct=False task_acc=1/3 dur=13.992
+[176/270] bbeh_time_arithmetic#34 correct=True task_acc=2/4 dur=14.828
+[177/270] bbeh_time_arithmetic#31 correct=True task_acc=3/5 dur=14.969
+[178/270] bbeh_spatial_reasoning#54 correct=False task_acc=4/23 dur=33.981
+[179/270] bbeh_spatial_reasoning#130 correct=False task_acc=4/24 dur=33.756
+[180/270] bbeh_time_arithmetic#50 correct=False task_acc=3/6 dur=14.438
+[181/270] bbeh_spatial_reasoning#170 correct=False task_acc=4/25 dur=33.777
+[182/270] bbeh_spatial_reasoning#172 correct=False task_acc=4/26 dur=33.725
+[183/270] bbeh_time_arithmetic#100 correct=False task_acc=3/7 dur=24.079
+[184/270] bbeh_time_arithmetic#105 correct=True task_acc=4/8 dur=15.337
+[185/270] bbeh_time_arithmetic#1 correct=True task_acc=5/9 dur=13.363
+[186/270] bbeh_spatial_reasoning#173 correct=False task_acc=4/27 dur=33.809
+[187/270] bbeh_spatial_reasoning#97 correct=False task_acc=4/28 dur=33.777
+[188/270] bbeh_spatial_reasoning#137 correct=False task_acc=4/29 dur=33.762
+[189/270] bbeh_spatial_reasoning#105 correct=False task_acc=4/30 dur=33.711
+[190/270] bbeh_time_arithmetic#180 correct=False task_acc=5/10 dur=33.524
+[191/270] bbeh_time_arithmetic#197 correct=True task_acc=6/11 dur=11.033
+[192/270] bbeh_time_arithmetic#154 correct=True task_acc=7/12 dur=15.088
+[193/270] bbeh_time_arithmetic#57 correct=False task_acc=7/13 dur=33.616
+[194/270] bbeh_time_arithmetic#41 correct=True task_acc=8/14 dur=15.991
+[195/270] bbeh_time_arithmetic#90 correct=True task_acc=9/15 dur=32.027
+[196/270] bbeh_time_arithmetic#96 correct=False task_acc=9/16 dur=33.471
+[197/270] bbeh_time_arithmetic#179 correct=False task_acc=9/17 dur=33.427
+[198/270] bbeh_time_arithmetic#60 correct=False task_acc=9/18 dur=33.389
+[199/270] bbeh_time_arithmetic#134 correct=False task_acc=9/19 dur=33.337
+[200/270] bbeh_time_arithmetic#26 correct=False task_acc=9/20 dur=33.361
+[201/270] bbeh_time_arithmetic#150 correct=False task_acc=9/21 dur=33.373
+[202/270] bbeh_time_arithmetic#138 correct=False task_acc=9/22 dur=33.336
+[203/270] bbeh_time_arithmetic#75 correct=True task_acc=10/23 dur=32.5
+[204/270] bbeh_time_arithmetic#62 correct=False task_acc=10/24 dur=33.385
+[205/270] bbeh_time_arithmetic#110 correct=True task_acc=11/25 dur=31.562
+[206/270] bbeh_time_arithmetic#66 correct=False task_acc=11/26 dur=33.436
+[207/270] bbeh_time_arithmetic#81 correct=False task_acc=11/27 dur=33.412
+[208/270] bbeh_time_arithmetic#40 correct=False task_acc=11/28 dur=33.438
+[209/270] bbeh_time_arithmetic#171 correct=False task_acc=11/29 dur=33.468
+[210/270] bbeh_time_arithmetic#144 correct=False task_acc=11/30 dur=33.471
+[211/270] bbeh_web_of_lies#80 correct=False task_acc=0/1 dur=33.622
+[212/270] bbeh_web_of_lies#56 correct=False task_acc=0/2 dur=33.622
+[213/270] bbeh_web_of_lies#16 correct=False task_acc=0/3 dur=33.626
+[214/270] bbeh_web_of_lies#83 correct=True task_acc=1/4 dur=26.633
+[215/270] bbeh_web_of_lies#2 correct=False task_acc=1/5 dur=33.644
+[216/270] bbeh_web_of_lies#195 correct=False task_acc=1/6 dur=33.644
+[217/270] bbeh_web_of_lies#38 correct=False task_acc=1/7 dur=33.648
+[218/270] bbeh_web_of_lies#121 correct=False task_acc=1/8 dur=33.627
+[219/270] bbeh_web_of_lies#161 correct=False task_acc=1/9 dur=33.597
+[220/270] bbeh_web_of_lies#147 correct=False task_acc=1/10 dur=33.607
+[221/270] bbeh_web_of_lies#67 correct=False task_acc=1/11 dur=33.584
+[222/270] bbeh_web_of_lies#14 correct=False task_acc=1/12 dur=33.575
+[223/270] bbeh_web_of_lies#39 correct=False task_acc=1/13 dur=33.549
+[224/270] bbeh_web_of_lies#129 correct=False task_acc=1/14 dur=33.541
+[225/270] bbeh_web_of_lies#115 correct=False task_acc=1/15 dur=33.538
+[226/270] bbeh_web_of_lies#11 correct=False task_acc=1/16 dur=33.555
+[227/270] bbeh_word_sorting#80 correct=False task_acc=0/1 dur=10.06
+[228/270] bbeh_web_of_lies#181 correct=False task_acc=1/17 dur=33.572
+[229/270] bbeh_web_of_lies#109 correct=False task_acc=1/18 dur=33.573
+[230/270] bbeh_word_sorting#104 correct=False task_acc=0/2 dur=7.704
+[231/270] bbeh_word_sorting#139 correct=False task_acc=0/3 dur=9.014
+[232/270] bbeh_web_of_lies#137 correct=False task_acc=1/19 dur=33.598
+[233/270] bbeh_web_of_lies#155 correct=False task_acc=1/20 dur=33.624
+[234/270] bbeh_word_sorting#34 correct=True task_acc=1/4 dur=19.466
+[235/270] bbeh_web_of_lies#154 correct=False task_acc=1/21 dur=33.638
+[236/270] bbeh_word_sorting#2 correct=True task_acc=2/5 dur=12.85
+[237/270] bbeh_web_of_lies#27 correct=False task_acc=1/22 dur=33.61
+[238/270] bbeh_web_of_lies#32 correct=False task_acc=1/23 dur=33.615
+[239/270] bbeh_word_sorting#60 correct=False task_acc=2/6 dur=10.606
+[240/270] bbeh_word_sorting#181 correct=True task_acc=3/7 dur=7.838
+[241/270] bbeh_web_of_lies#175 correct=False task_acc=1/24 dur=33.59
+[242/270] bbeh_web_of_lies#74 correct=False task_acc=1/25 dur=33.551
+[243/270] bbeh_word_sorting#177 correct=False task_acc=3/8 dur=16.647
+[244/270] bbeh_word_sorting#148 correct=False task_acc=3/9 dur=7.27
+[245/270] bbeh_web_of_lies#112 correct=False task_acc=1/26 dur=33.498
+[246/270] bbeh_word_sorting#152 correct=False task_acc=3/10 dur=8.204
+[247/270] bbeh_web_of_lies#194 correct=False task_acc=1/27 dur=33.438
+[248/270] bbeh_web_of_lies#148 correct=False task_acc=1/28 dur=33.399
+[249/270] bbeh_web_of_lies#25 correct=False task_acc=1/29 dur=33.343
+[250/270] bbeh_word_sorting#145 correct=False task_acc=3/11 dur=11.484
+[251/270] bbeh_word_sorting#159 correct=False task_acc=3/12 dur=16.094
+[252/270] bbeh_web_of_lies#20 correct=False task_acc=1/30 dur=33.212
+[253/270] bbeh_word_sorting#52 correct=True task_acc=4/13 dur=19.171
+[254/270] bbeh_word_sorting#63 correct=False task_acc=4/14 dur=33.144
+[255/270] bbeh_word_sorting#175 correct=True task_acc=5/15 dur=20.141
+[256/270] bbeh_word_sorting#53 correct=False task_acc=5/16 dur=13.772
+[257/270] bbeh_word_sorting#85 correct=False task_acc=5/17 dur=27.282
+[258/270] bbeh_word_sorting#25 correct=False task_acc=5/18 dur=32.08
+[259/270] bbeh_word_sorting#32 correct=True task_acc=6/19 dur=21.186
+[260/270] bbeh_word_sorting#14 correct=False task_acc=6/20 dur=31.906
+[261/270] bbeh_word_sorting#51 correct=False task_acc=6/21 dur=31.59
+[262/270] bbeh_word_sorting#153 correct=True task_acc=7/22 dur=25.687
+[263/270] bbeh_word_sorting#184 correct=True task_acc=8/23 dur=23.46
+[264/270] bbeh_word_sorting#91 correct=False task_acc=8/24 dur=31.301
+[265/270] bbeh_word_sorting#170 correct=False task_acc=8/25 dur=31.026
+[266/270] bbeh_word_sorting#48 correct=True task_acc=9/26 dur=25.715
+[267/270] bbeh_word_sorting#131 correct=False task_acc=9/27 dur=29.41
+[268/270] bbeh_word_sorting#3 correct=False task_acc=9/28 dur=29.346
+[269/270] bbeh_word_sorting#87 correct=False task_acc=9/29 dur=29.328
+[270/270] bbeh_word_sorting#58 correct=False task_acc=9/30 dur=29.324
+DONE {
+  "model": "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
+  "concurrency": 32,
+  "max_tokens": 4096,
+  "num_predictions": 270,
+  "correct": 56,
+  "accuracy": 0.2074074074074074,
+  "elapsed_sec": 232.086,
+  "avg_sec_per_response": 0.86,
+  "avg_sec_per_successful_request": 25.781,
+  "by_task": {
+    "bbeh_boardgame_qa": {
+      "correct": 5,
+      "total": 30,
+      "accuracy": 0.16666666666666666
+    },
+    "bbeh_boolean_expressions": {
+      "correct": 2,
+      "total": 30,
+      "accuracy": 0.06666666666666667
+    },
+    "bbeh_causal_understanding": {
+      "correct": 15,
+      "total": 30,
+      "accuracy": 0.5
+    },
+    "bbeh_dyck_languages": {
+      "correct": 6,
+      "total": 30,
+      "accuracy": 0.2
+    },
+    "bbeh_multistep_arithmetic": {
+      "correct": 3,
+      "total": 30,
+      "accuracy": 0.1
+    },
+    "bbeh_spatial_reasoning": {
+      "correct": 4,
+      "total": 30,
+      "accuracy": 0.13333333333333333
+    },
+    "bbeh_time_arithmetic": {
+      "correct": 11,
+      "total": 30,
+      "accuracy": 0.36666666666666664
+    },
+    "bbeh_web_of_lies": {
+      "correct": 1,
+      "total": 30,
+      "accuracy": 0.03333333333333333
+    },
+    "bbeh_word_sorting": {
+      "correct": 9,
+      "total": 30,
+      "accuracy": 0.3
+    }
+  },
+  "output_jsonl": "runs/deepseek_r1_qwen32b/predictions.jsonl"
+}

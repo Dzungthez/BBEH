@@ -22,3 +22,12 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
+.claude
+.venv-vllm-guide/
+.venv-vllm-nightly/
+
+# Large local logs
+experiments/multistep_react_verifier/logs/vllm_120b_nightly_test.log
+experiments/multistep_react_verifier/logs/vllm_397b_nightly_serve.log
+experiments/multistep_react_verifier/logs/vllm_397b_nightly_tp8_serve.log
+experiments/multistep_react_verifier/logs/vllm_397b_nightly_tp8_serve2.log
