@@ -16,6 +16,8 @@ class VLLMChatClient:
     model: str
     timeout_sec: int = 600
     seed: int | None = None
+    max_retries: int = 3
+    retry_backoff_base: float = 2.0
 
     def chat(self, messages: list[dict[str, str]], temperature: float = 0.0, max_tokens: int = 512) -> str:
         payload = {
@@ -27,16 +29,25 @@ class VLLMChatClient:
         }
         if self.seed is not None:
             payload["seed"] = self.seed
-        resp = requests.post(
-            f"{self.base_url}/chat/completions",
-            json=payload,
-            timeout=self.timeout_sec,
-        )
-        resp.raise_for_status()
-        data = resp.json()
-        if "choices" not in data or not data["choices"]:
-            raise RuntimeError(f"Invalid chat response: {data}")
-        return data["choices"][0]["message"]["content"]
+
+        last_exc: Exception | None = None
+        for attempt in range(1, self.max_retries + 1):
+            try:
+                resp = requests.post(
+                    f"{self.base_url}/chat/completions",
+                    json=payload,
+                    timeout=self.timeout_sec,
+                )
+                resp.raise_for_status()
+                data = resp.json()
+                if "choices" not in data or not data["choices"]:
+                    raise RuntimeError(f"Invalid chat response: {data}")
+                return data["choices"][0]["message"]["content"]
+            except Exception as exc:  # noqa: BLE001
+                last_exc = exc
+                if attempt < self.max_retries:
+                    time.sleep(self.retry_backoff_base ** attempt)
+        raise last_exc  # type: ignore[misc]
 
 
 class MultiStepReActStepVerifier:
@@ -69,22 +80,44 @@ class MultiStepReActStepVerifier:
         system_prompt = (
             "You are a strict step-level verifier for a Multi-step Arithmetic reasoning trace.\n"
             "You must classify CURRENT_STEP as one of: correct, incorrect, neutral.\n"
-            "Use tools before deciding when there is a concrete claim.\n\n"
-            "Available tools:\n"
-            "1) get_ground_truth() -> returns computed A, B, C, FINAL for this question.\n"
-            "2) evaluate_expression(expr, variables) -> integer value for a single expression.\n"
-            "3) check_equation(equation, variables) -> checks if LHS == RHS.\n\n"
-            "Output format (STRICT JSON ONLY):\n"
-            "For tool call:\n"
-            '{"action":"tool","tool":"evaluate_expression|check_equation|get_ground_truth","arguments":{...}}\n'
-            "For final answer:\n"
-            '{"action":"final","verdict":"correct|incorrect|neutral","reason":"...","claim":"..."}\n\n'
-            "Guidelines:\n"
-            "- Use PREV_STEP and NEXT_STEP as context, but verify only CURRENT_STEP's claim.\n"
-            "- 'neutral' if CURRENT_STEP is generic planning, assumption, or non-verifiable commentary.\n"
-            "- 'incorrect' if step contains a verifiable false claim.\n"
-            "- 'correct' if verifiable claims in CURRENT_STEP are all true.\n"
-            "- Keep reason concise and factual."
+            "Use tools before deciding when there is a concrete arithmetic claim.\n\n"
+            "## Available tools\n\n"
+            "1) get_ground_truth\n"
+            "   Arguments: none\n"
+            "   Returns: {\"A\": <int>, \"B\": <int>, \"C\": <int>, \"FINAL\": <int>} — the true computed values.\n"
+            "   Example: {\"action\":\"tool\",\"tool\":\"get_ground_truth\",\"arguments\":{}}\n\n"
+            "2) evaluate_expression\n"
+            "   Arguments:\n"
+            "     - \"expr\" (string): arithmetic expression using +, -, *, custom operators, and functions like abs(), min(), max(), gcd().\n"
+            "       Variables A, B, C are resolved automatically. Use the same operator symbols from the QUESTION.\n"
+            "     - \"variables\" (object, optional): extra variable bindings, e.g. {\"x\": 5}. Values must be integers.\n"
+            "   Returns: integer result.\n"
+            "   Example: {\"action\":\"tool\",\"tool\":\"evaluate_expression\",\"arguments\":{\"expr\":\"A + B * C\",\"variables\":{}}}\n\n"
+            "3) check_equation\n"
+            "   Arguments:\n"
+            "     - \"equation\" (string): equation with a single '=' separating LHS and RHS, e.g. \"A + B = 10\".\n"
+            "     - \"variables\" (object, optional): extra variable bindings as integers.\n"
+            "   Returns: {\"left_value\": <int>, \"right_value\": <int>, \"is_equal\": <bool>}\n"
+            "   Example: {\"action\":\"tool\",\"tool\":\"check_equation\",\"arguments\":{\"equation\":\"A + B = 15\",\"variables\":{}}}\n\n"
+            "## Output format (STRICT JSON, one object per response)\n\n"
+            "Tool call:  {\"action\":\"tool\",\"tool\":\"<name>\",\"arguments\":{...}}\n"
+            "Final:      {\"action\":\"final\",\"verdict\":\"correct|incorrect|neutral\",\"reason\":\"...\",\"claim\":\"...\"}\n\n"
+            "## Verdicts\n\n"
+            "- \"neutral\"   — CURRENT_STEP is generic planning, restating the question, or non-verifiable commentary.\n"
+            "- \"incorrect\" — CURRENT_STEP contains at least one verifiable arithmetic claim that is false.\n"
+            "- \"correct\"   — all verifiable arithmetic claims in CURRENT_STEP are true.\n\n"
+            "## Guidelines\n\n"
+            "- ALWAYS call a tool to verify before giving a verdict when the step contains a number or equation.\n"
+            "- Use PREV_STEP and NEXT_STEP only as context; verify only CURRENT_STEP's claims.\n"
+            "- Keep reason concise and factual.\n"
+            "- Output exactly ONE JSON object per response, nothing else.\n\n"
+            "## Example\n\n"
+            "CURRENT_STEP: \"A = 3 + 5 = 8\"\n"
+            "→ {\"action\":\"tool\",\"tool\":\"check_equation\",\"arguments\":{\"equation\":\"3 + 5 = 8\",\"variables\":{}}}\n"
+            "(observe {\"left_value\":8,\"right_value\":8,\"is_equal\":true})\n"
+            "→ {\"action\":\"tool\",\"tool\":\"get_ground_truth\",\"arguments\":{}}\n"
+            "(observe {\"A\":8,...})\n"
+            "→ {\"action\":\"final\",\"verdict\":\"correct\",\"reason\":\"3+5=8 matches ground truth A=8\",\"claim\":\"A = 3 + 5 = 8\"}"
         )
 
         user_prompt = (
@@ -101,6 +134,9 @@ class MultiStepReActStepVerifier:
         ]
 
         react_trace: list[dict[str, Any]] = []
+        seen_tool_calls: set[str] = set()
+        consecutive_repeats = 0
+        _MAX_CONSECUTIVE_REPEATS = 2
 
         for _ in range(self.max_turns):
             try:
@@ -113,6 +149,7 @@ class MultiStepReActStepVerifier:
                     "prev_step_text": prev_step_text,
                     "next_step_text": next_step_text,
                     "verdict": "neutral",
+                    "verdict_source": "error_chat",
                     "reason": f"Verifier chat error: {repr(exc)}",
                     "react_trace": react_trace,
                 }
@@ -126,6 +163,7 @@ class MultiStepReActStepVerifier:
                     "prev_step_text": prev_step_text,
                     "next_step_text": next_step_text,
                     "verdict": "neutral",
+                    "verdict_source": "error_parse",
                     "reason": "Verifier output format invalid; treated as neutral.",
                     "react_trace": react_trace,
                 }
@@ -143,6 +181,7 @@ class MultiStepReActStepVerifier:
                     "prev_step_text": prev_step_text,
                     "next_step_text": next_step_text,
                     "verdict": verdict,
+                    "verdict_source": "model",
                     "reason": str(parsed.get("reason", "")),
                     "claim": str(parsed.get("claim", "")),
                     "react_trace": react_trace,
@@ -155,12 +194,32 @@ class MultiStepReActStepVerifier:
                     "prev_step_text": prev_step_text,
                     "next_step_text": next_step_text,
                     "verdict": "neutral",
-                    "reason": "Unknown verifier action; treated as neutral.",
+                    "verdict_source": "error_unknown_action",
+                    "reason": f"Unknown verifier action '{action}'; treated as neutral.",
                     "react_trace": react_trace,
                 }
 
             tool_name = str(parsed.get("tool", "")).strip()
             tool_args = parsed.get("arguments", {}) or {}
+            call_key = json.dumps({"tool": tool_name, "arguments": tool_args}, sort_keys=True)
+            if call_key in seen_tool_calls:
+                consecutive_repeats += 1
+                if consecutive_repeats >= _MAX_CONSECUTIVE_REPEATS:
+                    react_trace.append({"loop_detected": call_key, "repeats": consecutive_repeats})
+                    return {
+                        "step_id": step_id,
+                        "step_text": step_text,
+                        "prev_step_text": prev_step_text,
+                        "next_step_text": next_step_text,
+                        "verdict": "neutral",
+                        "verdict_source": "error_loop",
+                        "reason": f"Verifier stuck in loop calling {tool_name} with same arguments.",
+                        "react_trace": react_trace,
+                    }
+            else:
+                consecutive_repeats = 0
+            seen_tool_calls.add(call_key)
+
             observation = self._run_tool(tool_name, tool_args)
             react_trace.append({"tool": tool_name, "arguments": tool_args, "observation": observation})
 
@@ -178,6 +237,7 @@ class MultiStepReActStepVerifier:
             "prev_step_text": prev_step_text,
             "next_step_text": next_step_text,
             "verdict": "neutral",
+            "verdict_source": "error_max_turns",
             "reason": "Reached max ReAct turns without final verdict.",
             "react_trace": react_trace,
         }
