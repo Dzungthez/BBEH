@@ -3,9 +3,9 @@
   "max_tokens": 16384,
   "concurrency": 16,
   "total": 200,
-  "correct": 0,
-  "wrong": 200,
-  "accuracy": 0.0,
-  "elapsed_sec": 1627.901,
-  "avg_sec_per_request": null
+  "correct": 71,
+  "wrong": 129,
+  "accuracy": 0.355,
+  "elapsed_sec": 1622.467,
+  "avg_sec_per_request": 121.432
 }

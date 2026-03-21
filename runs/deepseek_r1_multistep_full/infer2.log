@@ -202,3 +202,19 @@ Total jobs: 200
 [193/200] idx=191 correct=False acc=73/193 wrong=120
 [194/200] idx=181 correct=False acc=73/194 wrong=121
 [195/200] idx=183 correct=False acc=73/195 wrong=122
+[196/200] idx=187 correct=False acc=73/196 wrong=123
+[197/200] idx=193 correct=False acc=73/197 wrong=124
+[198/200] idx=195 correct=False acc=73/198 wrong=125
+[199/200] idx=197 correct=False acc=73/199 wrong=126
+[200/200] idx=199 correct=False acc=73/200 wrong=127
+DONE {
+  "model": "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
+  "max_tokens": 16384,
+  "concurrency": 16,
+  "total": 200,
+  "correct": 73,
+  "wrong": 127,
+  "accuracy": 0.365,
+  "elapsed_sec": 1668.241,
+  "avg_sec_per_request": 72.419
+}
