@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import json
 import random
+import time
 from datetime import datetime
 from pathlib import Path
 from typing import Any
@@ -275,8 +276,12 @@ def main() -> None:
     }
 
     global_order = 0
+    total_samples = sum(
+        len(select_indices(load_examples(tid), tid, args)) for tid in task_ids
+    )
     skipped_root_filter = 0
     kept_samples = 0
+    t_start = time.time()
 
     for task_id in task_ids:
         examples = load_examples(task_id)
@@ -374,11 +379,16 @@ def main() -> None:
                 "tree_summary": result.tree_summary,
             }
             report["samples"].append(sample_report)
+            elapsed_total = time.time() - t_start
+            remaining = total_samples - global_order
+            avg_per_sample = elapsed_total / global_order
+            eta_total = avg_per_sample * remaining
             print(
-                f"  [{global_order}] {task_id}[{dataset_index}] "
+                f"  [{global_order}/{total_samples}] {task_id}[{dataset_index}] "
                 f"| root_mc={result.root_mc:.3f} "
                 f"| found_errors={found_count}"
-                f"/{len(result.selected_rollout_results)}",
+                f"/{len(result.selected_rollout_results)} "
+                f"| elapsed={elapsed_total:.0f}s eta={eta_total:.0f}s",
                 flush=True,
             )
 

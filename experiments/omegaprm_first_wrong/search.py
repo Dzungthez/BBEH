@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import math
+import time
 from dataclasses import dataclass, field
 from typing import Any
 
@@ -94,14 +95,21 @@ class OmegaPRMFirstWrongSearch:
         self._candidate_counter = 0
 
     def run(self) -> SearchResult:
+        t0 = time.time()
         root_state = self._get_state(())
         root_mc = self._ensure_state_rollouts(root_state)
+        print(
+            f"    root: mc={root_mc:.3f} | pool={len(self.candidate_pool)} "
+            f"| rollouts={self.num_rollouts_total} | {time.time() - t0:.1f}s",
+            flush=True,
+        )
 
         selected_rollout_results: list[LocatedFirstWrong] = []
         while len(selected_rollout_results) < self.search_limit:
             candidate = self._select_candidate()
             if candidate is None:
                 break
+            iter_start = time.time()
             state = self._get_state(candidate.prefix_steps)
             state.visit_count += 1
             located = self._binary_search_rollout(
@@ -111,6 +119,19 @@ class OmegaPRMFirstWrongSearch:
                 response_text=candidate.response_text,
             )
             selected_rollout_results.append(located)
+            elapsed = time.time() - t0
+            iter_sec = time.time() - iter_start
+            n_done = len(selected_rollout_results)
+            avg = elapsed / n_done
+            eta = avg * (self.search_limit - n_done)
+            found_tag = f"step={located.first_wrong_step_index_1based}" if located.found else "not_found"
+            print(
+                f"    iter {n_done}/{self.search_limit}: {found_tag} "
+                f"| {iter_sec:.1f}s | pool={len(self.candidate_pool)} "
+                f"| rollouts={self.num_rollouts_total} "
+                f"| elapsed={elapsed:.0f}s eta={eta:.0f}s",
+                flush=True,
+            )
 
         tree_summary = [
             {
