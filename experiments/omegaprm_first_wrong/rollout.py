@@ -479,21 +479,20 @@ class VLLMRolloutClient:
         target: str,
         num_rollouts: int,
     ) -> list[RolloutSample]:
-        max_workers = self.max_parallel_requests or min(
-            num_rollouts, len(self.base_urls)
-        )
+        max_workers = self.max_parallel_requests or num_rollouts
         max_workers = max(1, max_workers)
         steps = prefix_steps if prefix_steps else None
 
         evaluate_correctness = _get_evaluate_correctness()
         target_lower = target.strip().lower()
         outputs: list[RolloutSample] = []
+        t0 = time.time()
         with ThreadPoolExecutor(max_workers=max_workers) as pool:
             futures = [
                 pool.submit(self._generate_once, question, steps)
                 for _ in range(num_rollouts)
             ]
-            for future in as_completed(futures):
+            for i, future in enumerate(as_completed(futures), 1):
                 sample = future.result()
                 # Try our robust extractor first, fall back to bbeh's
                 extracted = _extract_answer_from_rollout(sample.response_text)
@@ -513,4 +512,17 @@ class VLLMRolloutClient:
                         )
                     )
                 outputs.append(sample)
+                if num_rollouts >= 4:
+                    print(
+                        f"      rollout {i}/{num_rollouts} "
+                        f"| {sample.completion_tokens}tok "
+                        f"| {sample.duration_sec:.1f}s "
+                        f"| {sample.finish_reason} "
+                        f"| correct={sample.is_correct}"
+                        f" | elapsed={time.time() - t0:.0f}s",
+                        flush=True,
+                        end="\r",
+                    )
+            if num_rollouts >= 4:
+                print(flush=True)  # newline after progress
         return outputs

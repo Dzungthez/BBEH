@@ -40,6 +40,7 @@ MAX_ROLLOUT_TOKENS="${MAX_ROLLOUT_TOKENS:-16384}"
 MAX_CONTEXT="${MAX_CONTEXT:-32768}"
 CONTEXT_MARGIN="${CONTEXT_MARGIN:-512}"
 TIMEOUT_SEC="${TIMEOUT_SEC:-900}"
+MAX_PARALLEL="${MAX_PARALLEL:-0}"
 
 # Search
 K_ROLLOUTS="${K_ROLLOUTS:-8}"
@@ -71,6 +72,7 @@ CMD=(
   --max-context "$MAX_CONTEXT"
   --context-margin "$CONTEXT_MARGIN"
   --timeout-sec "$TIMEOUT_SEC"
+  --max-parallel-requests "$MAX_PARALLEL"
   --k-rollouts "$K_ROLLOUTS"
   --search-limit "$SEARCH_LIMIT"
   --alpha "$ALPHA"

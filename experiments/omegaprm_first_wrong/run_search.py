@@ -84,6 +84,12 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--max-context", type=int, default=32768)
     parser.add_argument("--context-margin", type=int, default=512)
     parser.add_argument("--timeout-sec", type=int, default=900)
+    parser.add_argument(
+        "--max-parallel-requests",
+        type=int,
+        default=0,
+        help="Max concurrent requests across all endpoints (0 = k_rollouts).",
+    )
     parser.add_argument("--k-rollouts", type=int, default=8)
     parser.add_argument("--search-limit", type=int, default=20)
     parser.add_argument("--alpha", type=float, default=0.5)
@@ -243,6 +249,7 @@ def main() -> None:
         timeout_sec=args.timeout_sec,
         max_context=args.max_context,
         context_safety_margin=args.context_margin,
+        max_parallel_requests=args.max_parallel_requests or None,
     )
 
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
