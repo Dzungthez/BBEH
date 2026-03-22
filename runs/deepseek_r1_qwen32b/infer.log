@@ -1,337 +1,1433 @@
-True
-False
-True
-False
-True
-False
-True
-False
-[001/270] bbeh_boardgame_qa#166 correct=True task_acc=1/1 dur=7.794
-[002/270] bbeh_boardgame_qa#40 correct=True task_acc=2/2 dur=9.24
-[003/270] bbeh_boardgame_qa#24 correct=False task_acc=2/3 dur=11.315
-[004/270] bbeh_boardgame_qa#61 correct=False task_acc=2/4 dur=13.79
-[005/270] bbeh_boardgame_qa#50 correct=False task_acc=2/5 dur=15.486
-[006/270] bbeh_boardgame_qa#52 correct=False task_acc=2/6 dur=20.37
-[007/270] bbeh_boardgame_qa#31 correct=True task_acc=3/7 dur=21.644
-[008/270] bbeh_boardgame_qa#126 correct=False task_acc=3/8 dur=22.786
-[009/270] bbeh_boardgame_qa#109 correct=True task_acc=4/9 dur=25.204
-[010/270] bbeh_boardgame_qa#0 correct=False task_acc=4/10 dur=26.917
-[011/270] bbeh_boardgame_qa#174 correct=False task_acc=4/11 dur=27.63
-[012/270] bbeh_boardgame_qa#18 correct=True task_acc=5/12 dur=28.112
-[013/270] bbeh_boardgame_qa#129 correct=False task_acc=5/13 dur=29.601
-[014/270] bbeh_boardgame_qa#78 correct=False task_acc=5/14 dur=33.753
-[015/270] bbeh_boardgame_qa#55 correct=False task_acc=5/15 dur=33.765
-[016/270] bbeh_boardgame_qa#88 correct=False task_acc=5/16 dur=33.771
-[017/270] bbeh_boardgame_qa#54 correct=False task_acc=5/17 dur=33.767
-[018/270] bbeh_boardgame_qa#183 correct=False task_acc=5/18 dur=33.77
-[019/270] bbeh_boardgame_qa#170 correct=False task_acc=5/19 dur=33.782
-[020/270] bbeh_boardgame_qa#127 correct=False task_acc=5/20 dur=33.773
-[021/270] bbeh_boardgame_qa#64 correct=False task_acc=5/21 dur=33.778
-[022/270] bbeh_boardgame_qa#131 correct=False task_acc=5/22 dur=33.776
-[023/270] bbeh_boardgame_qa#95 correct=False task_acc=5/23 dur=33.782
-[024/270] bbeh_boardgame_qa#74 correct=False task_acc=5/24 dur=33.787
-[025/270] bbeh_boardgame_qa#195 correct=False task_acc=5/25 dur=33.778
-[026/270] bbeh_boardgame_qa#155 correct=False task_acc=5/26 dur=33.783
-[027/270] bbeh_boardgame_qa#93 correct=False task_acc=5/27 dur=33.781
-[028/270] bbeh_boardgame_qa#67 correct=False task_acc=5/28 dur=33.782
-[029/270] bbeh_boardgame_qa#17 correct=False task_acc=5/29 dur=33.787
-[030/270] bbeh_boolean_expressions#72 correct=False task_acc=0/1 dur=33.781
-[031/270] bbeh_boolean_expressions#165 correct=False task_acc=0/2 dur=33.781
-[032/270] bbeh_boardgame_qa#2 correct=False task_acc=5/30 dur=33.785
-[033/270] bbeh_causal_understanding#178 correct=True task_acc=1/1 dur=2.523
-[034/270] bbeh_boolean_expressions#138 correct=True task_acc=1/3 dur=28.639
-[035/270] bbeh_causal_understanding#106 correct=False task_acc=1/2 dur=4.451
-[036/270] bbeh_causal_understanding#75 correct=False task_acc=1/3 dur=7.508
-[037/270] bbeh_causal_understanding#86 correct=False task_acc=1/4 dur=7.909
-[038/270] bbeh_boolean_expressions#196 correct=False task_acc=1/4 dur=33.832
-[039/270] bbeh_causal_understanding#173 correct=True task_acc=2/5 dur=4.867
-[040/270] bbeh_causal_understanding#158 correct=False task_acc=2/6 dur=6.853
-[041/270] bbeh_causal_understanding#74 correct=False task_acc=2/7 dur=7.698
-[042/270] bbeh_causal_understanding#25 correct=False task_acc=2/8 dur=3.064
-[043/270] bbeh_boolean_expressions#134 correct=False task_acc=1/5 dur=33.82
-[044/270] bbeh_causal_understanding#28 correct=True task_acc=3/9 dur=2.153
-[045/270] bbeh_causal_understanding#21 correct=True task_acc=4/10 dur=3.532
-[046/270] bbeh_boolean_expressions#50 correct=False task_acc=1/6 dur=33.787
-[047/270] bbeh_causal_understanding#171 correct=True task_acc=5/11 dur=3.418
-[048/270] bbeh_causal_understanding#84 correct=True task_acc=6/12 dur=6.148
-[049/270] bbeh_boolean_expressions#181 correct=False task_acc=1/7 dur=33.767
-[050/270] bbeh_causal_understanding#83 correct=False task_acc=6/13 dur=4.196
-[051/270] bbeh_causal_understanding#135 correct=True task_acc=7/14 dur=4.504
-[052/270] bbeh_causal_understanding#59 correct=True task_acc=8/15 dur=3.048
-[053/270] bbeh_causal_understanding#168 correct=True task_acc=9/16 dur=3.669
-[054/270] bbeh_causal_understanding#151 correct=True task_acc=10/17 dur=4.75
-[055/270] bbeh_causal_understanding#193 correct=False task_acc=10/18 dur=4.453
-[056/270] bbeh_causal_understanding#2 correct=True task_acc=11/19 dur=9.154
-[057/270] bbeh_causal_understanding#56 correct=True task_acc=12/20 dur=4.676
-[058/270] bbeh_boolean_expressions#122 correct=False task_acc=1/8 dur=33.658
-[059/270] bbeh_causal_understanding#29 correct=False task_acc=12/21 dur=4.091
-[060/270] bbeh_causal_understanding#17 correct=False task_acc=12/22 dur=5.314
-[061/270] bbeh_causal_understanding#140 correct=False task_acc=12/23 dur=4.109
-[062/270] bbeh_boolean_expressions#8 correct=False task_acc=1/9 dur=33.617
-[063/270] bbeh_causal_understanding#79 correct=False task_acc=12/24 dur=4.7
-[064/270] bbeh_boolean_expressions#74 correct=False task_acc=1/10 dur=33.579
-[065/270] bbeh_causal_understanding#45 correct=True task_acc=13/25 dur=3.431
-[066/270] bbeh_causal_understanding#161 correct=True task_acc=14/26 dur=4.557
-[067/270] bbeh_causal_understanding#111 correct=False task_acc=14/27 dur=6.098
-[068/270] bbeh_causal_understanding#103 correct=False task_acc=14/28 dur=4.275
-[069/270] bbeh_causal_understanding#157 correct=False task_acc=14/29 dur=4.546
-[070/270] bbeh_boolean_expressions#172 correct=False task_acc=1/11 dur=33.493
-[071/270] bbeh_causal_understanding#156 correct=True task_acc=15/30 dur=17.257
-[072/270] bbeh_boolean_expressions#68 correct=False task_acc=1/12 dur=33.425
-[073/270] bbeh_boolean_expressions#1 correct=False task_acc=1/13 dur=33.408
-[074/270] bbeh_boolean_expressions#87 correct=False task_acc=1/14 dur=33.389
-[075/270] bbeh_boolean_expressions#91 correct=True task_acc=2/15 dur=28.448
-[076/270] bbeh_dyck_languages#181 correct=True task_acc=1/1 dur=6.007
-[077/270] bbeh_boolean_expressions#13 correct=False task_acc=2/16 dur=33.325
-[078/270] bbeh_dyck_languages#173 correct=False task_acc=1/2 dur=8.715
-[079/270] bbeh_dyck_languages#14 correct=False task_acc=1/3 dur=6.998
-[080/270] bbeh_dyck_languages#99 correct=False task_acc=1/4 dur=6.334
-[081/270] bbeh_boolean_expressions#66 correct=False task_acc=2/17 dur=33.069
-[082/270] bbeh_boolean_expressions#16 correct=False task_acc=2/18 dur=33.065
-[083/270] bbeh_boolean_expressions#35 correct=False task_acc=2/19 dur=33.065
-[084/270] bbeh_boolean_expressions#70 correct=False task_acc=2/20 dur=33.074
-[085/270] bbeh_boolean_expressions#115 correct=False task_acc=2/21 dur=33.073
-[086/270] bbeh_boolean_expressions#95 correct=False task_acc=2/22 dur=33.083
-[087/270] bbeh_boolean_expressions#190 correct=False task_acc=2/23 dur=33.085
-[088/270] bbeh_boolean_expressions#125 correct=False task_acc=2/24 dur=33.085
-[089/270] bbeh_boolean_expressions#184 correct=False task_acc=2/25 dur=33.083
-[090/270] bbeh_boolean_expressions#155 correct=False task_acc=2/26 dur=33.086
-[091/270] bbeh_boolean_expressions#21 correct=False task_acc=2/27 dur=33.085
-[092/270] bbeh_boolean_expressions#189 correct=False task_acc=2/28 dur=33.073
-[093/270] bbeh_boolean_expressions#22 correct=False task_acc=2/29 dur=33.074
-[094/270] bbeh_boolean_expressions#53 correct=False task_acc=2/30 dur=33.076
-[095/270] bbeh_dyck_languages#32 correct=True task_acc=2/5 dur=11.155
-[096/270] bbeh_dyck_languages#189 correct=False task_acc=2/6 dur=9.34
-[097/270] bbeh_dyck_languages#90 correct=True task_acc=3/7 dur=14.469
-[098/270] bbeh_dyck_languages#38 correct=False task_acc=3/8 dur=16.849
-[099/270] bbeh_dyck_languages#158 correct=True task_acc=4/9 dur=7.248
-[100/270] bbeh_dyck_languages#23 correct=True task_acc=5/10 dur=7.585
-[101/270] bbeh_dyck_languages#110 correct=False task_acc=5/11 dur=8.606
-[102/270] bbeh_dyck_languages#124 correct=False task_acc=5/12 dur=8.697
-[103/270] bbeh_dyck_languages#78 correct=False task_acc=5/13 dur=13.913
-[104/270] bbeh_dyck_languages#141 correct=True task_acc=6/14 dur=12.411
-[105/270] bbeh_dyck_languages#172 correct=False task_acc=6/15 dur=15.474
-[106/270] bbeh_dyck_languages#139 correct=False task_acc=6/16 dur=28.881
-[107/270] bbeh_dyck_languages#80 correct=False task_acc=6/17 dur=33.069
-[108/270] bbeh_dyck_languages#65 correct=False task_acc=6/18 dur=33.106
-[109/270] bbeh_dyck_languages#44 correct=False task_acc=6/19 dur=33.119
-[110/270] bbeh_dyck_languages#128 correct=False task_acc=6/20 dur=33.151
-[111/270] bbeh_dyck_languages#160 correct=False task_acc=6/21 dur=29.789
-[112/270] bbeh_dyck_languages#156 correct=False task_acc=6/22 dur=31.072
-[113/270] bbeh_dyck_languages#47 correct=False task_acc=6/23 dur=33.186
-[114/270] bbeh_dyck_languages#106 correct=False task_acc=6/24 dur=33.175
-[115/270] bbeh_dyck_languages#88 correct=False task_acc=6/25 dur=33.202
-[116/270] bbeh_dyck_languages#85 correct=False task_acc=6/26 dur=33.242
-[117/270] bbeh_dyck_languages#25 correct=False task_acc=6/27 dur=33.252
-[118/270] bbeh_dyck_languages#180 correct=False task_acc=6/28 dur=33.252
-[119/270] bbeh_dyck_languages#62 correct=False task_acc=6/29 dur=33.252
-[120/270] bbeh_multistep_arithmetic#127 correct=False task_acc=0/1 dur=33.317
-[121/270] bbeh_multistep_arithmetic#134 correct=False task_acc=0/2 dur=33.315
-[122/270] bbeh_multistep_arithmetic#60 correct=False task_acc=0/3 dur=33.32
-[123/270] bbeh_multistep_arithmetic#105 correct=False task_acc=0/4 dur=33.315
-[124/270] bbeh_multistep_arithmetic#162 correct=False task_acc=0/5 dur=33.321
-[125/270] bbeh_multistep_arithmetic#55 correct=False task_acc=0/6 dur=33.321
-[126/270] bbeh_dyck_languages#69 correct=False task_acc=6/30 dur=33.323
-[127/270] bbeh_multistep_arithmetic#50 correct=False task_acc=0/7 dur=33.416
-[128/270] bbeh_multistep_arithmetic#118 correct=False task_acc=0/8 dur=33.453
-[129/270] bbeh_multistep_arithmetic#99 correct=False task_acc=0/9 dur=33.516
-[130/270] bbeh_multistep_arithmetic#124 correct=False task_acc=0/10 dur=33.637
-[131/270] bbeh_spatial_reasoning#136 correct=True task_acc=1/1 dur=7.499
-[132/270] bbeh_multistep_arithmetic#75 correct=False task_acc=0/11 dur=33.72
-[133/270] bbeh_multistep_arithmetic#85 correct=False task_acc=0/12 dur=33.725
-[134/270] bbeh_multistep_arithmetic#18 correct=True task_acc=1/13 dur=33.682
-[135/270] bbeh_multistep_arithmetic#49 correct=False task_acc=1/14 dur=33.776
-[136/270] bbeh_multistep_arithmetic#112 correct=False task_acc=1/15 dur=33.816
-[137/270] bbeh_multistep_arithmetic#40 correct=True task_acc=2/16 dur=30.653
-[138/270] bbeh_spatial_reasoning#125 correct=True task_acc=2/2 dur=10.742
-[139/270] bbeh_multistep_arithmetic#148 correct=False task_acc=2/17 dur=33.949
-[140/270] bbeh_multistep_arithmetic#145 correct=False task_acc=2/18 dur=34.068
-[141/270] bbeh_spatial_reasoning#80 correct=True task_acc=3/3 dur=12.433
-[142/270] bbeh_multistep_arithmetic#25 correct=False task_acc=2/19 dur=34.115
-[143/270] bbeh_multistep_arithmetic#5 correct=False task_acc=2/20 dur=34.085
-[144/270] bbeh_multistep_arithmetic#77 correct=False task_acc=2/21 dur=34.121
-[145/270] bbeh_multistep_arithmetic#146 correct=False task_acc=2/22 dur=34.108
-[146/270] bbeh_multistep_arithmetic#59 correct=False task_acc=2/23 dur=34.149
-[147/270] bbeh_multistep_arithmetic#71 correct=False task_acc=2/24 dur=34.153
-[148/270] bbeh_multistep_arithmetic#26 correct=False task_acc=2/25 dur=33.979
-[149/270] bbeh_multistep_arithmetic#163 correct=False task_acc=2/26 dur=34.246
-[150/270] bbeh_multistep_arithmetic#117 correct=False task_acc=2/27 dur=34.283
-[151/270] bbeh_spatial_reasoning#0 correct=True task_acc=4/4 dur=13.248
-[152/270] bbeh_multistep_arithmetic#150 correct=True task_acc=3/28 dur=34.378
-[153/270] bbeh_multistep_arithmetic#152 correct=False task_acc=3/29 dur=34.384
-[154/270] bbeh_multistep_arithmetic#31 correct=False task_acc=3/30 dur=34.385
-[155/270] bbeh_spatial_reasoning#44 correct=False task_acc=4/5 dur=34.385
-[156/270] bbeh_spatial_reasoning#198 correct=False task_acc=4/6 dur=34.374
-[157/270] bbeh_spatial_reasoning#165 correct=False task_acc=4/7 dur=34.383
-[158/270] bbeh_spatial_reasoning#35 correct=False task_acc=4/8 dur=34.384
-[159/270] bbeh_spatial_reasoning#141 correct=False task_acc=4/9 dur=34.385
-[160/270] bbeh_spatial_reasoning#116 correct=False task_acc=4/10 dur=34.386
-[161/270] bbeh_spatial_reasoning#1 correct=False task_acc=4/11 dur=34.308
-[162/270] bbeh_spatial_reasoning#30 correct=False task_acc=4/12 dur=34.276
-[163/270] bbeh_spatial_reasoning#199 correct=False task_acc=4/13 dur=34.262
-[164/270] bbeh_spatial_reasoning#3 correct=False task_acc=4/14 dur=34.304
-[165/270] bbeh_spatial_reasoning#50 correct=False task_acc=4/15 dur=30.738
-[166/270] bbeh_spatial_reasoning#33 correct=False task_acc=4/16 dur=34.299
-[167/270] bbeh_spatial_reasoning#162 correct=False task_acc=4/17 dur=34.271
-[168/270] bbeh_spatial_reasoning#61 correct=False task_acc=4/18 dur=34.232
-[169/270] bbeh_spatial_reasoning#146 correct=False task_acc=4/19 dur=34.203
-[170/270] bbeh_spatial_reasoning#131 correct=False task_acc=4/20 dur=34.216
-[171/270] bbeh_spatial_reasoning#25 correct=False task_acc=4/21 dur=34.136
-[172/270] bbeh_spatial_reasoning#95 correct=False task_acc=4/22 dur=34.116
-[173/270] bbeh_time_arithmetic#135 correct=True task_acc=1/1 dur=11.759
-[174/270] bbeh_time_arithmetic#10 correct=False task_acc=1/2 dur=13.126
-[175/270] bbeh_time_arithmetic#114 correct=False task_acc=1/3 dur=13.992
-[176/270] bbeh_time_arithmetic#34 correct=True task_acc=2/4 dur=14.828
-[177/270] bbeh_time_arithmetic#31 correct=True task_acc=3/5 dur=14.969
-[178/270] bbeh_spatial_reasoning#54 correct=False task_acc=4/23 dur=33.981
-[179/270] bbeh_spatial_reasoning#130 correct=False task_acc=4/24 dur=33.756
-[180/270] bbeh_time_arithmetic#50 correct=False task_acc=3/6 dur=14.438
-[181/270] bbeh_spatial_reasoning#170 correct=False task_acc=4/25 dur=33.777
-[182/270] bbeh_spatial_reasoning#172 correct=False task_acc=4/26 dur=33.725
-[183/270] bbeh_time_arithmetic#100 correct=False task_acc=3/7 dur=24.079
-[184/270] bbeh_time_arithmetic#105 correct=True task_acc=4/8 dur=15.337
-[185/270] bbeh_time_arithmetic#1 correct=True task_acc=5/9 dur=13.363
-[186/270] bbeh_spatial_reasoning#173 correct=False task_acc=4/27 dur=33.809
-[187/270] bbeh_spatial_reasoning#97 correct=False task_acc=4/28 dur=33.777
-[188/270] bbeh_spatial_reasoning#137 correct=False task_acc=4/29 dur=33.762
-[189/270] bbeh_spatial_reasoning#105 correct=False task_acc=4/30 dur=33.711
-[190/270] bbeh_time_arithmetic#180 correct=False task_acc=5/10 dur=33.524
-[191/270] bbeh_time_arithmetic#197 correct=True task_acc=6/11 dur=11.033
-[192/270] bbeh_time_arithmetic#154 correct=True task_acc=7/12 dur=15.088
-[193/270] bbeh_time_arithmetic#57 correct=False task_acc=7/13 dur=33.616
-[194/270] bbeh_time_arithmetic#41 correct=True task_acc=8/14 dur=15.991
-[195/270] bbeh_time_arithmetic#90 correct=True task_acc=9/15 dur=32.027
-[196/270] bbeh_time_arithmetic#96 correct=False task_acc=9/16 dur=33.471
-[197/270] bbeh_time_arithmetic#179 correct=False task_acc=9/17 dur=33.427
-[198/270] bbeh_time_arithmetic#60 correct=False task_acc=9/18 dur=33.389
-[199/270] bbeh_time_arithmetic#134 correct=False task_acc=9/19 dur=33.337
-[200/270] bbeh_time_arithmetic#26 correct=False task_acc=9/20 dur=33.361
-[201/270] bbeh_time_arithmetic#150 correct=False task_acc=9/21 dur=33.373
-[202/270] bbeh_time_arithmetic#138 correct=False task_acc=9/22 dur=33.336
-[203/270] bbeh_time_arithmetic#75 correct=True task_acc=10/23 dur=32.5
-[204/270] bbeh_time_arithmetic#62 correct=False task_acc=10/24 dur=33.385
-[205/270] bbeh_time_arithmetic#110 correct=True task_acc=11/25 dur=31.562
-[206/270] bbeh_time_arithmetic#66 correct=False task_acc=11/26 dur=33.436
-[207/270] bbeh_time_arithmetic#81 correct=False task_acc=11/27 dur=33.412
-[208/270] bbeh_time_arithmetic#40 correct=False task_acc=11/28 dur=33.438
-[209/270] bbeh_time_arithmetic#171 correct=False task_acc=11/29 dur=33.468
-[210/270] bbeh_time_arithmetic#144 correct=False task_acc=11/30 dur=33.471
-[211/270] bbeh_web_of_lies#80 correct=False task_acc=0/1 dur=33.622
-[212/270] bbeh_web_of_lies#56 correct=False task_acc=0/2 dur=33.622
-[213/270] bbeh_web_of_lies#16 correct=False task_acc=0/3 dur=33.626
-[214/270] bbeh_web_of_lies#83 correct=True task_acc=1/4 dur=26.633
-[215/270] bbeh_web_of_lies#2 correct=False task_acc=1/5 dur=33.644
-[216/270] bbeh_web_of_lies#195 correct=False task_acc=1/6 dur=33.644
-[217/270] bbeh_web_of_lies#38 correct=False task_acc=1/7 dur=33.648
-[218/270] bbeh_web_of_lies#121 correct=False task_acc=1/8 dur=33.627
-[219/270] bbeh_web_of_lies#161 correct=False task_acc=1/9 dur=33.597
-[220/270] bbeh_web_of_lies#147 correct=False task_acc=1/10 dur=33.607
-[221/270] bbeh_web_of_lies#67 correct=False task_acc=1/11 dur=33.584
-[222/270] bbeh_web_of_lies#14 correct=False task_acc=1/12 dur=33.575
-[223/270] bbeh_web_of_lies#39 correct=False task_acc=1/13 dur=33.549
-[224/270] bbeh_web_of_lies#129 correct=False task_acc=1/14 dur=33.541
-[225/270] bbeh_web_of_lies#115 correct=False task_acc=1/15 dur=33.538
-[226/270] bbeh_web_of_lies#11 correct=False task_acc=1/16 dur=33.555
-[227/270] bbeh_word_sorting#80 correct=False task_acc=0/1 dur=10.06
-[228/270] bbeh_web_of_lies#181 correct=False task_acc=1/17 dur=33.572
-[229/270] bbeh_web_of_lies#109 correct=False task_acc=1/18 dur=33.573
-[230/270] bbeh_word_sorting#104 correct=False task_acc=0/2 dur=7.704
-[231/270] bbeh_word_sorting#139 correct=False task_acc=0/3 dur=9.014
-[232/270] bbeh_web_of_lies#137 correct=False task_acc=1/19 dur=33.598
-[233/270] bbeh_web_of_lies#155 correct=False task_acc=1/20 dur=33.624
-[234/270] bbeh_word_sorting#34 correct=True task_acc=1/4 dur=19.466
-[235/270] bbeh_web_of_lies#154 correct=False task_acc=1/21 dur=33.638
-[236/270] bbeh_word_sorting#2 correct=True task_acc=2/5 dur=12.85
-[237/270] bbeh_web_of_lies#27 correct=False task_acc=1/22 dur=33.61
-[238/270] bbeh_web_of_lies#32 correct=False task_acc=1/23 dur=33.615
-[239/270] bbeh_word_sorting#60 correct=False task_acc=2/6 dur=10.606
-[240/270] bbeh_word_sorting#181 correct=True task_acc=3/7 dur=7.838
-[241/270] bbeh_web_of_lies#175 correct=False task_acc=1/24 dur=33.59
-[242/270] bbeh_web_of_lies#74 correct=False task_acc=1/25 dur=33.551
-[243/270] bbeh_word_sorting#177 correct=False task_acc=3/8 dur=16.647
-[244/270] bbeh_word_sorting#148 correct=False task_acc=3/9 dur=7.27
-[245/270] bbeh_web_of_lies#112 correct=False task_acc=1/26 dur=33.498
-[246/270] bbeh_word_sorting#152 correct=False task_acc=3/10 dur=8.204
-[247/270] bbeh_web_of_lies#194 correct=False task_acc=1/27 dur=33.438
-[248/270] bbeh_web_of_lies#148 correct=False task_acc=1/28 dur=33.399
-[249/270] bbeh_web_of_lies#25 correct=False task_acc=1/29 dur=33.343
-[250/270] bbeh_word_sorting#145 correct=False task_acc=3/11 dur=11.484
-[251/270] bbeh_word_sorting#159 correct=False task_acc=3/12 dur=16.094
-[252/270] bbeh_web_of_lies#20 correct=False task_acc=1/30 dur=33.212
-[253/270] bbeh_word_sorting#52 correct=True task_acc=4/13 dur=19.171
-[254/270] bbeh_word_sorting#63 correct=False task_acc=4/14 dur=33.144
-[255/270] bbeh_word_sorting#175 correct=True task_acc=5/15 dur=20.141
-[256/270] bbeh_word_sorting#53 correct=False task_acc=5/16 dur=13.772
-[257/270] bbeh_word_sorting#85 correct=False task_acc=5/17 dur=27.282
-[258/270] bbeh_word_sorting#25 correct=False task_acc=5/18 dur=32.08
-[259/270] bbeh_word_sorting#32 correct=True task_acc=6/19 dur=21.186
-[260/270] bbeh_word_sorting#14 correct=False task_acc=6/20 dur=31.906
-[261/270] bbeh_word_sorting#51 correct=False task_acc=6/21 dur=31.59
-[262/270] bbeh_word_sorting#153 correct=True task_acc=7/22 dur=25.687
-[263/270] bbeh_word_sorting#184 correct=True task_acc=8/23 dur=23.46
-[264/270] bbeh_word_sorting#91 correct=False task_acc=8/24 dur=31.301
-[265/270] bbeh_word_sorting#170 correct=False task_acc=8/25 dur=31.026
-[266/270] bbeh_word_sorting#48 correct=True task_acc=9/26 dur=25.715
-[267/270] bbeh_word_sorting#131 correct=False task_acc=9/27 dur=29.41
-[268/270] bbeh_word_sorting#3 correct=False task_acc=9/28 dur=29.346
-[269/270] bbeh_word_sorting#87 correct=False task_acc=9/29 dur=29.328
-[270/270] bbeh_word_sorting#58 correct=False task_acc=9/30 dur=29.324
-DONE {
-  "model": "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
-  "concurrency": 32,
-  "max_tokens": 4096,
-  "num_predictions": 270,
-  "correct": 56,
-  "accuracy": 0.2074074074074074,
-  "elapsed_sec": 232.086,
-  "avg_sec_per_response": 0.86,
-  "avg_sec_per_successful_request": 25.781,
-  "by_task": {
-    "bbeh_boardgame_qa": {
-      "correct": 5,
-      "total": 30,
-      "accuracy": 0.16666666666666666
-    },
-    "bbeh_boolean_expressions": {
-      "correct": 2,
-      "total": 30,
-      "accuracy": 0.06666666666666667
-    },
-    "bbeh_causal_understanding": {
-      "correct": 15,
-      "total": 30,
-      "accuracy": 0.5
-    },
-    "bbeh_dyck_languages": {
-      "correct": 6,
-      "total": 30,
-      "accuracy": 0.2
-    },
-    "bbeh_multistep_arithmetic": {
-      "correct": 3,
-      "total": 30,
-      "accuracy": 0.1
-    },
-    "bbeh_spatial_reasoning": {
-      "correct": 4,
-      "total": 30,
-      "accuracy": 0.13333333333333333
-    },
-    "bbeh_time_arithmetic": {
-      "correct": 11,
-      "total": 30,
-      "accuracy": 0.36666666666666664
-    },
-    "bbeh_web_of_lies": {
-      "correct": 1,
-      "total": 30,
-      "accuracy": 0.03333333333333333
-    },
-    "bbeh_word_sorting": {
-      "correct": 9,
-      "total": 30,
-      "accuracy": 0.3
-    }
-  },
-  "output_jsonl": "runs/deepseek_r1_qwen32b/predictions.jsonl"
-}
+Checking vLLM servers …
+  http://127.0.0.1:8000/v1 → ['deepseek-ai/DeepSeek-R1-Distill-Qwen-32B']
+  http://127.0.0.1:8001/v1 → ['deepseek-ai/DeepSeek-R1-Distill-Qwen-32B']
+  http://127.0.0.1:8002/v1 → ['deepseek-ai/DeepSeek-R1-Distill-Qwen-32B']
+  http://127.0.0.1:8003/v1 → ['deepseek-ai/DeepSeek-R1-Distill-Qwen-32B']
+All servers ready.
+Total examples: 1400 across 7 tasks
+Model: deepseek-ai/DeepSeek-R1-Distill-Qwen-32B  Ports: [8000, 8001, 8002, 8003]  Concurrency: 64  MaxTokens: 32000  Temp: 0.6
+[0001/1400] bbeh_boolean_expressions#039 ok=False acc=0/1 tok=1852 steps=58 dur=53.315s
+[0002/1400] bbeh_boolean_expressions#060 ok=False acc=0/2 tok=1934 steps=84 dur=55.546s
+[0003/1400] bbeh_boolean_expressions#042 ok=True acc=1/3 tok=1972 steps=40 dur=57.595s
+[0004/1400] bbeh_boolean_expressions#036 ok=False acc=1/4 tok=2096 steps=80 dur=60.905s
+[0005/1400] bbeh_boolean_expressions#000 ok=True acc=2/5 tok=2707 steps=80 dur=77.279s
+[0006/1400] bbeh_boolean_expressions#043 ok=False acc=2/6 tok=2673 steps=83 dur=77.283s
+[0007/1400] bbeh_boolean_expressions#023 ok=False acc=2/7 tok=2846 steps=89 dur=82.289s
+[0008/1400] bbeh_boolean_expressions#006 ok=False acc=2/8 tok=2981 steps=84 dur=86.977s
+[0009/1400] bbeh_boolean_expressions#018 ok=False acc=2/9 tok=3081 steps=150 dur=88.797s
+[0010/1400] bbeh_boolean_expressions#058 ok=False acc=2/10 tok=3371 steps=137 dur=98.234s
+[0011/1400] bbeh_boolean_expressions#052 ok=False acc=2/11 tok=3700 steps=166 dur=107.21s
+[0012/1400] bbeh_boolean_expressions#009 ok=False acc=2/12 tok=3744 steps=153 dur=108.519s
+[0013/1400] bbeh_boolean_expressions#014 ok=True acc=3/13 tok=3877 steps=139 dur=110.352s
+[0014/1400] bbeh_boolean_expressions#020 ok=False acc=3/14 tok=3913 steps=104 dur=112.62s
+[0015/1400] bbeh_boolean_expressions#029 ok=True acc=4/15 tok=3992 steps=134 dur=115.948s
+[0016/1400] bbeh_boolean_expressions#034 ok=False acc=4/16 tok=4233 steps=146 dur=121.61s
+[0017/1400] bbeh_boolean_expressions#001 ok=True acc=5/17 tok=4222 steps=150 dur=122.754s
+[0018/1400] bbeh_boolean_expressions#045 ok=True acc=6/18 tok=4444 steps=173 dur=126.562s
+[0019/1400] bbeh_boolean_expressions#057 ok=False acc=6/19 tok=4518 steps=205 dur=128.732s
+[0020/1400] bbeh_boolean_expressions#004 ok=False acc=6/20 tok=4471 steps=186 dur=130.176s
+[0021/1400] bbeh_boolean_expressions#031 ok=True acc=7/21 tok=4931 steps=256 dur=143.621s
+[0022/1400] bbeh_boolean_expressions#062 ok=False acc=7/22 tok=4946 steps=133 dur=144.044s
+[0023/1400] bbeh_boolean_expressions#021 ok=False acc=7/23 tok=5115 steps=250 dur=145.696s
+[0024/1400] bbeh_boolean_expressions#005 ok=False acc=7/24 tok=5161 steps=137 dur=147.013s
+[0025/1400] bbeh_boolean_expressions#027 ok=False acc=7/25 tok=5306 steps=209 dur=154.661s
+[0026/1400] bbeh_boolean_expressions#016 ok=True acc=8/26 tok=5572 steps=235 dur=158.575s
+[0027/1400] bbeh_boolean_expressions#037 ok=False acc=8/27 tok=5468 steps=276 dur=159.338s
+[0028/1400] bbeh_boolean_expressions#051 ok=True acc=9/28 tok=5629 steps=257 dur=161.064s
+[0029/1400] bbeh_boolean_expressions#050 ok=True acc=10/29 tok=5838 steps=226 dur=166.07s
+[0030/1400] bbeh_boolean_expressions#035 ok=True acc=11/30 tok=5868 steps=196 dur=167.855s
+[0031/1400] bbeh_boolean_expressions#056 ok=False acc=11/31 tok=5809 steps=216 dur=170.279s
+[0032/1400] bbeh_boolean_expressions#012 ok=True acc=12/32 tok=5850 steps=237 dur=170.524s
+[0033/1400] bbeh_boolean_expressions#049 ok=False acc=12/33 tok=5914 steps=274 dur=173.502s
+[0034/1400] bbeh_boolean_expressions#028 ok=False acc=12/34 tok=6079 steps=184 dur=177.247s
+[0035/1400] bbeh_boolean_expressions#017 ok=False acc=12/35 tok=6240 steps=317 dur=181.973s
+[0036/1400] bbeh_boolean_expressions#054 ok=True acc=13/36 tok=6402 steps=231 dur=186.745s
+[0037/1400] bbeh_boolean_expressions#019 ok=True acc=14/37 tok=6348 steps=235 dur=186.884s
+[0038/1400] bbeh_boolean_expressions#063 ok=False acc=14/38 tok=6536 steps=213 dur=187.034s
+[0039/1400] bbeh_boolean_expressions#033 ok=True acc=15/39 tok=6372 steps=214 dur=187.663s
+[0040/1400] bbeh_boolean_expressions#061 ok=True acc=16/40 tok=6649 steps=255 dur=189.366s
+[0041/1400] bbeh_boolean_expressions#070 ok=False acc=16/41 tok=3818 steps=138 dur=111.401s
+[0042/1400] bbeh_boolean_expressions#008 ok=False acc=16/42 tok=6694 steps=230 dur=197.644s
+[0043/1400] bbeh_boolean_expressions#030 ok=True acc=17/43 tok=7027 steps=352 dur=200.113s
+[0044/1400] bbeh_boolean_expressions#026 ok=False acc=17/44 tok=6781 steps=270 dur=200.34s
+[0045/1400] bbeh_boolean_expressions#025 ok=False acc=17/45 tok=7306 steps=312 dur=209.146s
+[0046/1400] bbeh_boolean_expressions#007 ok=True acc=18/46 tok=7285 steps=197 dur=212.528s
+[0047/1400] bbeh_boolean_expressions#040 ok=True acc=19/47 tok=7558 steps=272 dur=215.126s
+[0048/1400] bbeh_boolean_expressions#003 ok=True acc=20/48 tok=7359 steps=378 dur=218.31s
+[0049/1400] bbeh_boolean_expressions#010 ok=False acc=20/49 tok=7628 steps=342 dur=218.525s
+[0050/1400] bbeh_boolean_expressions#055 ok=False acc=20/50 tok=7824 steps=408 dur=224.036s
+[0051/1400] bbeh_boolean_expressions#041 ok=False acc=20/51 tok=7872 steps=346 dur=225.464s
+[0052/1400] bbeh_boolean_expressions#084 ok=True acc=21/52 tok=2665 steps=64 dur=82.425s
+[0053/1400] bbeh_boolean_expressions#064 ok=True acc=22/53 tok=6008 steps=190 dur=181.255s
+[0054/1400] bbeh_boolean_expressions#013 ok=False acc=22/54 tok=7907 steps=358 dur=235.973s
+[0055/1400] bbeh_boolean_expressions#046 ok=False acc=22/55 tok=8185 steps=262 dur=238.617s
+[0056/1400] bbeh_boolean_expressions#078 ok=False acc=22/56 tok=4362 steps=172 dur=127.501s
+[0057/1400] bbeh_boolean_expressions#038 ok=True acc=23/57 tok=8387 steps=263 dur=244.562s
+[0058/1400] bbeh_boolean_expressions#022 ok=False acc=23/58 tok=8688 steps=224 dur=246.949s
+[0059/1400] bbeh_boolean_expressions#071 ok=False acc=23/59 tok=5616 steps=158 dur=160.238s
+[0060/1400] bbeh_boolean_expressions#032 ok=False acc=23/60 tok=8800 steps=292 dur=252.027s
+[0061/1400] bbeh_boolean_expressions#066 ok=True acc=24/61 tok=6715 steps=331 dur=195.789s
+[0062/1400] bbeh_boolean_expressions#067 ok=True acc=25/62 tok=6803 steps=173 dur=194.007s
+[0063/1400] bbeh_boolean_expressions#024 ok=False acc=25/63 tok=8926 steps=386 dur=268.331s
+[0064/1400] bbeh_boolean_expressions#091 ok=True acc=26/64 tok=3881 steps=145 dur=111.145s
+[0065/1400] bbeh_boolean_expressions#095 ok=True acc=27/65 tok=3787 steps=87 dur=108.569s
+[0066/1400] bbeh_boolean_expressions#104 ok=False acc=27/66 tok=3045 steps=115 dur=96.99s
+[0067/1400] bbeh_boolean_expressions#082 ok=True acc=28/67 tok=5602 steps=187 dur=163.552s
+[0068/1400] bbeh_boolean_expressions#079 ok=False acc=28/68 tok=5991 steps=152 dur=170.793s
+[0069/1400] bbeh_boolean_expressions#002 ok=False acc=28/69 tok=10362 steps=381 dur=296.26s
+[0070/1400] bbeh_boolean_expressions#089 ok=True acc=29/70 tok=5338 steps=191 dur=151.926s
+[0071/1400] bbeh_boolean_expressions#088 ok=False acc=29/71 tok=4901 steps=146 dur=156.145s
+[0072/1400] bbeh_boolean_expressions#011 ok=False acc=29/72 tok=10964 steps=615 dur=311.986s
+[0073/1400] bbeh_boolean_expressions#059 ok=True acc=30/73 tok=10986 steps=143 dur=313.838s
+[0074/1400] bbeh_boolean_expressions#073 ok=False acc=30/74 tok=7665 steps=346 dur=218.008s
+[0075/1400] bbeh_boolean_expressions#083 ok=False acc=30/75 tok=6572 steps=318 dur=187.284s
+[0076/1400] bbeh_boolean_expressions#098 ok=False acc=30/76 tok=4642 steps=180 dur=135.967s
+[0077/1400] bbeh_boolean_expressions#111 ok=False acc=30/77 tok=3554 steps=100 dur=101.062s
+[0078/1400] bbeh_boolean_expressions#068 ok=True acc=31/78 tok=7918 steps=455 dur=245.761s
+[0079/1400] bbeh_boolean_expressions#087 ok=False acc=31/79 tok=6271 steps=218 dur=178.892s
+[0080/1400] bbeh_boolean_expressions#099 ok=True acc=32/80 tok=5112 steps=113 dur=145.816s
+[0081/1400] bbeh_boolean_expressions#107 ok=False acc=32/81 tok=4674 steps=110 dur=133.22s
+[0082/1400] bbeh_boolean_expressions#101 ok=False acc=32/82 tok=5324 steps=219 dur=151.212s
+[0083/1400] bbeh_boolean_expressions#094 ok=True acc=33/83 tok=5977 steps=240 dur=174.801s
+[0084/1400] bbeh_boolean_expressions#093 ok=True acc=34/84 tok=6339 steps=300 dur=180.234s
+[0085/1400] bbeh_boolean_expressions#076 ok=True acc=35/85 tok=7889 steps=434 dur=245.8s
+[0086/1400] bbeh_boolean_expressions#129 ok=False acc=35/86 tok=2361 steps=60 dur=66.994s
+[0087/1400] bbeh_boolean_expressions#081 ok=False acc=35/87 tok=8138 steps=334 dur=231.115s
+[0088/1400] bbeh_boolean_expressions#102 ok=False acc=35/88 tok=5839 steps=217 dur=170.816s
+[0089/1400] bbeh_boolean_expressions#048 ok=True acc=36/89 tok=12365 steps=624 dur=361.109s
+[0090/1400] bbeh_boolean_expressions#086 ok=False acc=36/90 tok=7368 steps=175 dur=215.673s
+[0091/1400] bbeh_boolean_expressions#069 ok=False acc=36/91 tok=10180 steps=443 dur=289.122s
+[0092/1400] bbeh_boolean_expressions#115 ok=False acc=36/92 tok=5028 steps=123 dur=142.655s
+[0093/1400] bbeh_boolean_expressions#085 ok=True acc=37/93 tok=7929 steps=346 dur=225.175s
+[0094/1400] bbeh_boolean_expressions#090 ok=True acc=38/94 tok=7197 steps=341 dur=210.448s
+[0095/1400] bbeh_boolean_expressions#110 ok=False acc=38/95 tok=5633 steps=307 dur=164.623s
+[0096/1400] bbeh_boolean_expressions#097 ok=False acc=38/96 tok=7157 steps=199 dur=203.236s
+[0097/1400] bbeh_boolean_expressions#077 ok=False acc=38/97 tok=9487 steps=408 dur=269.443s
+[0098/1400] bbeh_boolean_expressions#074 ok=False acc=38/98 tok=9465 steps=443 dur=276.576s
+[0099/1400] bbeh_boolean_expressions#123 ok=False acc=38/99 tok=4746 steps=139 dur=134.739s
+[0100/1400] bbeh_boolean_expressions#103 ok=False acc=38/100 tok=6990 steps=262 dur=199.166s
+[0101/1400] bbeh_boolean_expressions#145 ok=True acc=39/101 tok=1944 steps=64 dur=55.211s
+[0102/1400] bbeh_boolean_expressions#125 ok=True acc=40/102 tok=4892 steps=147 dur=139.192s
+[0103/1400] bbeh_boolean_expressions#080 ok=True acc=41/103 tok=8699 steps=349 dur=271.591s
+[0104/1400] bbeh_boolean_expressions#113 ok=True acc=42/104 tok=6095 steps=221 dur=173.191s
+[0105/1400] bbeh_boolean_expressions#109 ok=False acc=42/105 tok=6533 steps=218 dur=185.605s
+[0106/1400] bbeh_boolean_expressions#142 ok=True acc=43/106 tok=2501 steps=49 dur=73.063s
+[0107/1400] bbeh_boolean_expressions#121 ok=False acc=43/107 tok=5430 steps=217 dur=154.572s
+[0108/1400] bbeh_boolean_expressions#044 ok=False acc=43/108 tok=13158 steps=624 dur=402.156s
+[0109/1400] bbeh_boolean_expressions#118 ok=True acc=44/109 tok=5892 steps=172 dur=172.985s
+[0110/1400] bbeh_boolean_expressions#105 ok=False acc=44/110 tok=7696 steps=325 dur=218.413s
+[0111/1400] bbeh_boolean_expressions#126 ok=True acc=45/111 tok=5092 steps=220 dur=150.157s
+[0112/1400] bbeh_boolean_expressions#112 ok=False acc=45/112 tok=5229 steps=148 dur=202.166s
+[0113/1400] bbeh_boolean_expressions#114 ok=True acc=46/113 tok=6663 steps=322 dur=195.856s
+[0114/1400] bbeh_boolean_expressions#092 ok=True acc=47/114 tok=8054 steps=500 dur=256.008s
+[0115/1400] bbeh_boolean_expressions#072 ok=False acc=47/115 tok=10842 steps=496 dur=339.967s
+[0116/1400] bbeh_boolean_expressions#117 ok=False acc=47/116 tok=6958 steps=252 dur=197.701s
+[0117/1400] bbeh_boolean_expressions#127 ok=True acc=48/117 tok=5976 steps=263 dur=169.614s
+[0118/1400] bbeh_boolean_expressions#096 ok=True acc=49/118 tok=8435 steps=377 dur=269.826s
+[0119/1400] bbeh_boolean_expressions#143 ok=True acc=50/119 tok=3974 steps=144 dur=112.948s
+[0120/1400] bbeh_boolean_expressions#130 ok=True acc=51/120 tok=5394 steps=204 dur=159.487s
+[0121/1400] bbeh_boolean_expressions#108 ok=True acc=52/121 tok=6833 steps=341 dur=243.024s
+[0122/1400] bbeh_boolean_expressions#139 ok=True acc=53/122 tok=4718 steps=176 dur=134.285s
+[0123/1400] bbeh_boolean_expressions#135 ok=False acc=53/123 tok=5000 steps=166 dur=142.36s
+[0124/1400] bbeh_boolean_expressions#138 ok=True acc=54/124 tok=4644 steps=246 dur=137.101s
+[0125/1400] bbeh_boolean_expressions#161 ok=False acc=54/125 tok=2702 steps=94 dur=76.648s
+[0126/1400] bbeh_boolean_expressions#167 ok=False acc=54/126 tok=2421 steps=54 dur=69.222s
+[0127/1400] bbeh_boolean_expressions#133 ok=False acc=54/127 tok=5543 steps=240 dur=156.77s
+[0128/1400] bbeh_boolean_expressions#128 ok=False acc=54/128 tok=4988 steps=129 dur=189.435s
+[0129/1400] bbeh_boolean_expressions#122 ok=False acc=54/129 tok=7548 steps=140 dur=222.209s
+[0130/1400] bbeh_boolean_expressions#119 ok=True acc=55/130 tok=8100 steps=385 dur=230.734s
+[0131/1400] bbeh_boolean_expressions#100 ok=True acc=56/131 tok=9156 steps=338 dur=293.541s
+[0132/1400] bbeh_boolean_expressions#151 ok=True acc=57/132 tok=4554 steps=160 dur=130.532s
+[0133/1400] bbeh_boolean_expressions#149 ok=False acc=57/133 tok=5233 steps=156 dur=147.92s
+[0134/1400] bbeh_boolean_expressions#132 ok=False acc=57/134 tok=6017 steps=203 dur=214.118s
+[0135/1400] bbeh_boolean_expressions#131 ok=True acc=58/135 tok=7689 steps=337 dur=219.572s
+[0136/1400] bbeh_boolean_expressions#150 ok=False acc=58/136 tok=5318 steps=159 dur=155.913s
+[0137/1400] bbeh_boolean_expressions#158 ok=True acc=59/137 tok=4964 steps=89 dur=145.413s
+[0138/1400] bbeh_boolean_expressions#137 ok=False acc=59/138 tok=7491 steps=301 dur=211.702s
+[0139/1400] bbeh_boolean_expressions#178 ok=True acc=60/139 tok=3454 steps=68 dur=100.079s
+[0140/1400] bbeh_boolean_expressions#146 ok=True acc=61/140 tok=6494 steps=230 dur=189.858s
+[0141/1400] bbeh_causal_understanding#000 ok=True acc=1/1 tok=402 steps=9 dur=11.407s
+[0142/1400] bbeh_boolean_expressions#140 ok=False acc=61/141 tok=5520 steps=205 dur=219.4s
+[0143/1400] bbeh_causal_understanding#001 ok=False acc=1/2 tok=431 steps=11 dur=12.456s
+[0144/1400] bbeh_boolean_expressions#147 ok=True acc=62/142 tok=6795 steps=255 dur=194.582s
+[0145/1400] bbeh_boolean_expressions#168 ok=True acc=63/143 tok=3364 steps=46 dur=150.311s
+[0146/1400] bbeh_boolean_expressions#152 ok=False acc=63/144 tok=4111 steps=177 dur=187.373s
+[0147/1400] bbeh_causal_understanding#002 ok=True acc=2/3 tok=690 steps=14 dur=20.107s
+[0148/1400] bbeh_boolean_expressions#148 ok=True acc=64/145 tok=4300 steps=135 dur=193.529s
+[0149/1400] bbeh_boolean_expressions#141 ok=True acc=65/146 tok=8058 steps=346 dur=228.183s
+[0150/1400] bbeh_causal_understanding#003 ok=True acc=3/4 tok=587 steps=13 dur=16.835s
+[0151/1400] bbeh_causal_understanding#004 ok=True acc=4/5 tok=559 steps=9 dur=15.813s
+[0152/1400] bbeh_boolean_expressions#173 ok=False acc=65/147 tok=4849 steps=163 dur=137.367s
+[0153/1400] bbeh_causal_understanding#006 ok=True acc=5/6 tok=563 steps=12 dur=16.417s
+[0154/1400] bbeh_boolean_expressions#156 ok=False acc=65/148 tok=4369 steps=170 dur=187.84s
+[0155/1400] bbeh_causal_understanding#012 ok=True acc=6/7 tok=250 steps=8 dur=7.068s
+[0156/1400] bbeh_causal_understanding#007 ok=False acc=6/8 tok=579 steps=10 dur=16.534s
+[0157/1400] bbeh_boolean_expressions#136 ok=False acc=65/149 tok=7153 steps=369 dur=249.728s
+[0158/1400] bbeh_boolean_expressions#164 ok=False acc=65/150 tok=4098 steps=143 dur=170.249s
+[0159/1400] bbeh_boolean_expressions#170 ok=False acc=65/151 tok=5578 steps=169 dur=162.712s
+[0160/1400] bbeh_causal_understanding#010 ok=False acc=6/9 tok=600 steps=11 dur=17.423s
+[0161/1400] bbeh_causal_understanding#008 ok=True acc=7/10 tok=637 steps=13 dur=18.066s
+[0162/1400] bbeh_causal_understanding#009 ok=True acc=8/11 tok=645 steps=12 dur=18.802s
+[0163/1400] bbeh_causal_understanding#011 ok=True acc=9/12 tok=652 steps=15 dur=18.929s
+[0164/1400] bbeh_causal_understanding#015 ok=False acc=9/13 tok=532 steps=10 dur=15.476s
+[0165/1400] bbeh_boolean_expressions#154 ok=True acc=66/152 tok=6941 steps=190 dur=202.691s
+[0166/1400] bbeh_causal_understanding#014 ok=True acc=10/14 tok=605 steps=12 dur=17.653s
+[0167/1400] bbeh_causal_understanding#017 ok=False acc=10/15 tok=453 steps=10 dur=13.225s
+[0168/1400] bbeh_causal_understanding#016 ok=False acc=10/16 tok=475 steps=9 dur=13.582s
+[0169/1400] bbeh_causal_understanding#018 ok=False acc=10/17 tok=452 steps=12 dur=13.249s
+[0170/1400] bbeh_boolean_expressions#177 ok=False acc=66/153 tok=5285 steps=106 dur=150.119s
+[0171/1400] bbeh_causal_understanding#005 ok=False acc=10/18 tok=1173 steps=20 dur=34.112s
+[0172/1400] bbeh_boolean_expressions#153 ok=False acc=66/154 tok=7530 steps=318 dur=213.843s
+[0173/1400] bbeh_boolean_expressions#174 ok=True acc=67/155 tok=5407 steps=144 dur=156.872s
+[0174/1400] bbeh_causal_understanding#013 ok=True acc=11/19 tok=860 steps=15 dur=24.936s
+[0175/1400] bbeh_boolean_expressions#190 ok=False acc=67/156 tok=3840 steps=127 dur=110.544s
+[0176/1400] bbeh_causal_understanding#026 ok=False acc=11/20 tok=325 steps=7 dur=9.438s
+[0177/1400] bbeh_causal_understanding#019 ok=False acc=11/21 tok=643 steps=13 dur=18.908s
+[0178/1400] bbeh_causal_understanding#022 ok=True acc=12/22 tok=521 steps=12 dur=15.115s
+[0179/1400] bbeh_boolean_expressions#188 ok=False acc=67/157 tok=4120 steps=174 dur=119.14s
+[0180/1400] bbeh_causal_understanding#024 ok=False acc=12/23 tok=476 steps=6 dur=13.498s
+[0181/1400] bbeh_causal_understanding#020 ok=False acc=12/24 tok=579 steps=11 dur=16.476s
+[0182/1400] bbeh_causal_understanding#028 ok=True acc=13/25 tok=419 steps=9 dur=11.886s
+[0183/1400] bbeh_causal_understanding#030 ok=False acc=13/26 tok=375 steps=10 dur=10.805s
+[0184/1400] bbeh_causal_understanding#021 ok=True acc=14/27 tok=617 steps=11 dur=17.896s
+[0185/1400] bbeh_causal_understanding#023 ok=False acc=14/28 tok=531 steps=12 dur=15.727s
+[0186/1400] bbeh_boolean_expressions#179 ok=False acc=67/158 tok=5169 steps=164 dur=149.138s
+[0187/1400] bbeh_causal_understanding#031 ok=True acc=15/29 tok=437 steps=10 dur=12.898s
+[0188/1400] bbeh_causal_understanding#027 ok=True acc=16/30 tok=494 steps=9 dur=14.561s
+[0189/1400] bbeh_boolean_expressions#169 ok=False acc=67/159 tok=6535 steps=127 dur=185.592s
+[0190/1400] bbeh_causal_understanding#032 ok=False acc=16/31 tok=488 steps=10 dur=13.873s
+[0191/1400] bbeh_causal_understanding#033 ok=True acc=17/32 tok=508 steps=12 dur=14.553s
+[0192/1400] bbeh_causal_understanding#041 ok=False acc=17/33 tok=294 steps=7 dur=8.448s
+[0193/1400] bbeh_causal_understanding#029 ok=False acc=17/34 tok=621 steps=11 dur=17.826s
+[0194/1400] bbeh_causal_understanding#042 ok=True acc=18/35 tok=290 steps=7 dur=8.417s
+[0195/1400] bbeh_causal_understanding#037 ok=True acc=19/36 tok=404 steps=10 dur=11.617s
+[0196/1400] bbeh_causal_understanding#043 ok=True acc=20/37 tok=294 steps=7 dur=8.569s
+[0197/1400] bbeh_causal_understanding#045 ok=True acc=21/38 tok=268 steps=8 dur=7.687s
+[0198/1400] bbeh_causal_understanding#034 ok=False acc=21/39 tok=567 steps=10 dur=16.354s
+[0199/1400] bbeh_boolean_expressions#124 ok=False acc=67/160 tok=9321 steps=351 dur=336.566s
+[0200/1400] bbeh_boolean_expressions#134 ok=False acc=67/161 tok=9584 steps=352 dur=279.603s
+[0201/1400] bbeh_causal_understanding#044 ok=True acc=22/40 tok=403 steps=9 dur=11.607s
+[0202/1400] bbeh_causal_understanding#050 ok=True acc=23/41 tok=364 steps=9 dur=10.522s
+[0203/1400] bbeh_causal_understanding#040 ok=False acc=23/42 tok=568 steps=12 dur=16.338s
+[0204/1400] bbeh_causal_understanding#049 ok=True acc=24/43 tok=412 steps=8 dur=11.741s
+[0205/1400] bbeh_causal_understanding#046 ok=True acc=25/44 tok=524 steps=10 dur=15.124s
+[0206/1400] bbeh_causal_understanding#052 ok=True acc=26/45 tok=407 steps=10 dur=11.897s
+[0207/1400] bbeh_causal_understanding#036 ok=False acc=26/46 tok=774 steps=14 dur=22.307s
+[0208/1400] bbeh_causal_understanding#047 ok=True acc=27/47 tok=585 steps=10 dur=16.85s
+[0209/1400] bbeh_boolean_expressions#185 ok=False acc=67/162 tok=5142 steps=218 dur=146.358s
+[0210/1400] bbeh_causal_understanding#058 ok=False acc=27/48 tok=389 steps=9 dur=11.191s
+[0211/1400] bbeh_causal_understanding#053 ok=True acc=28/49 tok=500 steps=10 dur=14.343s
+[0212/1400] bbeh_causal_understanding#056 ok=True acc=29/50 tok=405 steps=10 dur=11.858s
+[0213/1400] bbeh_causal_understanding#039 ok=False acc=29/51 tok=754 steps=15 dur=21.82s
+[0214/1400] bbeh_causal_understanding#051 ok=True acc=30/52 tok=596 steps=12 dur=17.141s
+[0215/1400] bbeh_causal_understanding#038 ok=False acc=30/53 tok=813 steps=17 dur=23.406s
+[0216/1400] bbeh_causal_understanding#025 ok=True acc=31/54 tok=1203 steps=20 dur=34.521s
+[0217/1400] bbeh_causal_understanding#062 ok=True acc=32/55 tok=414 steps=8 dur=11.932s
+[0218/1400] bbeh_causal_understanding#048 ok=False acc=32/56 tok=691 steps=13 dur=20.042s
+[0219/1400] bbeh_causal_understanding#060 ok=False acc=32/57 tok=463 steps=8 dur=13.534s
+[0220/1400] bbeh_boolean_expressions#163 ok=False acc=67/163 tok=7485 steps=367 dur=214.916s
+[0221/1400] bbeh_boolean_expressions#181 ok=False acc=67/164 tok=5631 steps=198 dur=160.217s
+[0222/1400] bbeh_causal_understanding#059 ok=True acc=33/58 tok=576 steps=11 dur=16.571s
+[0223/1400] bbeh_causal_understanding#061 ok=False acc=33/59 tok=556 steps=14 dur=16.018s
+[0224/1400] bbeh_causal_understanding#064 ok=False acc=33/60 tok=507 steps=9 dur=14.779s
+[0225/1400] bbeh_causal_understanding#054 ok=False acc=33/61 tok=683 steps=13 dur=19.705s
+[0226/1400] bbeh_causal_understanding#055 ok=True acc=34/62 tok=672 steps=10 dur=19.346s
+[0227/1400] bbeh_boolean_expressions#165 ok=True acc=68/165 tok=7530 steps=263 dur=214.111s
+[0228/1400] bbeh_boolean_expressions#159 ok=False acc=68/166 tok=7979 steps=334 dur=229.002s
+[0229/1400] bbeh_causal_understanding#071 ok=False acc=34/63 tok=459 steps=10 dur=13.239s
+[0230/1400] bbeh_causal_understanding#035 ok=False acc=34/64 tok=1278 steps=26 dur=36.925s
+[0231/1400] bbeh_causal_understanding#070 ok=True acc=35/65 tok=515 steps=9 dur=14.859s
+[0232/1400] bbeh_causal_understanding#076 ok=False acc=35/66 tok=474 steps=9 dur=13.764s
+[0233/1400] bbeh_causal_understanding#081 ok=False acc=35/67 tok=401 steps=10 dur=11.613s
+[0234/1400] bbeh_boolean_expressions#116 ok=False acc=68/167 tok=10843 steps=418 dur=379.799s
+[0235/1400] bbeh_causal_understanding#067 ok=True acc=36/68 tok=753 steps=13 dur=21.595s
+[0236/1400] bbeh_causal_understanding#063 ok=False acc=36/69 tok=909 steps=18 dur=26.079s
+[0237/1400] bbeh_causal_understanding#084 ok=True acc=37/70 tok=465 steps=9 dur=13.521s
+[0238/1400] bbeh_boolean_expressions#162 ok=True acc=69/168 tok=7928 steps=71 dur=230.864s
+[0239/1400] bbeh_boolean_expressions#189 ok=False acc=69/169 tok=5313 steps=197 dur=151.66s
+[0240/1400] bbeh_causal_understanding#090 ok=True acc=38/71 tok=353 steps=8 dur=10.191s
+[0241/1400] bbeh_causal_understanding#082 ok=False acc=38/72 tok=571 steps=11 dur=16.457s
+[0242/1400] bbeh_causal_understanding#074 ok=False acc=38/73 tok=678 steps=12 dur=19.605s
+[0243/1400] bbeh_causal_understanding#073 ok=True acc=39/74 tok=704 steps=12 dur=20.226s
+[0244/1400] bbeh_causal_understanding#069 ok=False acc=39/75 tok=816 steps=16 dur=23.448s
+[0245/1400] bbeh_causal_understanding#057 ok=True acc=40/76 tok=1111 steps=18 dur=31.843s
+[0246/1400] bbeh_causal_understanding#068 ok=False acc=40/77 tok=866 steps=16 dur=25.051s
+[0247/1400] bbeh_causal_understanding#066 ok=False acc=40/78 tok=939 steps=17 dur=27.156s
+[0248/1400] bbeh_causal_understanding#086 ok=False acc=40/79 tok=571 steps=14 dur=16.551s
+[0249/1400] bbeh_boolean_expressions#166 ok=True acc=70/170 tok=7816 steps=408 dur=227.552s
+[0250/1400] bbeh_boolean_expressions#160 ok=False acc=70/171 tok=6579 steps=269 dur=240.014s
+[0251/1400] bbeh_causal_understanding#089 ok=True acc=41/80 tok=543 steps=12 dur=15.504s
+[0252/1400] bbeh_causal_understanding#072 ok=False acc=41/81 tok=849 steps=16 dur=24.481s
+[0253/1400] bbeh_causal_understanding#093 ok=False acc=41/82 tok=415 steps=9 dur=11.837s
+[0254/1400] bbeh_boolean_expressions#194 ok=True acc=71/172 tok=5001 steps=123 dur=144.092s
+[0255/1400] bbeh_causal_understanding#091 ok=True acc=42/83 tok=526 steps=11 dur=15.189s
+[0256/1400] bbeh_causal_understanding#100 ok=True acc=43/84 tok=274 steps=8 dur=7.775s
+[0257/1400] bbeh_causal_understanding#079 ok=False acc=43/85 tok=817 steps=13 dur=23.504s
+[0258/1400] bbeh_boolean_expressions#171 ok=False acc=71/173 tok=7782 steps=335 dur=223.591s
+[0259/1400] bbeh_causal_understanding#065 ok=False acc=43/86 tok=1122 steps=16 dur=32.186s
+[0260/1400] bbeh_causal_understanding#078 ok=False acc=43/87 tok=873 steps=16 dur=25.235s
+[0261/1400] bbeh_causal_understanding#098 ok=True acc=44/88 tok=356 steps=8 dur=10.394s
+[0262/1400] bbeh_causal_understanding#108 ok=False acc=44/89 tok=243 steps=6 dur=6.835s
+[0263/1400] bbeh_causal_understanding#077 ok=True acc=45/90 tok=914 steps=19 dur=26.192s
+[0264/1400] bbeh_causal_understanding#087 ok=False acc=45/91 tok=711 steps=14 dur=20.499s
+[0265/1400] bbeh_boolean_expressions#193 ok=True acc=72/174 tok=5353 steps=219 dur=152.964s
+[0266/1400] bbeh_causal_understanding#106 ok=False acc=45/92 tok=269 steps=7 dur=7.78s
+[0267/1400] bbeh_causal_understanding#080 ok=True acc=46/93 tok=906 steps=16 dur=26.005s
+[0268/1400] bbeh_causal_understanding#088 ok=False acc=46/94 tok=761 steps=11 dur=21.819s
+[0269/1400] bbeh_causal_understanding#099 ok=False acc=46/95 tok=413 steps=8 dur=11.959s
+[0270/1400] bbeh_causal_understanding#083 ok=False acc=46/96 tok=866 steps=17 dur=24.921s
+[0271/1400] bbeh_boolean_expressions#172 ok=False acc=72/175 tok=5885 steps=298 dur=217.238s
+[0272/1400] bbeh_causal_understanding#092 ok=False acc=46/97 tok=600 steps=11 dur=17.152s
+[0273/1400] bbeh_causal_understanding#102 ok=False acc=46/98 tok=394 steps=8 dur=11.452s
+[0274/1400] bbeh_causal_understanding#107 ok=True acc=47/99 tok=369 steps=9 dur=10.668s
+[0275/1400] bbeh_boolean_expressions#192 ok=False acc=72/176 tok=5672 steps=241 dur=161.234s
+[0276/1400] bbeh_boolean_expressions#187 ok=True acc=73/177 tok=6132 steps=185 dur=176.571s
+[0277/1400] bbeh_causal_understanding#109 ok=False acc=47/100 tok=356 steps=8 dur=10.203s
+[0278/1400] bbeh_causal_understanding#104 ok=False acc=47/101 tok=457 steps=9 dur=12.94s
+[0279/1400] bbeh_causal_understanding#103 ok=False acc=47/102 tok=470 steps=8 dur=13.543s
+[0280/1400] bbeh_causal_understanding#105 ok=False acc=47/103 tok=476 steps=8 dur=13.64s
+[0281/1400] bbeh_causal_understanding#075 ok=True acc=48/104 tok=1170 steps=23 dur=33.524s
+[0282/1400] bbeh_causal_understanding#115 ok=True acc=49/105 tok=360 steps=7 dur=10.283s
+[0283/1400] bbeh_causal_understanding#094 ok=True acc=50/106 tok=731 steps=13 dur=21.269s
+[0284/1400] bbeh_causal_understanding#111 ok=False acc=50/107 tok=440 steps=11 dur=12.547s
+[0285/1400] bbeh_causal_understanding#096 ok=True acc=51/108 tok=754 steps=14 dur=21.401s
+[0286/1400] bbeh_boolean_expressions#155 ok=True acc=74/178 tok=9323 steps=304 dur=267.558s
+[0287/1400] bbeh_causal_understanding#112 ok=False acc=51/109 tok=527 steps=10 dur=14.892s
+[0288/1400] bbeh_causal_understanding#116 ok=False acc=51/110 tok=480 steps=8 dur=13.585s
+[0289/1400] bbeh_causal_understanding#101 ok=False acc=51/111 tok=699 steps=14 dur=19.97s
+[0290/1400] bbeh_causal_understanding#130 ok=True acc=52/112 tok=340 steps=10 dur=9.982s
+[0291/1400] bbeh_causal_understanding#127 ok=False acc=52/113 tok=388 steps=8 dur=11.011s
+[0292/1400] bbeh_causal_understanding#085 ok=False acc=52/114 tok=1165 steps=22 dur=33.306s
+[0293/1400] bbeh_causal_understanding#120 ok=True acc=53/115 tok=473 steps=11 dur=13.4s
+[0294/1400] bbeh_causal_understanding#110 ok=False acc=53/116 tok=605 steps=11 dur=17.626s
+[0295/1400] bbeh_causal_understanding#128 ok=False acc=53/117 tok=430 steps=9 dur=12.189s
+[0296/1400] bbeh_causal_understanding#126 ok=True acc=54/118 tok=434 steps=10 dur=12.718s
+[0297/1400] bbeh_causal_understanding#121 ok=False acc=54/119 tok=485 steps=10 dur=13.914s
+[0298/1400] bbeh_causal_understanding#119 ok=False acc=54/120 tok=523 steps=11 dur=14.908s
+[0299/1400] bbeh_causal_understanding#117 ok=False acc=54/121 tok=545 steps=11 dur=15.632s
+[0300/1400] bbeh_causal_understanding#132 ok=True acc=55/122 tok=416 steps=10 dur=11.76s
+[0301/1400] bbeh_causal_understanding#134 ok=True acc=56/123 tok=388 steps=11 dur=11.419s
+[0302/1400] bbeh_causal_understanding#118 ok=True acc=57/124 tok=537 steps=10 dur=15.727s
+[0303/1400] bbeh_causal_understanding#114 ok=False acc=57/125 tok=644 steps=10 dur=18.749s
+[0304/1400] bbeh_causal_understanding#113 ok=True acc=58/126 tok=685 steps=11 dur=19.634s
+[0305/1400] bbeh_causal_understanding#135 ok=True acc=59/127 tok=481 steps=13 dur=13.694s
+[0306/1400] bbeh_boolean_expressions#120 ok=False acc=74/179 tok=11484 steps=517 dur=398.287s
+[0307/1400] bbeh_causal_understanding#140 ok=False acc=59/128 tok=431 steps=9 dur=12.1s
+[0308/1400] bbeh_causal_understanding#125 ok=True acc=60/129 tok=666 steps=12 dur=19.139s
+[0309/1400] bbeh_causal_understanding#097 ok=False acc=60/130 tok=1114 steps=21 dur=31.849s
+[0310/1400] bbeh_causal_understanding#129 ok=True acc=61/131 tok=660 steps=15 dur=18.981s
+[0311/1400] bbeh_boolean_expressions#186 ok=False acc=74/180 tok=6667 steps=312 dur=192.296s
+[0312/1400] bbeh_causal_understanding#141 ok=False acc=61/132 tok=555 steps=10 dur=16.013s
+[0313/1400] bbeh_causal_understanding#142 ok=True acc=62/133 tok=565 steps=10 dur=16.549s
+[0314/1400] bbeh_causal_understanding#145 ok=True acc=63/134 tok=523 steps=10 dur=15.175s
+[0315/1400] bbeh_causal_understanding#147 ok=True acc=64/135 tok=493 steps=9 dur=14.272s
+[0316/1400] bbeh_causal_understanding#148 ok=True acc=65/136 tok=495 steps=10 dur=13.872s
+[0317/1400] bbeh_causal_understanding#149 ok=True acc=66/137 tok=499 steps=10 dur=14.48s
+[0318/1400] bbeh_causal_understanding#157 ok=False acc=66/138 tok=422 steps=9 dur=12.272s
+[0319/1400] bbeh_causal_understanding#146 ok=True acc=67/139 tok=612 steps=13 dur=17.851s
+[0320/1400] bbeh_causal_understanding#133 ok=False acc=67/140 tok=808 steps=14 dur=23.306s
+[0321/1400] bbeh_causal_understanding#153 ok=True acc=68/141 tok=491 steps=10 dur=14.254s
+[0322/1400] bbeh_causal_understanding#139 ok=False acc=68/142 tok=748 steps=13 dur=21.541s
+[0323/1400] bbeh_causal_understanding#131 ok=False acc=68/143 tok=863 steps=15 dur=24.749s
+[0324/1400] bbeh_causal_understanding#162 ok=True acc=69/144 tok=476 steps=9 dur=13.871s
+[0325/1400] bbeh_causal_understanding#150 ok=True acc=70/145 tok=599 steps=12 dur=17.466s
+[0326/1400] bbeh_causal_understanding#137 ok=True acc=71/146 tok=837 steps=11 dur=24.118s
+[0327/1400] bbeh_causal_understanding#168 ok=True acc=72/147 tok=429 steps=10 dur=12.079s
+[0328/1400] bbeh_causal_understanding#138 ok=False acc=72/148 tok=824 steps=11 dur=24.09s
+[0329/1400] bbeh_causal_understanding#161 ok=True acc=73/149 tok=518 steps=9 dur=14.991s
+[0330/1400] bbeh_causal_understanding#122 ok=False acc=73/150 tok=988 steps=19 dur=28.81s
+[0331/1400] bbeh_causal_understanding#144 ok=True acc=74/151 tok=800 steps=13 dur=22.508s
+[0332/1400] bbeh_causal_understanding#165 ok=False acc=74/152 tok=536 steps=11 dur=15.513s
+[0333/1400] bbeh_causal_understanding#124 ok=False acc=74/153 tok=1049 steps=17 dur=29.537s
+[0334/1400] bbeh_causal_understanding#172 ok=True acc=75/154 tok=358 steps=8 dur=10.173s
+[0335/1400] bbeh_causal_understanding#159 ok=True acc=76/155 tok=615 steps=10 dur=17.772s
+[0336/1400] bbeh_causal_understanding#143 ok=True acc=77/156 tok=859 steps=14 dur=24.704s
+[0337/1400] bbeh_causal_understanding#160 ok=True acc=78/157 tok=642 steps=12 dur=18.054s
+[0338/1400] bbeh_boolean_expressions#176 ok=True acc=75/181 tok=6914 steps=361 dur=237.488s
+[0339/1400] bbeh_causal_understanding#095 ok=False acc=78/158 tok=1585 steps=35 dur=45.441s
+[0340/1400] bbeh_causal_understanding#173 ok=True acc=79/159 tok=447 steps=9 dur=12.894s
+[0341/1400] bbeh_causal_understanding#171 ok=True acc=80/160 tok=473 steps=9 dur=13.615s
+[0342/1400] bbeh_causal_understanding#151 ok=True acc=81/161 tok=832 steps=16 dur=23.975s
+[0343/1400] bbeh_causal_understanding#156 ok=True acc=82/162 tok=836 steps=12 dur=23.564s
+[0344/1400] bbeh_causal_understanding#175 ok=True acc=83/163 tok=526 steps=9 dur=15.12s
+[0345/1400] bbeh_causal_understanding#166 ok=True acc=84/164 tok=740 steps=12 dur=21.58s
+[0346/1400] bbeh_causal_understanding#174 ok=True acc=85/165 tok=584 steps=11 dur=17.037s
+[0347/1400] bbeh_causal_understanding#169 ok=True acc=86/166 tok=749 steps=12 dur=21.591s
+[0348/1400] bbeh_causal_understanding#154 ok=True acc=87/167 tok=920 steps=14 dur=26.848s
+[0349/1400] bbeh_causal_understanding#182 ok=True acc=88/168 tok=454 steps=8 dur=13.328s
+[0350/1400] bbeh_causal_understanding#178 ok=True acc=89/169 tok=566 steps=11 dur=16.557s
+[0351/1400] bbeh_boolean_expressions#182 ok=False acc=75/182 tok=7611 steps=308 dur=220.096s
+[0352/1400] bbeh_causal_understanding#188 ok=False acc=89/170 tok=416 steps=8 dur=11.887s
+[0353/1400] bbeh_causal_understanding#191 ok=True acc=90/171 tok=425 steps=8 dur=12.309s
+[0354/1400] bbeh_boolean_expressions#184 ok=False acc=75/183 tok=7201 steps=117 dur=215.267s
+[0355/1400] bbeh_causal_understanding#192 ok=False acc=90/172 tok=448 steps=8 dur=12.788s
+[0356/1400] bbeh_causal_understanding#176 ok=True acc=91/173 tok=670 steps=14 dur=19.074s
+[0357/1400] bbeh_boolean_expressions#191 ok=False acc=75/184 tok=6938 steps=209 dur=199.597s
+[0358/1400] bbeh_causal_understanding#186 ok=True acc=92/174 tok=534 steps=9 dur=15.665s
+[0359/1400] bbeh_causal_understanding#184 ok=True acc=93/175 tok=588 steps=12 dur=16.747s
+[0360/1400] bbeh_causal_understanding#164 ok=False acc=93/176 tok=1031 steps=22 dur=29.133s
+[0361/1400] bbeh_causal_understanding#193 ok=False acc=93/177 tok=516 steps=11 dur=14.908s
+[0362/1400] bbeh_causal_understanding#198 ok=True acc=94/178 tok=428 steps=9 dur=12.622s
+[0363/1400] bbeh_causal_understanding#179 ok=True acc=95/179 tok=729 steps=14 dur=21.097s
+[0364/1400] bbeh_causal_understanding#177 ok=False acc=95/180 tok=769 steps=15 dur=22.158s
+[0365/1400] bbeh_causal_understanding#190 ok=True acc=96/181 tok=544 steps=12 dur=16.002s
+[0366/1400] bbeh_causal_understanding#167 ok=True acc=97/182 tok=1033 steps=24 dur=29.945s
+[0367/1400] bbeh_causal_understanding#196 ok=True acc=98/183 tok=545 steps=10 dur=15.623s
+[0368/1400] bbeh_causal_understanding#194 ok=True acc=99/184 tok=569 steps=10 dur=16.751s
+[0369/1400] bbeh_causal_understanding#123 ok=False acc=99/185 tok=1617 steps=29 dur=46.607s
+[0370/1400] bbeh_causal_understanding#170 ok=False acc=99/186 tok=1018 steps=18 dur=29.802s
+[0371/1400] bbeh_causal_understanding#197 ok=True acc=100/187 tok=612 steps=11 dur=17.808s
+[0372/1400] bbeh_boolean_expressions#195 ok=False acc=75/185 tok=6457 steps=307 dur=185.731s
+[0373/1400] bbeh_causal_understanding#189 ok=False acc=100/188 tok=694 steps=13 dur=20.156s
+[0374/1400] bbeh_causal_understanding#185 ok=True acc=101/189 tok=770 steps=14 dur=22.345s
+[0375/1400] bbeh_causal_understanding#152 ok=True acc=102/190 tok=1327 steps=29 dur=37.64s
+[0376/1400] bbeh_causal_understanding#180 ok=True acc=103/191 tok=909 steps=16 dur=25.968s
+[0377/1400] bbeh_causal_understanding#155 ok=True acc=104/192 tok=1328 steps=30 dur=38.606s
+[0378/1400] bbeh_causal_understanding#187 ok=False acc=104/193 tok=795 steps=12 dur=23.208s
+[0379/1400] bbeh_causal_understanding#136 ok=False acc=104/194 tok=1746 steps=34 dur=49.432s
+[0380/1400] bbeh_causal_understanding#163 ok=True acc=105/195 tok=1454 steps=24 dur=42.197s
+[0381/1400] bbeh_dyck_languages#005 ok=True acc=1/1 tok=736 steps=28 dur=21.589s
+[0382/1400] bbeh_boolean_expressions#198 ok=True acc=76/186 tok=5927 steps=316 dur=171.686s
+[0383/1400] bbeh_dyck_languages#016 ok=True acc=2/2 tok=634 steps=20 dur=18.079s
+[0384/1400] bbeh_causal_understanding#183 ok=True acc=106/196 tok=1177 steps=21 dur=34.159s
+[0385/1400] bbeh_causal_understanding#199 ok=True acc=107/197 tok=978 steps=15 dur=28.612s
+[0386/1400] bbeh_causal_understanding#195 ok=True acc=108/198 tok=1228 steps=23 dur=35.716s
+[0387/1400] bbeh_dyck_languages#028 ok=False acc=2/3 tok=757 steps=24 dur=21.38s
+[0388/1400] bbeh_dyck_languages#001 ok=False acc=2/4 tok=1205 steps=46 dur=35.367s
+[0389/1400] bbeh_causal_understanding#158 ok=False acc=108/199 tok=1888 steps=32 dur=54.921s
+[0390/1400] bbeh_dyck_languages#002 ok=False acc=2/5 tok=1221 steps=43 dur=35.551s
+[0391/1400] bbeh_dyck_languages#008 ok=False acc=2/6 tok=1172 steps=54 dur=33.165s
+[0392/1400] bbeh_dyck_languages#007 ok=True acc=3/7 tok=1208 steps=31 dur=35.182s
+[0393/1400] bbeh_dyck_languages#012 ok=False acc=3/8 tok=1171 steps=46 dur=33.086s
+[0394/1400] bbeh_dyck_languages#039 ok=False acc=3/9 tok=751 steps=22 dur=21.735s
+[0395/1400] bbeh_boolean_expressions#144 ok=True acc=77/187 tok=10303 steps=356 dur=366.198s
+[0396/1400] bbeh_dyck_languages#031 ok=False acc=3/10 tok=1008 steps=22 dur=29.244s
+[0397/1400] bbeh_boolean_expressions#175 ok=True acc=78/188 tok=9932 steps=465 dur=286.107s
+[0398/1400] bbeh_dyck_languages#046 ok=True acc=4/11 tok=782 steps=25 dur=22.342s
+[0399/1400] bbeh_dyck_languages#024 ok=False acc=4/12 tok=1444 steps=72 dur=40.774s
+[0400/1400] bbeh_dyck_languages#019 ok=False acc=4/13 tok=1533 steps=70 dur=44.616s
+[0401/1400] bbeh_dyck_languages#035 ok=False acc=4/14 tok=1356 steps=84 dur=39.434s
+[0402/1400] bbeh_dyck_languages#020 ok=True acc=5/15 tok=1638 steps=49 dur=46.321s
+[0403/1400] bbeh_dyck_languages#048 ok=False acc=5/16 tok=1078 steps=58 dur=30.477s
+[0404/1400] bbeh_dyck_languages#043 ok=False acc=5/17 tok=1212 steps=46 dur=35.233s
+[0405/1400] bbeh_dyck_languages#044 ok=True acc=6/18 tok=1369 steps=59 dur=38.711s
+[0406/1400] bbeh_dyck_languages#018 ok=False acc=6/19 tok=1933 steps=85 dur=55.895s
+[0407/1400] bbeh_dyck_languages#052 ok=False acc=6/20 tok=1036 steps=47 dur=29.439s
+[0408/1400] bbeh_dyck_languages#022 ok=False acc=6/21 tok=1998 steps=86 dur=57.736s
+[0409/1400] bbeh_dyck_languages#059 ok=False acc=6/22 tok=912 steps=39 dur=26.469s
+[0410/1400] bbeh_dyck_languages#030 ok=False acc=6/23 tok=2021 steps=50 dur=58.295s
+[0411/1400] bbeh_dyck_languages#051 ok=False acc=6/24 tok=1272 steps=55 dur=36.846s
+[0412/1400] bbeh_dyck_languages#023 ok=False acc=6/25 tok=2162 steps=67 dur=62.627s
+[0413/1400] bbeh_dyck_languages#004 ok=False acc=6/26 tok=2579 steps=68 dur=72.923s
+[0414/1400] bbeh_boolean_expressions#199 ok=True acc=79/189 tok=7607 steps=345 dur=219.159s
+[0415/1400] bbeh_dyck_languages#011 ok=False acc=6/27 tok=2397 steps=104 dur=69.551s
+[0416/1400] bbeh_dyck_languages#027 ok=False acc=6/28 tok=2299 steps=59 dur=66.515s
+[0417/1400] bbeh_dyck_languages#058 ok=False acc=6/29 tok=1331 steps=43 dur=38.351s
+[0418/1400] bbeh_dyck_languages#015 ok=False acc=6/30 tok=2518 steps=86 dur=72.895s
+[0419/1400] bbeh_dyck_languages#033 ok=False acc=6/31 tok=2167 steps=60 dur=65.851s
+[0420/1400] bbeh_dyck_languages#040 ok=True acc=7/32 tok=2265 steps=47 dur=63.861s
+[0421/1400] bbeh_dyck_languages#060 ok=True acc=8/33 tok=1205 steps=54 dur=34.149s
+[0422/1400] bbeh_boolean_expressions#197 ok=False acc=79/190 tok=7908 steps=306 dur=230.745s
+[0423/1400] bbeh_dyck_languages#053 ok=False acc=8/34 tok=1521 steps=39 dur=47.033s
+[0424/1400] bbeh_dyck_languages#038 ok=False acc=8/35 tok=2313 steps=75 dur=66.658s
+[0425/1400] bbeh_dyck_languages#070 ok=False acc=8/36 tok=703 steps=29 dur=20.281s
+[0426/1400] bbeh_dyck_languages#064 ok=False acc=8/37 tok=1072 steps=11 dur=30.302s
+[0427/1400] bbeh_dyck_languages#067 ok=False acc=8/38 tok=969 steps=41 dur=27.611s
+[0428/1400] bbeh_causal_understanding#181 ok=True acc=109/200 tok=3121 steps=75 dur=93.868s
+[0429/1400] bbeh_dyck_languages#065 ok=False acc=8/39 tok=994 steps=46 dur=31.459s
+[0430/1400] bbeh_dyck_languages#009 ok=False acc=8/40 tok=2741 steps=70 dur=83.14s
+[0431/1400] bbeh_dyck_languages#006 ok=False acc=8/41 tok=2937 steps=86 dur=84.939s
+[0432/1400] bbeh_dyck_languages#003 ok=True acc=9/42 tok=3065 steps=91 dur=88.489s
+[0433/1400] bbeh_dyck_languages#045 ok=False acc=9/43 tok=2098 steps=78 dur=64.3s
+[0434/1400] bbeh_dyck_languages#057 ok=False acc=9/44 tok=1615 steps=42 dur=50.005s
+[0435/1400] bbeh_dyck_languages#080 ok=False acc=9/45 tok=446 steps=9 dur=12.522s
+[0436/1400] bbeh_dyck_languages#063 ok=False acc=9/46 tok=1448 steps=10 dur=41.317s
+[0437/1400] bbeh_dyck_languages#017 ok=False acc=9/47 tok=2862 steps=72 dur=87.113s
+[0438/1400] bbeh_dyck_languages#056 ok=False acc=9/48 tok=2013 steps=29 dur=56.762s
+[0439/1400] bbeh_dyck_languages#062 ok=False acc=9/49 tok=1582 steps=55 dur=45.647s
+[0440/1400] bbeh_dyck_languages#090 ok=True acc=10/50 tok=436 steps=12 dur=12.585s
+[0441/1400] bbeh_dyck_languages#061 ok=False acc=10/51 tok=1627 steps=58 dur=50.818s
+[0442/1400] bbeh_dyck_languages#036 ok=False acc=10/52 tok=2986 steps=59 dur=84.024s
+[0443/1400] bbeh_dyck_languages#066 ok=False acc=10/53 tok=1469 steps=64 dur=42.403s
+[0444/1400] bbeh_dyck_languages#021 ok=False acc=10/54 tok=2993 steps=103 dur=91.227s
+[0445/1400] bbeh_dyck_languages#037 ok=True acc=11/55 tok=2923 steps=80 dur=89.398s
+[0446/1400] bbeh_dyck_languages#092 ok=False acc=11/56 tok=753 steps=33 dur=21.036s
+[0447/1400] bbeh_dyck_languages#013 ok=False acc=11/57 tok=3415 steps=120 dur=104.039s
+[0448/1400] bbeh_dyck_languages#083 ok=False acc=11/58 tok=1050 steps=38 dur=30.1s
+[0449/1400] bbeh_dyck_languages#032 ok=False acc=11/59 tok=3491 steps=86 dur=98.125s
+[0450/1400] bbeh_dyck_languages#000 ok=False acc=11/60 tok=4083 steps=229 dur=115.011s
+[0451/1400] bbeh_dyck_languages#073 ok=True acc=12/61 tok=1345 steps=42 dur=44.185s
+[0452/1400] bbeh_dyck_languages#014 ok=False acc=12/62 tok=3813 steps=64 dur=110.313s
+[0453/1400] bbeh_dyck_languages#076 ok=False acc=12/63 tok=1665 steps=72 dur=46.558s
+[0454/1400] bbeh_dyck_languages#081 ok=True acc=13/64 tok=1314 steps=36 dur=40.272s
+[0455/1400] bbeh_dyck_languages#095 ok=True acc=14/65 tok=1100 steps=28 dur=31.857s
+[0456/1400] bbeh_dyck_languages#010 ok=False acc=14/66 tok=4039 steps=101 dur=116.908s
+[0457/1400] bbeh_dyck_languages#104 ok=False acc=14/67 tok=837 steps=28 dur=23.428s
+[0458/1400] bbeh_dyck_languages#069 ok=False acc=14/68 tok=1875 steps=50 dur=58.757s
+[0459/1400] bbeh_dyck_languages#068 ok=False acc=14/69 tok=2195 steps=72 dur=61.412s
+[0460/1400] bbeh_dyck_languages#102 ok=True acc=15/70 tok=933 steps=44 dur=27.336s
+[0461/1400] bbeh_dyck_languages#049 ok=False acc=15/71 tok=3009 steps=125 dur=92.182s
+[0462/1400] bbeh_dyck_languages#101 ok=False acc=15/72 tok=985 steps=10 dur=29.802s
+[0463/1400] bbeh_dyck_languages#088 ok=False acc=15/73 tok=1523 steps=39 dur=42.587s
+[0464/1400] bbeh_dyck_languages#097 ok=False acc=15/74 tok=1273 steps=39 dur=38.555s
+[0465/1400] bbeh_dyck_languages#084 ok=False acc=15/75 tok=1774 steps=75 dur=49.59s
+[0466/1400] bbeh_dyck_languages#106 ok=False acc=15/76 tok=1080 steps=48 dur=31.574s
+[0467/1400] bbeh_dyck_languages#087 ok=True acc=16/77 tok=1712 steps=72 dur=49.505s
+[0468/1400] bbeh_dyck_languages#047 ok=False acc=16/78 tok=3673 steps=73 dur=105.946s
+[0469/1400] bbeh_dyck_languages#103 ok=True acc=17/79 tok=1167 steps=39 dur=34.082s
+[0470/1400] bbeh_dyck_languages#072 ok=False acc=17/80 tok=2303 steps=66 dur=64.484s
+[0471/1400] bbeh_dyck_languages#098 ok=False acc=17/81 tok=1447 steps=11 dur=42.125s
+[0472/1400] bbeh_dyck_languages#109 ok=True acc=18/82 tok=894 steps=31 dur=26.634s
+[0473/1400] bbeh_dyck_languages#042 ok=False acc=18/83 tok=3962 steps=115 dur=114.563s
+[0474/1400] bbeh_dyck_languages#107 ok=True acc=19/84 tok=1231 steps=38 dur=35.949s
+[0475/1400] bbeh_dyck_languages#111 ok=True acc=20/85 tok=893 steps=24 dur=26.15s
+[0476/1400] bbeh_dyck_languages#112 ok=False acc=20/86 tok=933 steps=14 dur=26.244s
+[0477/1400] bbeh_dyck_languages#075 ok=False acc=20/87 tok=2269 steps=80 dur=65.529s
+[0478/1400] bbeh_dyck_languages#079 ok=False acc=20/88 tok=2104 steps=69 dur=60.777s
+[0479/1400] bbeh_dyck_languages#078 ok=False acc=20/89 tok=2194 steps=14 dur=63.725s
+[0480/1400] bbeh_dyck_languages#082 ok=False acc=20/90 tok=2080 steps=70 dur=60.627s
+[0481/1400] bbeh_dyck_languages#108 ok=False acc=20/91 tok=1324 steps=31 dur=37.156s
+[0482/1400] bbeh_dyck_languages#113 ok=False acc=20/92 tok=971 steps=7 dur=28.978s
+[0483/1400] bbeh_dyck_languages#089 ok=False acc=20/93 tok=1938 steps=28 dur=58.656s
+[0484/1400] bbeh_dyck_languages#114 ok=False acc=20/94 tok=1025 steps=15 dur=30.038s
+[0485/1400] bbeh_dyck_languages#055 ok=False acc=20/95 tok=3735 steps=116 dur=107.789s
+[0486/1400] bbeh_dyck_languages#054 ok=False acc=20/96 tok=3785 steps=63 dur=109.738s
+[0487/1400] bbeh_dyck_languages#085 ok=False acc=20/97 tok=2352 steps=16 dur=71.44s
+[0488/1400] bbeh_dyck_languages#133 ok=False acc=20/98 tok=666 steps=27 dur=20.342s
+[0489/1400] bbeh_dyck_languages#116 ok=False acc=20/99 tok=1245 steps=47 dur=34.994s
+[0490/1400] bbeh_dyck_languages#121 ok=False acc=20/100 tok=1051 steps=38 dur=31.759s
+[0491/1400] bbeh_dyck_languages#123 ok=False acc=20/101 tok=1066 steps=47 dur=30.719s
+[0492/1400] bbeh_dyck_languages#122 ok=False acc=20/102 tok=1104 steps=34 dur=32.359s
+[0493/1400] bbeh_dyck_languages#124 ok=False acc=20/103 tok=1188 steps=34 dur=33.365s
+[0494/1400] bbeh_dyck_languages#093 ok=False acc=20/104 tok=2349 steps=126 dur=71.107s
+[0495/1400] bbeh_dyck_languages#134 ok=False acc=20/105 tok=875 steps=28 dur=25.631s
+[0496/1400] bbeh_dyck_languages#127 ok=False acc=20/106 tok=1091 steps=36 dur=31.479s
+[0497/1400] bbeh_dyck_languages#118 ok=True acc=21/107 tok=1339 steps=38 dur=39.155s
+[0498/1400] bbeh_dyck_languages#135 ok=True acc=22/108 tok=910 steps=32 dur=26.248s
+[0499/1400] bbeh_dyck_languages#144 ok=False acc=22/109 tok=671 steps=10 dur=18.83s
+[0500/1400] bbeh_dyck_languages#071 ok=False acc=22/110 tok=3365 steps=36 dur=96.926s
+[0501/1400] bbeh_dyck_languages#131 ok=False acc=22/111 tok=1103 steps=31 dur=31.842s
+[0502/1400] bbeh_dyck_languages#091 ok=False acc=22/112 tok=2751 steps=62 dur=79.507s
+[0503/1400] bbeh_dyck_languages#142 ok=False acc=22/113 tok=938 steps=28 dur=27.483s
+[0504/1400] bbeh_dyck_languages#077 ok=True acc=23/114 tok=2907 steps=66 dur=93.199s
+[0505/1400] bbeh_dyck_languages#150 ok=True acc=24/115 tok=525 steps=10 dur=15.414s
+[0506/1400] bbeh_dyck_languages#096 ok=False acc=24/116 tok=2973 steps=89 dur=83.104s
+[0507/1400] bbeh_dyck_languages#130 ok=False acc=24/117 tok=1380 steps=40 dur=40.417s
+[0508/1400] bbeh_dyck_languages#143 ok=False acc=24/118 tok=1227 steps=13 dur=35.216s
+[0509/1400] bbeh_dyck_languages#136 ok=False acc=24/119 tok=1490 steps=66 dur=41.708s
+[0510/1400] bbeh_dyck_languages#146 ok=True acc=25/120 tok=1108 steps=27 dur=32.341s
+[0511/1400] bbeh_dyck_languages#139 ok=False acc=25/121 tok=1324 steps=54 dur=38.066s
+[0512/1400] bbeh_dyck_languages#025 ok=False acc=25/122 tok=5463 steps=124 dur=165.714s
+[0513/1400] bbeh_dyck_languages#034 ok=False acc=25/123 tok=5627 steps=105 dur=163.085s
+[0514/1400] bbeh_dyck_languages#155 ok=False acc=25/124 tok=768 steps=19 dur=22.263s
+[0515/1400] bbeh_dyck_languages#147 ok=False acc=25/125 tok=1262 steps=46 dur=36.308s
+[0516/1400] bbeh_dyck_languages#099 ok=False acc=25/126 tok=3060 steps=106 dur=88.487s
+[0517/1400] bbeh_dyck_languages#154 ok=True acc=26/127 tok=959 steps=41 dur=27.846s
+[0518/1400] bbeh_dyck_languages#141 ok=True acc=27/128 tok=1498 steps=49 dur=45.444s
+[0519/1400] bbeh_dyck_languages#115 ok=False acc=27/129 tok=2338 steps=106 dur=67.59s
+[0520/1400] bbeh_dyck_languages#120 ok=False acc=27/130 tok=2270 steps=36 dur=63.639s
+[0521/1400] bbeh_dyck_languages#125 ok=False acc=27/131 tok=2025 steps=57 dur=61.272s
+[0522/1400] bbeh_dyck_languages#162 ok=False acc=27/132 tok=881 steps=33 dur=25.618s
+[0523/1400] bbeh_dyck_languages#151 ok=True acc=28/133 tok=1204 steps=48 dur=34.765s
+[0524/1400] bbeh_dyck_languages#157 ok=False acc=28/134 tok=1018 steps=42 dur=30.906s
+[0525/1400] bbeh_boolean_expressions#183 ok=False acc=79/191 tok=13843 steps=577 dur=398.833s
+[0526/1400] bbeh_dyck_languages#170 ok=False acc=28/135 tok=840 steps=26 dur=24.396s
+[0527/1400] bbeh_dyck_languages#140 ok=False acc=28/136 tok=2136 steps=92 dur=59.749s
+[0528/1400] bbeh_dyck_languages#152 ok=False acc=28/137 tok=1574 steps=51 dur=44.031s
+[0529/1400] bbeh_dyck_languages#117 ok=False acc=28/138 tok=2609 steps=118 dur=78.934s
+[0530/1400] bbeh_dyck_languages#119 ok=False acc=28/139 tok=2674 steps=39 dur=76.924s
+[0531/1400] bbeh_dyck_languages#179 ok=True acc=29/140 tok=643 steps=15 dur=18.366s
+[0532/1400] bbeh_dyck_languages#169 ok=False acc=29/141 tok=1071 steps=40 dur=32.737s
+[0533/1400] bbeh_dyck_languages#029 ok=True acc=30/142 tok=6342 steps=70 dur=192.594s
+[0534/1400] bbeh_dyck_languages#148 ok=False acc=30/143 tok=2139 steps=90 dur=59.832s
+[0535/1400] bbeh_dyck_languages#153 ok=False acc=30/144 tok=1715 steps=44 dur=52.271s
+[0536/1400] bbeh_dyck_languages#163 ok=False acc=30/145 tok=1493 steps=36 dur=42.738s
+[0537/1400] bbeh_dyck_languages#166 ok=False acc=30/146 tok=1425 steps=53 dur=41.385s
+[0538/1400] bbeh_dyck_languages#181 ok=False acc=30/147 tok=833 steps=25 dur=25.691s
+[0539/1400] bbeh_dyck_languages#110 ok=False acc=30/148 tok=3443 steps=138 dur=100.284s
+[0540/1400] bbeh_dyck_languages#137 ok=False acc=30/149 tok=2417 steps=64 dur=73.719s
+[0541/1400] bbeh_dyck_languages#187 ok=False acc=30/150 tok=740 steps=16 dur=21.167s
+[0542/1400] bbeh_dyck_languages#188 ok=True acc=31/151 tok=807 steps=33 dur=22.574s
+[0543/1400] bbeh_dyck_languages#164 ok=False acc=31/152 tok=1862 steps=63 dur=52.141s
+[0544/1400] bbeh_dyck_languages#026 ok=False acc=31/153 tok=7103 steps=230 dur=205.868s
+[0545/1400] bbeh_dyck_languages#172 ok=False acc=31/154 tok=1479 steps=54 dur=41.428s
+[0546/1400] bbeh_dyck_languages#174 ok=False acc=31/155 tok=1455 steps=16 dur=42.144s
+[0547/1400] bbeh_dyck_languages#175 ok=False acc=31/156 tok=1495 steps=32 dur=42.774s
+[0548/1400] bbeh_dyck_languages#177 ok=False acc=31/157 tok=1416 steps=20 dur=43.449s
+[0549/1400] bbeh_dyck_languages#180 ok=False acc=31/158 tok=1461 steps=63 dur=40.901s
+[0550/1400] bbeh_boolean_expressions#047 ok=False acc=79/192 tok=30888 steps=1484 dur=885.002s
+[0551/1400] bbeh_dyck_languages#171 ok=False acc=31/159 tok=1758 steps=53 dur=50.288s
+[0552/1400] bbeh_dyck_languages#105 ok=False acc=31/160 tok=4361 steps=119 dur=132.5s
+[0553/1400] bbeh_dyck_languages#191 ok=False acc=31/161 tok=1194 steps=45 dur=34.089s
+[0554/1400] bbeh_dyck_languages#195 ok=False acc=31/162 tok=1026 steps=39 dur=29.238s
+[0555/1400] bbeh_dyck_languages#165 ok=True acc=32/163 tok=2252 steps=60 dur=68.912s
+[0556/1400] bbeh_dyck_languages#196 ok=False acc=32/164 tok=1086 steps=14 dur=30.47s
+[0557/1400] bbeh_dyck_languages#158 ok=False acc=32/165 tok=2662 steps=86 dur=77.099s
+[0558/1400] bbeh_dyck_languages#184 ok=False acc=32/166 tok=1793 steps=59 dur=50.211s
+[0559/1400] bbeh_dyck_languages#129 ok=False acc=32/167 tok=3475 steps=122 dur=106.186s
+[0560/1400] bbeh_dyck_languages#190 ok=False acc=32/168 tok=1383 steps=18 dur=39.946s
+[0561/1400] bbeh_dyck_languages#128 ok=False acc=32/169 tok=3834 steps=89 dur=107.388s
+[0562/1400] bbeh_dyck_languages#138 ok=False acc=32/170 tok=3524 steps=110 dur=102.263s
+[0563/1400] bbeh_dyck_languages#159 ok=False acc=32/171 tok=2852 steps=110 dur=81.605s
+[0564/1400] bbeh_boolean_expressions#015 ok=False acc=79/193 tok=31116 steps=255 dur=900.198s
+[0565/1400] bbeh_dyck_languages#132 ok=False acc=32/172 tok=3997 steps=121 dur=111.934s
+[0566/1400] bbeh_dyck_languages#100 ok=False acc=32/173 tok=5340 steps=181 dur=149.541s
+[0567/1400] bbeh_dyck_languages#086 ok=False acc=32/174 tok=5636 steps=36 dur=163.618s
+[0568/1400] bbeh_boolean_expressions#053 ok=False acc=79/194 tok=31359 steps=1736 dur=907.156s
+[0569/1400] bbeh_dyck_languages#189 ok=False acc=32/175 tok=1838 steps=61 dur=55.961s
+[0570/1400] bbeh_dyck_languages#145 ok=False acc=32/176 tok=3674 steps=172 dur=111.576s
+[0571/1400] bbeh_dyck_languages#161 ok=False acc=32/177 tok=3093 steps=34 dur=93.81s
+[0572/1400] bbeh_dyck_languages#173 ok=False acc=32/178 tok=2577 steps=85 dur=78.281s
+[0573/1400] bbeh_dyck_languages#182 ok=False acc=32/179 tok=2431 steps=26 dur=70.408s
+[0574/1400] bbeh_dyck_languages#193 ok=False acc=32/180 tok=2191 steps=75 dur=65.724s
+[0575/1400] bbeh_dyck_languages#198 ok=True acc=33/181 tok=2142 steps=61 dur=61.875s
+[0576/1400] bbeh_dyck_languages#094 ok=False acc=33/182 tok=6239 steps=132 dur=181.031s
+[0577/1400] bbeh_dyck_languages#167 ok=False acc=33/183 tok=3632 steps=115 dur=103.565s
+[0578/1400] bbeh_dyck_languages#176 ok=False acc=33/184 tok=3447 steps=92 dur=96.729s
+[0579/1400] bbeh_dyck_languages#183 ok=False acc=33/185 tok=3127 steps=39 dur=88.994s
+[0580/1400] bbeh_dyck_languages#178 ok=False acc=33/186 tok=3521 steps=88 dur=101.869s
+[0581/1400] bbeh_dyck_languages#160 ok=True acc=34/187 tok=4480 steps=204 dur=125.879s
+[0582/1400] bbeh_dyck_languages#126 ok=False acc=34/188 tok=5589 steps=92 dur=162.181s
+[0583/1400] bbeh_dyck_languages#185 ok=True acc=35/189 tok=3492 steps=146 dur=103.451s
+[0584/1400] bbeh_boolean_expressions#065 ok=False acc=79/195 tok=31262 steps=1918 dur=903.767s
+[0585/1400] bbeh_multistep_arithmetic#020 ok=True acc=1/1 tok=2411 steps=72 dur=68.802s
+[0586/1400] bbeh_dyck_languages#199 ok=False acc=35/190 tok=3459 steps=160 dur=98.565s
+[0587/1400] bbeh_dyck_languages#197 ok=False acc=35/191 tok=3485 steps=103 dur=101.957s
+[0588/1400] bbeh_dyck_languages#186 ok=False acc=35/192 tok=4467 steps=179 dur=129.097s
+[0589/1400] bbeh_multistep_arithmetic#000 ok=True acc=2/2 tok=3923 steps=218 dur=112.117s
+[0590/1400] bbeh_multistep_arithmetic#006 ok=False acc=2/3 tok=3614 steps=84 dur=104.433s
+[0591/1400] bbeh_dyck_languages#192 ok=False acc=35/193 tok=4329 steps=144 dur=123.703s
+[0592/1400] bbeh_multistep_arithmetic#008 ok=True acc=3/4 tok=3848 steps=59 dur=110.725s
+[0593/1400] bbeh_multistep_arithmetic#002 ok=False acc=3/5 tok=4532 steps=159 dur=130.843s
+[0594/1400] bbeh_multistep_arithmetic#010 ok=True acc=4/6 tok=4233 steps=187 dur=122.204s
+[0595/1400] bbeh_boolean_expressions#075 ok=False acc=79/196 tok=31192 steps=2004 dur=892.814s
+[0596/1400] bbeh_dyck_languages#156 ok=False acc=35/194 tok=6519 steps=145 dur=186.416s
+[0597/1400] bbeh_multistep_arithmetic#040 ok=True acc=5/7 tok=2532 steps=130 dur=74.762s
+[0598/1400] bbeh_multistep_arithmetic#004 ok=False acc=5/8 tok=4742 steps=175 dur=137.004s
+[0599/1400] bbeh_multistep_arithmetic#022 ok=True acc=6/9 tok=4153 steps=183 dur=119.885s
+[0600/1400] bbeh_dyck_languages#194 ok=False acc=35/195 tok=5580 steps=245 dur=161.01s
+[0601/1400] bbeh_multistep_arithmetic#014 ok=True acc=7/10 tok=4833 steps=105 dur=139.663s
+[0602/1400] bbeh_multistep_arithmetic#030 ok=True acc=8/11 tok=4276 steps=153 dur=123.593s
+[0603/1400] bbeh_multistep_arithmetic#032 ok=True acc=9/12 tok=3997 steps=212 dur=118.021s
+[0604/1400] bbeh_multistep_arithmetic#018 ok=False acc=9/13 tok=4811 steps=191 dur=139.132s
+[0605/1400] bbeh_multistep_arithmetic#026 ok=False acc=9/14 tok=4655 steps=181 dur=134.579s
+[0606/1400] bbeh_multistep_arithmetic#001 ok=False acc=9/15 tok=5820 steps=102 dur=168.285s
+[0607/1400] bbeh_multistep_arithmetic#034 ok=False acc=9/16 tok=4292 steps=91 dur=123.996s
+[0608/1400] bbeh_multistep_arithmetic#042 ok=True acc=10/17 tok=3645 steps=124 dur=105.362s
+[0609/1400] bbeh_multistep_arithmetic#016 ok=True acc=11/18 tok=5044 steps=160 dur=148.34s
+[0610/1400] bbeh_multistep_arithmetic#038 ok=True acc=12/19 tok=3976 steps=127 dur=114.892s
+[0611/1400] bbeh_multistep_arithmetic#024 ok=True acc=13/20 tok=5098 steps=109 dur=150.364s
+[0612/1400] bbeh_multistep_arithmetic#015 ok=False acc=13/21 tok=5880 steps=195 dur=168.088s
+[0613/1400] bbeh_multistep_arithmetic#012 ok=False acc=13/22 tok=6051 steps=245 dur=177.473s
+[0614/1400] bbeh_multistep_arithmetic#036 ok=True acc=14/23 tok=5001 steps=224 dur=148.144s
+[0615/1400] bbeh_multistep_arithmetic#048 ok=True acc=15/24 tok=3458 steps=170 dur=103.595s
+[0616/1400] bbeh_multistep_arithmetic#028 ok=False acc=15/25 tok=5852 steps=173 dur=171.959s
+[0617/1400] bbeh_multistep_arithmetic#046 ok=False acc=15/26 tok=4624 steps=107 dur=133.573s
+[0618/1400] bbeh_multistep_arithmetic#044 ok=False acc=15/27 tok=4842 steps=77 dur=143.351s
+[0619/1400] bbeh_multistep_arithmetic#052 ok=False acc=15/28 tok=3700 steps=211 dur=109.719s
+[0620/1400] bbeh_boolean_expressions#106 ok=False acc=79/197 tok=31191 steps=1202 dur=905.923s
+[0621/1400] bbeh_multistep_arithmetic#054 ok=False acc=15/29 tok=4596 steps=140 dur=132.799s
+[0622/1400] bbeh_multistep_arithmetic#041 ok=False acc=15/30 tok=6385 steps=105 dur=185.937s
+[0623/1400] bbeh_multistep_arithmetic#062 ok=False acc=15/31 tok=3605 steps=128 dur=104.435s
+[0624/1400] bbeh_multistep_arithmetic#060 ok=False acc=15/32 tok=4041 steps=97 dur=117.687s
+[0625/1400] bbeh_multistep_arithmetic#050 ok=False acc=15/33 tok=5451 steps=280 dur=157.587s
+[0626/1400] bbeh_multistep_arithmetic#056 ok=True acc=16/34 tok=4375 steps=229 dur=127.308s
+[0627/1400] bbeh_multistep_arithmetic#058 ok=True acc=17/35 tok=4431 steps=210 dur=128.34s
+[0628/1400] bbeh_multistep_arithmetic#064 ok=True acc=18/36 tok=3959 steps=89 dur=113.936s
+[0629/1400] bbeh_multistep_arithmetic#027 ok=False acc=18/37 tok=8636 steps=436 dur=247.247s
+[0630/1400] bbeh_multistep_arithmetic#072 ok=True acc=19/38 tok=3871 steps=44 dur=109.907s
+[0631/1400] bbeh_multistep_arithmetic#039 ok=False acc=19/39 tok=7935 steps=528 dur=227.577s
+[0632/1400] bbeh_multistep_arithmetic#025 ok=False acc=19/40 tok=8782 steps=291 dur=256.86s
+[0633/1400] bbeh_dyck_languages#041 ok=False acc=35/196 tok=16148 steps=400 dur=481.18s
+[0634/1400] bbeh_multistep_arithmetic#003 ok=True acc=20/41 tok=10363 steps=503 dur=296.833s
+[0635/1400] bbeh_multistep_arithmetic#074 ok=False acc=20/42 tok=4102 steps=174 dur=118.92s
+[0636/1400] bbeh_multistep_arithmetic#070 ok=False acc=20/43 tok=4592 steps=147 dur=133.024s
+[0637/1400] bbeh_multistep_arithmetic#066 ok=True acc=21/44 tok=5363 steps=246 dur=155.295s
+[0638/1400] bbeh_multistep_arithmetic#068 ok=True acc=22/45 tok=5373 steps=284 dur=152.708s
+[0639/1400] bbeh_multistep_arithmetic#082 ok=False acc=22/46 tok=3642 steps=100 dur=105.49s
+[0640/1400] bbeh_multistep_arithmetic#033 ok=False acc=22/47 tok=9615 steps=311 dur=283.42s
+[0641/1400] bbeh_multistep_arithmetic#076 ok=False acc=22/48 tok=4997 steps=250 dur=140.657s
+[0642/1400] bbeh_multistep_arithmetic#011 ok=False acc=22/49 tok=11259 steps=523 dur=322.448s
+[0643/1400] bbeh_multistep_arithmetic#009 ok=False acc=22/50 tok=11175 steps=608 dur=330.922s
+[0644/1400] bbeh_multistep_arithmetic#051 ok=False acc=22/51 tok=8208 steps=370 dur=235.747s
+[0645/1400] bbeh_multistep_arithmetic#080 ok=True acc=23/52 tok=4649 steps=251 dur=130.655s
+[0646/1400] bbeh_multistep_arithmetic#063 ok=False acc=23/53 tok=6853 steps=267 dur=196.681s
+[0647/1400] bbeh_multistep_arithmetic#078 ok=True acc=24/54 tok=5185 steps=249 dur=150.394s
+[0648/1400] bbeh_multistep_arithmetic#035 ok=False acc=24/55 tok=10846 steps=516 dur=311.01s
+[0649/1400] bbeh_multistep_arithmetic#086 ok=False acc=24/56 tok=3563 steps=175 dur=103.539s
+[0650/1400] bbeh_multistep_arithmetic#084 ok=True acc=25/57 tok=4215 steps=218 dur=118.201s
+[0651/1400] bbeh_multistep_arithmetic#090 ok=True acc=26/58 tok=3700 steps=180 dur=107.331s
+[0652/1400] bbeh_multistep_arithmetic#005 ok=False acc=26/59 tok=12530 steps=578 dur=373.932s
+[0653/1400] bbeh_multistep_arithmetic#071 ok=False acc=26/60 tok=7827 steps=243 dur=224.616s
+[0654/1400] bbeh_multistep_arithmetic#096 ok=True acc=27/61 tok=4017 steps=179 dur=112.795s
+[0655/1400] bbeh_multistep_arithmetic#088 ok=False acc=27/62 tok=5519 steps=269 dur=154.782s
+[0656/1400] bbeh_multistep_arithmetic#102 ok=True acc=28/63 tok=3133 steps=114 dur=90.557s
+[0657/1400] bbeh_multistep_arithmetic#065 ok=False acc=28/64 tok=8384 steps=178 dur=257.633s
+[0658/1400] bbeh_multistep_arithmetic#059 ok=False acc=28/65 tok=9851 steps=500 dur=282.982s
+[0659/1400] bbeh_boolean_expressions#157 ok=False acc=79/198 tok=31048 steps=1719 dur=918.39s
+[0660/1400] bbeh_multistep_arithmetic#092 ok=False acc=28/66 tok=5072 steps=211 dur=142.249s
+[0661/1400] bbeh_multistep_arithmetic#104 ok=True acc=29/67 tok=3371 steps=216 dur=94.325s
+[0662/1400] bbeh_multistep_arithmetic#094 ok=True acc=30/68 tok=5197 steps=261 dur=149.926s
+[0663/1400] bbeh_multistep_arithmetic#098 ok=True acc=31/69 tok=5227 steps=200 dur=150.721s
+[0664/1400] bbeh_multistep_arithmetic#110 ok=True acc=32/70 tok=3675 steps=194 dur=105.637s
+[0665/1400] bbeh_multistep_arithmetic#045 ok=False acc=32/71 tok=12415 steps=543 dur=378.789s
+[0666/1400] bbeh_multistep_arithmetic#061 ok=False acc=32/72 tok=10826 steps=514 dur=337.028s
+[0667/1400] bbeh_multistep_arithmetic#100 ok=True acc=33/73 tok=5664 steps=289 dur=158.818s
+[0668/1400] bbeh_multistep_arithmetic#108 ok=True acc=34/74 tok=4668 steps=225 dur=130.955s
+[0669/1400] bbeh_boolean_expressions#180 ok=False acc=79/199 tok=31102 steps=1480 dur=903.961s
+[0670/1400] bbeh_multistep_arithmetic#007 ok=False acc=34/75 tok=16459 steps=633 dur=472.895s
+[0671/1400] bbeh_multistep_arithmetic#029 ok=False acc=34/76 tok=14703 steps=616 dur=448.25s
+[0672/1400] bbeh_multistep_arithmetic#112 ok=False acc=34/77 tok=4636 steps=105 dur=130.028s
+[0673/1400] bbeh_multistep_arithmetic#023 ok=False acc=34/78 tok=15943 steps=750 dur=458.23s
+[0674/1400] bbeh_multistep_arithmetic#114 ok=True acc=35/79 tok=4612 steps=239 dur=132.309s
+[0675/1400] bbeh_multistep_arithmetic#106 ok=True acc=36/80 tok=5766 steps=189 dur=165.855s
+[0676/1400] bbeh_boolean_expressions#196 ok=False acc=79/200 tok=31252 steps=19 dur=886.481s
+[0677/1400] bbeh_multistep_arithmetic#031 ok=False acc=36/81 tok=17036 steps=886 dur=490.137s
+[0678/1400] bbeh_multistep_arithmetic#120 ok=True acc=37/82 tok=4614 steps=232 dur=129.613s
+[0679/1400] bbeh_multistep_arithmetic#122 ok=False acc=37/83 tok=4536 steps=203 dur=130.356s
+[0680/1400] bbeh_multistep_arithmetic#083 ok=False acc=37/84 tok=10902 steps=328 dur=315.909s
+[0681/1400] bbeh_multistep_arithmetic#091 ok=False acc=37/85 tok=9856 steps=115 dur=285.926s
+[0682/1400] bbeh_multistep_arithmetic#067 ok=False acc=37/86 tok=13984 steps=747 dur=404.978s
+[0683/1400] bbeh_multistep_arithmetic#081 ok=False acc=37/87 tok=11043 steps=516 dur=350.92s
+[0684/1400] bbeh_multistep_arithmetic#126 ok=True acc=38/88 tok=4214 steps=100 dur=121.379s
+[0685/1400] bbeh_multistep_arithmetic#136 ok=True acc=39/89 tok=3336 steps=72 dur=94.087s
+[0686/1400] bbeh_multistep_arithmetic#124 ok=False acc=39/90 tok=5568 steps=145 dur=156.801s
+[0687/1400] bbeh_multistep_arithmetic#132 ok=False acc=39/91 tok=3785 steps=146 dur=106.677s
+[0688/1400] bbeh_multistep_arithmetic#134 ok=False acc=39/92 tok=3902 steps=134 dur=112.566s
+[0689/1400] bbeh_multistep_arithmetic#128 ok=True acc=40/93 tok=5209 steps=274 dur=147.101s
+[0690/1400] bbeh_multistep_arithmetic#138 ok=False acc=40/94 tok=3787 steps=90 dur=109.118s
+[0691/1400] bbeh_multistep_arithmetic#095 ok=False acc=40/95 tok=11394 steps=567 dur=335.103s
+[0692/1400] bbeh_multistep_arithmetic#130 ok=True acc=41/96 tok=5263 steps=247 dur=151.51s
+[0693/1400] bbeh_multistep_arithmetic#140 ok=False acc=41/97 tok=3737 steps=172 dur=106.232s
+[0694/1400] bbeh_multistep_arithmetic#116 ok=True acc=42/98 tok=8664 steps=485 dur=244.773s
+[0695/1400] bbeh_multistep_arithmetic#144 ok=True acc=43/99 tok=3208 steps=107 dur=91.664s
+[0696/1400] bbeh_multistep_arithmetic#075 ok=False acc=43/100 tok=15846 steps=886 dur=466.983s
+[0697/1400] bbeh_multistep_arithmetic#142 ok=True acc=44/101 tok=4063 steps=125 dur=116.933s
+[0698/1400] bbeh_multistep_arithmetic#127 ok=True acc=45/102 tok=7095 steps=353 dur=216.748s
+[0699/1400] bbeh_multistep_arithmetic#118 ok=True acc=46/103 tok=9287 steps=527 dur=267.001s
+[0700/1400] bbeh_multistep_arithmetic#150 ok=False acc=46/104 tok=3366 steps=107 dur=96.732s
+[0701/1400] bbeh_multistep_arithmetic#119 ok=False acc=46/105 tok=8838 steps=367 dur=268.577s
+[0702/1400] bbeh_multistep_arithmetic#123 ok=False acc=46/106 tok=8796 steps=383 dur=268.07s
+[0703/1400] bbeh_multistep_arithmetic#115 ok=False acc=46/107 tok=10764 steps=371 dur=326.038s
+[0704/1400] bbeh_dyck_languages#050 ok=False acc=35/197 tok=31332 steps=105 dur=905.336s
+[0705/1400] bbeh_multistep_arithmetic#148 ok=False acc=46/108 tok=5319 steps=209 dur=152.702s
+[0706/1400] bbeh_multistep_arithmetic#156 ok=True acc=47/109 tok=3644 steps=194 dur=104.828s
+[0707/1400] bbeh_multistep_arithmetic#152 ok=True acc=48/110 tok=4774 steps=85 dur=137.285s
+[0708/1400] bbeh_multistep_arithmetic#146 ok=False acc=48/111 tok=6229 steps=324 dur=180.194s
+[0709/1400] bbeh_multistep_arithmetic#160 ok=True acc=49/112 tok=3343 steps=71 dur=96.364s
+[0710/1400] bbeh_dyck_languages#074 ok=False acc=35/198 tok=31278 steps=83 dur=903.987s
+[0711/1400] bbeh_multistep_arithmetic#139 ok=True acc=50/113 tok=8092 steps=371 dur=255.891s
+[0712/1400] bbeh_multistep_arithmetic#111 ok=False acc=50/114 tok=13899 steps=684 dur=424.415s
+[0713/1400] bbeh_dyck_languages#149 ok=False acc=35/199 tok=27405 steps=24 dur=843.694s
+[0714/1400] bbeh_multistep_arithmetic#154 ok=True acc=51/115 tok=5541 steps=298 dur=160.437s
+[0715/1400] bbeh_multistep_arithmetic#166 ok=True acc=52/116 tok=3596 steps=78 dur=103.829s
+[0716/1400] bbeh_multistep_arithmetic#158 ok=True acc=53/117 tok=6032 steps=267 dur=174.801s
+[0717/1400] bbeh_multistep_arithmetic#135 ok=False acc=53/118 tok=10924 steps=577 dur=342.295s
+[0718/1400] bbeh_multistep_arithmetic#162 ok=True acc=54/119 tok=5375 steps=286 dur=155.966s
+[0719/1400] bbeh_multistep_arithmetic#168 ok=True acc=55/120 tok=3997 steps=139 dur=114.486s
+[0720/1400] bbeh_dyck_languages#168 ok=False acc=35/200 tok=31313 steps=15 dur=892.524s
+[0721/1400] bbeh_multistep_arithmetic#176 ok=False acc=55/121 tok=2656 steps=81 dur=75.811s
+[0722/1400] bbeh_multistep_arithmetic#164 ok=False acc=55/122 tok=7135 steps=313 dur=204.336s
+[0723/1400] bbeh_multistep_arithmetic#170 ok=True acc=56/123 tok=5410 steps=240 dur=156.657s
+[0724/1400] bbeh_multistep_arithmetic#172 ok=True acc=57/124 tok=5723 steps=287 dur=163.471s
+[0725/1400] bbeh_multistep_arithmetic#180 ok=True acc=58/125 tok=3481 steps=159 dur=99.454s
+[0726/1400] bbeh_multistep_arithmetic#182 ok=False acc=58/126 tok=3173 steps=127 dur=92.18s
+[0727/1400] bbeh_multistep_arithmetic#178 ok=False acc=58/127 tok=4997 steps=202 dur=145.594s
+[0728/1400] bbeh_multistep_arithmetic#184 ok=False acc=58/128 tok=3445 steps=87 dur=98.271s
+[0729/1400] bbeh_multistep_arithmetic#019 ok=False acc=58/129 tok=31713 steps=1212 dur=951.193s
+[0730/1400] bbeh_multistep_arithmetic#013 ok=False acc=58/130 tok=31718 steps=650 dur=986.394s
+[0731/1400] bbeh_multistep_arithmetic#017 ok=False acc=58/131 tok=31703 steps=1315 dur=988.126s
+[0732/1400] bbeh_multistep_arithmetic#186 ok=True acc=59/132 tok=4023 steps=105 dur=117.336s
+[0733/1400] bbeh_multistep_arithmetic#188 ok=False acc=59/133 tok=3180 steps=154 dur=90.203s
+[0734/1400] bbeh_multistep_arithmetic#021 ok=False acc=59/134 tok=31722 steps=1081 dur=990.696s
+[0735/1400] bbeh_multistep_arithmetic#043 ok=False acc=59/135 tok=31698 steps=826 dur=958.106s
+[0736/1400] bbeh_multistep_arithmetic#143 ok=False acc=59/136 tok=10449 steps=364 dur=490.128s
+[0737/1400] bbeh_multistep_arithmetic#037 ok=False acc=59/137 tok=31635 steps=1155 dur=991.969s
+[0738/1400] bbeh_multistep_arithmetic#047 ok=False acc=59/138 tok=31708 steps=747 dur=961.671s
+[0739/1400] bbeh_multistep_arithmetic#192 ok=False acc=59/139 tok=3244 steps=128 dur=91.759s
+[0740/1400] bbeh_multistep_arithmetic#101 ok=False acc=59/140 tok=9512 steps=321 dur=760.359s
+[0741/1400] bbeh_multistep_arithmetic#055 ok=False acc=59/141 tok=31741 steps=1232 dur=965.924s
+[0742/1400] bbeh_multistep_arithmetic#049 ok=False acc=59/142 tok=31753 steps=1294 dur=1002.433s
+[0743/1400] bbeh_multistep_arithmetic#097 ok=False acc=59/143 tok=11988 steps=596 dur=807.336s
+[0744/1400] bbeh_time_arithmetic#002 ok=True acc=1/1 tok=1357 steps=37 dur=39.998s
+[0745/1400] bbeh_multistep_arithmetic#194 ok=True acc=60/144 tok=3347 steps=113 dur=98.35s
+[0746/1400] bbeh_multistep_arithmetic#053 ok=False acc=60/145 tok=31705 steps=768 dur=1004.682s
+[0747/1400] bbeh_multistep_arithmetic#196 ok=True acc=61/146 tok=3561 steps=95 dur=101.07s
+[0748/1400] bbeh_multistep_arithmetic#190 ok=True acc=62/147 tok=5681 steps=264 dur=166.592s
+[0749/1400] bbeh_multistep_arithmetic#198 ok=False acc=62/148 tok=3315 steps=85 dur=97.373s
+[0750/1400] bbeh_multistep_arithmetic#151 ok=False acc=62/149 tok=9107 steps=407 dur=533.493s
+[0751/1400] bbeh_time_arithmetic#006 ok=True acc=2/2 tok=975 steps=16 dur=28.808s
+[0752/1400] bbeh_time_arithmetic#004 ok=True acc=3/3 tok=1835 steps=46 dur=52.28s
+[0753/1400] bbeh_multistep_arithmetic#057 ok=False acc=62/150 tok=31689 steps=947 dur=1008.218s
+[0754/1400] bbeh_time_arithmetic#008 ok=True acc=4/4 tok=1104 steps=18 dur=31.375s
+[0755/1400] bbeh_multistep_arithmetic#147 ok=False acc=62/151 tok=12050 steps=729 dur=572.24s
+[0756/1400] bbeh_multistep_arithmetic#093 ok=False acc=62/152 tok=14776 steps=547 dur=867.288s
+[0757/1400] bbeh_time_arithmetic#012 ok=True acc=5/5 tok=1199 steps=34 dur=34.053s
+[0758/1400] bbeh_time_arithmetic#010 ok=True acc=6/6 tok=1701 steps=44 dur=50.283s
+[0759/1400] bbeh_multistep_arithmetic#079 ok=False acc=62/153 tok=31783 steps=547 dur=973.585s
+[0760/1400] bbeh_multistep_arithmetic#069 ok=False acc=62/154 tok=31720 steps=19 dur=1015.698s
+[0761/1400] bbeh_time_arithmetic#000 ok=True acc=7/7 tok=4977 steps=82 dur=141.367s
+[0762/1400] bbeh_multistep_arithmetic#073 ok=False acc=62/155 tok=31733 steps=734 dur=1018.052s
+[0763/1400] bbeh_time_arithmetic#009 ok=True acc=8/8 tok=833 steps=20 dur=85.315s
+[0764/1400] bbeh_multistep_arithmetic#163 ok=False acc=62/156 tok=7001 steps=213 dur=531.991s
+[0765/1400] bbeh_multistep_arithmetic#155 ok=False acc=62/157 tok=9327 steps=421 dur=585.648s
+[0766/1400] bbeh_time_arithmetic#021 ok=True acc=9/9 tok=1078 steps=7 dur=49.874s
+[0767/1400] bbeh_time_arithmetic#001 ok=True acc=10/10 tok=1547 steps=32 dur=168.138s
+[0768/1400] bbeh_time_arithmetic#003 ok=True acc=11/11 tok=1301 steps=37 dur=142.186s
+[0769/1400] bbeh_multistep_arithmetic#087 ok=False acc=62/158 tok=31648 steps=335 dur=974.878s
+[0770/1400] bbeh_time_arithmetic#019 ok=False acc=11/12 tok=766 steps=13 dur=80.355s
+[0771/1400] bbeh_time_arithmetic#024 ok=True acc=12/13 tok=1724 steps=50 dur=49.258s
+[0772/1400] bbeh_time_arithmetic#020 ok=False acc=12/14 tok=2625 steps=91 dur=74.896s
+[0773/1400] bbeh_multistep_arithmetic#105 ok=False acc=62/159 tok=12271 steps=634 dur=906.605s
+[0774/1400] bbeh_time_arithmetic#015 ok=False acc=12/15 tok=1459 steps=21 dur=108.124s
+[0775/1400] bbeh_time_arithmetic#022 ok=False acc=12/16 tok=2241 steps=51 dur=65.801s
+[0776/1400] bbeh_time_arithmetic#018 ok=False acc=12/17 tok=3575 steps=55 dur=105.214s
+[0777/1400] bbeh_time_arithmetic#027 ok=True acc=13/18 tok=1238 steps=23 dur=36.676s
+[0778/1400] bbeh_multistep_arithmetic#113 ok=False acc=62/160 tok=8488 steps=326 dur=890.215s
+[0779/1400] bbeh_time_arithmetic#025 ok=True acc=14/19 tok=1788 steps=31 dur=62.916s
+[0780/1400] bbeh_time_arithmetic#031 ok=True acc=15/20 tok=1359 steps=23 dur=40.262s
+[0781/1400] bbeh_multistep_arithmetic#077 ok=False acc=62/161 tok=31651 steps=190 dur=1068.647s
+[0782/1400] bbeh_time_arithmetic#005 ok=False acc=15/21 tok=2855 steps=75 dur=167.471s
+[0783/1400] bbeh_time_arithmetic#016 ok=True acc=16/22 tok=4429 steps=87 dur=126.388s
+[0784/1400] bbeh_time_arithmetic#029 ok=False acc=16/23 tok=1021 steps=23 dur=55.379s
+[0785/1400] bbeh_multistep_arithmetic#099 ok=False acc=62/162 tok=31702 steps=779 dur=978.171s
+[0786/1400] bbeh_time_arithmetic#028 ok=True acc=17/24 tok=2518 steps=116 dur=71.685s
+[0787/1400] bbeh_time_arithmetic#023 ok=False acc=17/25 tok=2709 steps=76 dur=106.648s
+[0788/1400] bbeh_time_arithmetic#011 ok=True acc=18/26 tok=3191 steps=55 dur=173.731s
+[0789/1400] bbeh_time_arithmetic#043 ok=False acc=18/27 tok=1192 steps=28 dur=35.957s
+[0790/1400] bbeh_time_arithmetic#017 ok=False acc=18/28 tok=3720 steps=132 dur=155.731s
+[0791/1400] bbeh_time_arithmetic#034 ok=True acc=19/29 tok=2350 steps=48 dur=67.876s
+[0792/1400] bbeh_multistep_arithmetic#103 ok=False acc=62/163 tok=31663 steps=1067 dur=978.225s
+[0793/1400] bbeh_time_arithmetic#047 ok=True acc=20/30 tok=1164 steps=29 dur=34.911s
+[0794/1400] bbeh_multistep_arithmetic#167 ok=False acc=62/164 tok=7839 steps=323 dur=583.133s
+[0795/1400] bbeh_time_arithmetic#046 ok=True acc=21/31 tok=1811 steps=56 dur=51.997s
+[0796/1400] bbeh_time_arithmetic#052 ok=True acc=22/32 tok=781 steps=8 dur=22.011s
+[0797/1400] bbeh_time_arithmetic#032 ok=True acc=23/33 tok=3282 steps=108 dur=93.009s
+[0798/1400] bbeh_multistep_arithmetic#107 ok=False acc=62/165 tok=31700 steps=1093 dur=979.105s
+[0799/1400] bbeh_multistep_arithmetic#159 ok=False acc=62/166 tok=11711 steps=604 dur=665.596s
+[0800/1400] bbeh_multistep_arithmetic#121 ok=False acc=62/167 tok=8784 steps=447 dur=905.977s
+[0801/1400] bbeh_time_arithmetic#050 ok=False acc=23/34 tok=1311 steps=21 dur=37.703s
+[0802/1400] bbeh_time_arithmetic#035 ok=False acc=23/35 tok=3303 steps=120 dur=97.263s
+[0803/1400] bbeh_time_arithmetic#054 ok=True acc=24/36 tok=1124 steps=16 dur=32.364s
+[0804/1400] bbeh_time_arithmetic#055 ok=True acc=25/37 tok=1144 steps=20 dur=32.529s
+[0805/1400] bbeh_time_arithmetic#048 ok=False acc=25/38 tok=2305 steps=43 dur=64.911s
+[0806/1400] bbeh_time_arithmetic#030 ok=False acc=25/39 tok=4414 steps=46 dur=127.363s
+[0807/1400] bbeh_time_arithmetic#007 ok=True acc=26/40 tok=5218 steps=205 dur=240.039s
+[0808/1400] bbeh_time_arithmetic#013 ok=False acc=26/41 tok=5489 steps=176 dur=222.443s
+[0809/1400] bbeh_time_arithmetic#051 ok=False acc=26/42 tok=2093 steps=36 dur=60.0s
+[0810/1400] bbeh_time_arithmetic#059 ok=True acc=27/43 tok=1474 steps=37 dur=41.872s
+[0811/1400] bbeh_multistep_arithmetic#187 ok=False acc=62/168 tok=7041 steps=142 dur=439.726s
+[0812/1400] bbeh_time_arithmetic#056 ok=False acc=27/44 tok=2076 steps=52 dur=58.316s
+[0813/1400] bbeh_multistep_arithmetic#161 ok=False acc=62/169 tok=7431 steps=86 dur=696.489s
+[0814/1400] bbeh_time_arithmetic#040 ok=True acc=28/45 tok=4302 steps=68 dur=120.861s
+[0815/1400] bbeh_time_arithmetic#036 ok=False acc=28/46 tok=4666 steps=87 dur=131.417s
+[0816/1400] bbeh_time_arithmetic#071 ok=True acc=29/47 tok=1253 steps=22 dur=36.038s
+[0817/1400] bbeh_multistep_arithmetic#117 ok=False acc=62/170 tok=11117 steps=571 dur=986.815s
+[0818/1400] bbeh_multistep_arithmetic#179 ok=False acc=62/171 tok=9241 steps=408 dur=573.18s
+[0819/1400] bbeh_time_arithmetic#068 ok=True acc=30/48 tok=2021 steps=44 dur=56.657s
+[0820/1400] bbeh_time_arithmetic#062 ok=True acc=31/49 tok=2765 steps=99 dur=79.655s
+[0821/1400] bbeh_time_arithmetic#067 ok=False acc=31/50 tok=2384 steps=32 dur=68.232s
+[0822/1400] bbeh_multistep_arithmetic#171 ok=False acc=62/172 tok=10484 steps=398 dur=656.522s
+[0823/1400] bbeh_time_arithmetic#063 ok=True acc=32/51 tok=3243 steps=102 dur=92.456s
+[0824/1400] bbeh_multistep_arithmetic#149 ok=False acc=62/173 tok=9289 steps=408 dur=835.207s
+[0825/1400] bbeh_time_arithmetic#026 ok=False acc=32/52 tok=7766 steps=157 dur=224.572s
+[0826/1400] bbeh_time_arithmetic#076 ok=True acc=33/53 tok=2065 steps=57 dur=57.853s
+[0827/1400] bbeh_time_arithmetic#080 ok=True acc=34/54 tok=1501 steps=33 dur=42.069s
+[0828/1400] bbeh_time_arithmetic#064 ok=False acc=34/55 tok=3669 steps=84 dur=102.775s
+[0829/1400] bbeh_multistep_arithmetic#193 ok=False acc=62/174 tok=8337 steps=409 dur=437.236s
+[0830/1400] bbeh_time_arithmetic#083 ok=True acc=35/56 tok=1325 steps=29 dur=38.037s
+[0831/1400] bbeh_time_arithmetic#087 ok=False acc=35/57 tok=881 steps=15 dur=25.522s
+[0832/1400] bbeh_time_arithmetic#072 ok=False acc=35/58 tok=3220 steps=95 dur=90.156s
+[0833/1400] bbeh_time_arithmetic#075 ok=False acc=35/59 tok=3149 steps=152 dur=90.617s
+[0834/1400] bbeh_multistep_arithmetic#173 ok=False acc=62/175 tok=9831 steps=466 dur=693.927s
+[0835/1400] bbeh_time_arithmetic#088 ok=False acc=35/60 tok=1223 steps=26 dur=34.492s
+[0836/1400] bbeh_multistep_arithmetic#189 ok=False acc=62/176 tok=9239 steps=247 dur=522.766s
+[0837/1400] bbeh_time_arithmetic#042 ok=False acc=35/61 tok=7248 steps=260 dur=208.973s
+[0838/1400] bbeh_time_arithmetic#070 ok=False acc=35/62 tok=4045 steps=130 dur=117.081s
+[0839/1400] bbeh_multistep_arithmetic#175 ok=False acc=62/177 tok=12236 steps=382 dur=687.258s
+[0840/1400] bbeh_time_arithmetic#094 ok=True acc=36/63 tok=862 steps=11 dur=24.991s
+[0841/1400] bbeh_time_arithmetic#078 ok=True acc=37/64 tok=3344 steps=132 dur=96.748s
+[0842/1400] bbeh_multistep_arithmetic#185 ok=True acc=63/178 tok=9643 steps=319 dur=583.761s
+[0843/1400] bbeh_time_arithmetic#044 ok=True acc=38/65 tok=7570 steps=271 dur=212.499s
+[0844/1400] bbeh_multistep_arithmetic#177 ok=False acc=63/179 tok=10161 steps=541 dur=694.959s
+[0845/1400] bbeh_multistep_arithmetic#157 ok=False acc=63/180 tok=11016 steps=160 dur=838.388s
+[0846/1400] bbeh_time_arithmetic#038 ok=True acc=39/66 tok=8205 steps=199 dur=236.527s
+[0847/1400] bbeh_time_arithmetic#074 ok=False acc=39/67 tok=4228 steps=104 dur=122.1s
+[0848/1400] bbeh_multistep_arithmetic#125 ok=False acc=63/181 tok=13737 steps=607 dur=1052.529s
+[0849/1400] bbeh_time_arithmetic#095 ok=False acc=39/68 tok=1640 steps=26 dur=48.242s
+[0850/1400] bbeh_time_arithmetic#091 ok=True acc=40/69 tok=2154 steps=38 dur=63.208s
+[0851/1400] bbeh_multistep_arithmetic#131 ok=False acc=63/182 tok=31745 steps=382 dur=1022.142s
+[0852/1400] bbeh_multistep_arithmetic#141 ok=False acc=63/183 tok=11732 steps=500 dur=950.767s
+[0853/1400] bbeh_multistep_arithmetic#169 ok=False acc=63/184 tok=11232 steps=713 dur=760.578s
+[0854/1400] bbeh_time_arithmetic#098 ok=False acc=40/70 tok=1455 steps=17 dur=41.505s
+[0855/1400] bbeh_time_arithmetic#058 ok=True acc=41/71 tok=6545 steps=302 dur=188.355s
+[0856/1400] bbeh_time_arithmetic#108 ok=True acc=42/72 tok=1111 steps=17 dur=31.364s
+[0857/1400] bbeh_time_arithmetic#066 ok=False acc=42/73 tok=6062 steps=159 dur=174.58s
+[0858/1400] bbeh_time_arithmetic#106 ok=False acc=42/74 tok=1272 steps=27 dur=36.39s
+[0859/1400] bbeh_time_arithmetic#102 ok=True acc=43/75 tok=1637 steps=33 dur=46.73s
+[0860/1400] bbeh_time_arithmetic#096 ok=True acc=44/76 tok=2054 steps=40 dur=57.978s
+[0861/1400] bbeh_time_arithmetic#100 ok=True acc=45/77 tok=2221 steps=39 dur=62.728s
+[0862/1400] bbeh_time_arithmetic#037 ok=False acc=45/78 tok=3271 steps=110 dur=282.833s
+[0863/1400] bbeh_time_arithmetic#041 ok=True acc=46/79 tok=2659 steps=82 dur=273.96s
+[0864/1400] bbeh_time_arithmetic#084 ok=True acc=47/80 tok=4337 steps=96 dur=122.128s
+[0865/1400] bbeh_time_arithmetic#039 ok=False acc=47/81 tok=9822 steps=247 dur=285.004s
+[0866/1400] bbeh_time_arithmetic#060 ok=True acc=48/82 tok=7586 steps=150 dur=213.22s
+[0867/1400] bbeh_time_arithmetic#115 ok=False acc=48/83 tok=1279 steps=37 dur=36.704s
+[0868/1400] bbeh_time_arithmetic#033 ok=True acc=49/84 tok=4264 steps=106 dur=308.569s
+[0869/1400] bbeh_time_arithmetic#118 ok=True acc=50/85 tok=1114 steps=15 dur=32.316s
+[0870/1400] bbeh_time_arithmetic#090 ok=True acc=51/86 tok=3811 steps=72 dur=109.775s
+[0871/1400] bbeh_time_arithmetic#107 ok=False acc=51/87 tok=2218 steps=55 dur=64.306s
+[0872/1400] bbeh_time_arithmetic#111 ok=True acc=52/88 tok=2024 steps=60 dur=58.376s
+[0873/1400] bbeh_time_arithmetic#099 ok=False acc=52/89 tok=3083 steps=73 dur=89.362s
+[0874/1400] bbeh_multistep_arithmetic#181 ok=False acc=63/185 tok=12172 steps=281 dur=721.185s
+[0875/1400] bbeh_time_arithmetic#119 ok=False acc=52/90 tok=1595 steps=32 dur=45.81s
+[0876/1400] bbeh_time_arithmetic#092 ok=False acc=52/91 tok=4210 steps=100 dur=118.782s
+[0877/1400] bbeh_time_arithmetic#120 ok=False acc=52/92 tok=1944 steps=42 dur=54.719s
+[0878/1400] bbeh_time_arithmetic#127 ok=True acc=53/93 tok=1343 steps=18 dur=38.577s
+[0879/1400] bbeh_time_arithmetic#082 ok=True acc=54/94 tok=5918 steps=291 dur=170.339s
+[0880/1400] bbeh_time_arithmetic#116 ok=False acc=54/95 tok=2558 steps=62 dur=72.097s
+[0881/1400] bbeh_multistep_arithmetic#145 ok=False acc=63/186 tok=14004 steps=618 dur=1003.346s
+[0882/1400] bbeh_time_arithmetic#123 ok=False acc=54/96 tok=2104 steps=57 dur=60.567s
+[0883/1400] bbeh_time_arithmetic#135 ok=True acc=55/97 tok=1353 steps=25 dur=39.128s
+[0884/1400] bbeh_time_arithmetic#114 ok=False acc=55/98 tok=3314 steps=24 dur=95.341s
+[0885/1400] bbeh_multistep_arithmetic#085 ok=False acc=63/187 tok=31709 steps=473 dur=1343.272s
+[0886/1400] bbeh_time_arithmetic#136 ok=True acc=56/99 tok=1523 steps=51 dur=42.384s
+[0887/1400] bbeh_time_arithmetic#132 ok=True acc=57/100 tok=2208 steps=56 dur=61.678s
+[0888/1400] bbeh_time_arithmetic#086 ok=True acc=58/101 tok=6471 steps=187 dur=186.211s
+[0889/1400] bbeh_time_arithmetic#128 ok=False acc=58/102 tok=2727 steps=74 dur=76.444s
+[0890/1400] bbeh_time_arithmetic#139 ok=True acc=59/103 tok=1788 steps=39 dur=52.402s
+[0891/1400] bbeh_time_arithmetic#143 ok=True acc=60/104 tok=1399 steps=21 dur=41.223s
+[0892/1400] bbeh_time_arithmetic#142 ok=True acc=61/105 tok=1502 steps=24 dur=43.292s
+[0893/1400] bbeh_time_arithmetic#130 ok=True acc=62/106 tok=3016 steps=142 dur=86.781s
+[0894/1400] bbeh_time_arithmetic#124 ok=True acc=63/107 tok=3501 steps=70 dur=98.242s
+[0895/1400] bbeh_time_arithmetic#045 ok=True acc=64/108 tok=4009 steps=136 dur=361.654s
+[0896/1400] bbeh_time_arithmetic#140 ok=True acc=65/109 tok=2279 steps=52 dur=64.09s
+[0897/1400] bbeh_time_arithmetic#148 ok=False acc=65/110 tok=1476 steps=21 dur=41.859s
+[0898/1400] bbeh_time_arithmetic#144 ok=True acc=66/111 tok=2303 steps=42 dur=64.848s
+[0899/1400] bbeh_time_arithmetic#104 ok=False acc=66/112 tok=5962 steps=130 dur=167.716s
+[0900/1400] bbeh_multistep_arithmetic#089 ok=False acc=63/188 tok=31654 steps=473 dur=1378.819s
+[0901/1400] bbeh_time_arithmetic#079 ok=False acc=66/113 tok=8679 steps=348 dur=252.642s
+[0902/1400] bbeh_time_arithmetic#152 ok=False acc=66/114 tok=1266 steps=37 dur=36.0s
+[0903/1400] bbeh_time_arithmetic#085 ok=True acc=67/115 tok=794 steps=18 dur=239.921s
+[0904/1400] bbeh_time_arithmetic#131 ok=False acc=67/116 tok=3784 steps=120 dur=111.406s
+[0905/1400] bbeh_time_arithmetic#156 ok=True acc=68/117 tok=1069 steps=24 dur=30.546s
+[0906/1400] bbeh_time_arithmetic#134 ok=False acc=68/118 tok=3915 steps=149 dur=112.824s
+[0907/1400] bbeh_time_arithmetic#154 ok=True acc=69/119 tok=1636 steps=51 dur=47.412s
+[0908/1400] bbeh_multistep_arithmetic#197 ok=False acc=63/189 tok=14686 steps=694 dur=646.638s
+[0909/1400] bbeh_time_arithmetic#163 ok=True acc=70/120 tok=904 steps=12 dur=27.49s
+[0910/1400] bbeh_time_arithmetic#073 ok=True acc=71/121 tok=1612 steps=36 dur=306.781s
+[0911/1400] bbeh_time_arithmetic#159 ok=True acc=72/122 tok=1448 steps=21 dur=44.084s
+[0912/1400] bbeh_time_arithmetic#069 ok=False acc=72/123 tok=2073 steps=42 dur=330.581s
+[0913/1400] bbeh_time_arithmetic#167 ok=True acc=73/124 tok=957 steps=22 dur=29.251s
+[0914/1400] bbeh_time_arithmetic#049 ok=False acc=73/125 tok=4009 steps=116 dur=398.359s
+[0915/1400] bbeh_time_arithmetic#061 ok=True acc=74/126 tok=2800 steps=82 dur=360.02s
+[0916/1400] bbeh_time_arithmetic#162 ok=True acc=75/127 tok=1590 steps=26 dur=46.075s
+[0917/1400] bbeh_time_arithmetic#110 ok=True acc=76/128 tok=6843 steps=184 dur=197.204s
+[0918/1400] bbeh_time_arithmetic#053 ok=True acc=77/129 tok=3587 steps=139 dur=390.398s
+[0919/1400] bbeh_time_arithmetic#077 ok=False acc=77/130 tok=2191 steps=79 dur=319.844s
+[0920/1400] bbeh_time_arithmetic#103 ok=False acc=77/131 tok=7487 steps=163 dur=221.072s
+[0921/1400] bbeh_time_arithmetic#151 ok=False acc=77/132 tok=2980 steps=66 dur=90.663s
+[0922/1400] bbeh_time_arithmetic#170 ok=True acc=78/133 tok=1358 steps=41 dur=39.287s
+[0923/1400] bbeh_time_arithmetic#065 ok=True acc=79/134 tok=3085 steps=75 dur=365.438s
+[0924/1400] bbeh_time_arithmetic#147 ok=True acc=80/135 tok=3604 steps=100 dur=109.358s
+[0925/1400] bbeh_multistep_arithmetic#174 ok=False acc=63/190 tok=31837 steps=984 dur=924.275s
+[0926/1400] bbeh_time_arithmetic#122 ok=True acc=81/136 tok=6710 steps=302 dur=193.606s
+[0927/1400] bbeh_time_arithmetic#146 ok=False acc=81/137 tok=4192 steps=104 dur=121.18s
+[0928/1400] bbeh_time_arithmetic#155 ok=False acc=81/138 tok=3128 steps=35 dur=95.468s
+[0929/1400] bbeh_time_arithmetic#166 ok=False acc=81/139 tok=2283 steps=74 dur=65.992s
+[0930/1400] bbeh_time_arithmetic#183 ok=False acc=81/140 tok=839 steps=15 dur=25.754s
+[0931/1400] bbeh_time_arithmetic#172 ok=True acc=82/141 tok=1788 steps=41 dur=51.323s
+[0932/1400] bbeh_time_arithmetic#178 ok=False acc=82/142 tok=1185 steps=33 dur=34.21s
+[0933/1400] bbeh_time_arithmetic#150 ok=True acc=83/143 tok=4161 steps=117 dur=120.322s
+[0934/1400] bbeh_time_arithmetic#057 ok=False acc=83/144 tok=4323 steps=176 dur=411.729s
+[0935/1400] bbeh_time_arithmetic#175 ok=True acc=84/145 tok=1535 steps=29 dur=47.367s
+[0936/1400] bbeh_time_arithmetic#168 ok=True acc=85/146 tok=2846 steps=88 dur=81.519s
+[0937/1400] bbeh_time_arithmetic#188 ok=False acc=85/147 tok=1218 steps=20 dur=34.462s
+[0938/1400] bbeh_time_arithmetic#138 ok=True acc=86/148 tok=6437 steps=240 dur=185.87s
+[0939/1400] bbeh_time_arithmetic#186 ok=True acc=87/149 tok=1514 steps=36 dur=43.856s
+[0940/1400] bbeh_time_arithmetic#176 ok=False acc=87/150 tok=2394 steps=63 dur=67.674s
+[0941/1400] bbeh_time_arithmetic#184 ok=True acc=88/151 tok=1912 steps=39 dur=53.848s
+[0942/1400] bbeh_time_arithmetic#192 ok=True acc=89/152 tok=1293 steps=19 dur=36.451s
+[0943/1400] bbeh_time_arithmetic#158 ok=True acc=90/153 tok=4245 steps=144 dur=122.75s
+[0944/1400] bbeh_time_arithmetic#194 ok=True acc=91/154 tok=1187 steps=20 dur=34.463s
+[0945/1400] bbeh_time_arithmetic#112 ok=True acc=92/155 tok=9184 steps=471 dur=259.934s
+[0946/1400] bbeh_time_arithmetic#190 ok=True acc=93/156 tok=1528 steps=13 dur=44.351s
+[0947/1400] bbeh_time_arithmetic#174 ok=False acc=93/157 tok=2999 steps=44 dur=86.818s
+[0948/1400] bbeh_time_arithmetic#160 ok=False acc=93/158 tok=4518 steps=85 dur=128.746s
+[0949/1400] bbeh_time_arithmetic#126 ok=True acc=94/159 tok=8260 steps=242 dur=238.723s
+[0950/1400] bbeh_time_arithmetic#182 ok=False acc=94/160 tok=2781 steps=74 dur=80.681s
+[0951/1400] bbeh_time_arithmetic#191 ok=True acc=95/161 tok=2046 steps=46 dur=62.354s
+[0952/1400] bbeh_time_arithmetic#196 ok=False acc=95/162 tok=2178 steps=71 dur=61.4s
+[0953/1400] bbeh_web_of_lies#000 ok=True acc=1/1 tok=1728 steps=36 dur=48.9s
+[0954/1400] bbeh_time_arithmetic#180 ok=False acc=95/163 tok=3629 steps=101 dur=102.59s
+[0955/1400] bbeh_time_arithmetic#164 ok=True acc=96/164 tok=5668 steps=333 dur=161.503s
+[0956/1400] bbeh_time_arithmetic#171 ok=True acc=97/165 tok=4707 steps=88 dur=145.545s
+[0957/1400] bbeh_web_of_lies#006 ok=True acc=2/2 tok=2893 steps=49 dur=84.421s
+[0958/1400] bbeh_web_of_lies#007 ok=True acc=3/3 tok=1842 steps=60 dur=91.681s
+[0959/1400] bbeh_web_of_lies#018 ok=True acc=4/4 tok=1938 steps=44 dur=56.06s
+[0960/1400] bbeh_web_of_lies#016 ok=False acc=4/5 tok=2689 steps=67 dur=76.969s
+[0961/1400] bbeh_time_arithmetic#198 ok=False acc=97/166 tok=4756 steps=86 dur=138.183s
+[0962/1400] bbeh_time_arithmetic#187 ok=True acc=98/167 tok=5291 steps=117 dur=164.849s
+[0963/1400] bbeh_web_of_lies#019 ok=True acc=5/6 tok=1714 steps=40 dur=67.405s
+[0964/1400] bbeh_web_of_lies#020 ok=True acc=6/7 tok=2496 steps=92 dur=71.103s
+[0965/1400] bbeh_web_of_lies#010 ok=True acc=7/8 tok=5407 steps=83 dur=158.021s
+[0966/1400] bbeh_time_arithmetic#199 ok=False acc=98/168 tok=5229 steps=151 dur=189.334s
+[0967/1400] bbeh_web_of_lies#022 ok=True acc=8/9 tok=2964 steps=80 dur=87.185s
+[0968/1400] bbeh_time_arithmetic#195 ok=False acc=98/169 tok=7183 steps=225 dur=228.523s
+[0969/1400] bbeh_multistep_arithmetic#109 ok=False acc=63/191 tok=31706 steps=988 dur=1603.016s
+[0970/1400] bbeh_time_arithmetic#179 ok=True acc=99/170 tok=11012 steps=311 dur=343.609s
+[0971/1400] bbeh_time_arithmetic#014 ok=False acc=99/171 tok=31880 steps=2464 dur=925.943s
+[0972/1400] bbeh_multistep_arithmetic#129 ok=False acc=63/192 tok=31743 steps=816 dur=1612.217s
+[0973/1400] bbeh_multistep_arithmetic#133 ok=False acc=63/193 tok=31708 steps=682 dur=1621.251s
+[0974/1400] bbeh_time_arithmetic#101 ok=True acc=100/172 tok=1258 steps=31 dur=638.994s
+[0975/1400] bbeh_time_arithmetic#121 ok=True acc=101/173 tok=780 steps=14 dur=595.8s
+[0976/1400] bbeh_multistep_arithmetic#183 ok=False acc=63/194 tok=31739 steps=939 dur=1260.739s
+[0977/1400] bbeh_time_arithmetic#113 ok=False acc=101/174 tok=1162 steps=29 dur=621.076s
+[0978/1400] bbeh_web_of_lies#023 ok=True acc=9/10 tok=1206 steps=29 dur=254.064s
+[0979/1400] bbeh_multistep_arithmetic#191 ok=False acc=63/195 tok=31684 steps=37 dur=1167.035s
+[0980/1400] bbeh_time_arithmetic#109 ok=False acc=101/175 tok=1474 steps=38 dur=641.058s
+[0981/1400] bbeh_time_arithmetic#081 ok=True acc=102/176 tok=3598 steps=127 dur=731.457s
+[0982/1400] bbeh_multistep_arithmetic#195 ok=False acc=63/196 tok=31706 steps=1253 dur=1113.802s
+[0983/1400] bbeh_time_arithmetic#125 ok=True acc=103/177 tok=1399 steps=45 dur=603.403s
+[0984/1400] bbeh_multistep_arithmetic#137 ok=False acc=63/197 tok=31710 steps=779 dur=1632.748s
+[0985/1400] bbeh_web_of_lies#008 ok=False acc=9/11 tok=13408 steps=276 dur=381.708s
+[0986/1400] bbeh_multistep_arithmetic#199 ok=False acc=63/198 tok=31697 steps=894 dur=1092.949s
+[0987/1400] bbeh_time_arithmetic#193 ok=True acc=104/178 tok=1058 steps=26 dur=421.485s
+[0988/1400] bbeh_time_arithmetic#169 ok=False acc=104/179 tok=1231 steps=22 dur=486.682s
+[0989/1400] bbeh_time_arithmetic#105 ok=True acc=105/180 tok=2205 steps=74 dur=669.405s
+[0990/1400] bbeh_time_arithmetic#181 ok=True acc=106/181 tok=1231 steps=42 dur=454.915s
+[0991/1400] bbeh_time_arithmetic#141 ok=False acc=106/182 tok=1563 steps=34 dur=575.773s
+[0992/1400] bbeh_multistep_arithmetic#153 ok=False acc=63/199 tok=31656 steps=1074 dur=1529.313s
+[0993/1400] bbeh_time_arithmetic#133 ok=False acc=106/183 tok=1776 steps=25 dur=607.302s
+[0994/1400] bbeh_time_arithmetic#197 ok=True acc=107/184 tok=1435 steps=46 dur=426.551s
+[0995/1400] bbeh_web_of_lies#034 ok=True acc=10/12 tok=3100 steps=80 dur=91.166s
+[0996/1400] bbeh_time_arithmetic#161 ok=True acc=108/185 tok=1536 steps=23 dur=513.959s
+[0997/1400] bbeh_time_arithmetic#137 ok=False acc=108/186 tok=1929 steps=59 dur=599.516s
+[0998/1400] bbeh_multistep_arithmetic#165 ok=False acc=63/200 tok=31669 steps=974 dur=1467.371s
+[0999/1400] bbeh_time_arithmetic#177 ok=True acc=109/187 tok=1782 steps=35 dur=477.566s
+[1000/1400] bbeh_time_arithmetic#089 ok=False acc=109/188 tok=3786 steps=69 dur=735.231s
+[1001/1400] bbeh_web_of_lies#012 ok=False acc=10/13 tok=13921 steps=575 dur=396.213s
+[1002/1400] bbeh_time_arithmetic#145 ok=False acc=109/189 tok=2198 steps=91 dur=587.283s
+[1003/1400] bbeh_time_arithmetic#149 ok=False acc=109/190 tok=2232 steps=44 dur=572.085s
+[1004/1400] bbeh_time_arithmetic#153 ok=False acc=109/191 tok=2341 steps=44 dur=563.754s
+[1005/1400] bbeh_web_of_lies#017 ok=True acc=11/14 tok=2108 steps=43 dur=388.931s
+[1006/1400] bbeh_time_arithmetic#173 ok=True acc=110/192 tok=2558 steps=70 dur=516.272s
+[1007/1400] bbeh_web_of_lies#050 ok=True acc=12/15 tok=2025 steps=47 dur=58.628s
+[1008/1400] bbeh_time_arithmetic#165 ok=True acc=111/193 tok=3021 steps=81 dur=552.719s
+[1009/1400] bbeh_web_of_lies#026 ok=False acc=12/16 tok=11428 steps=447 dur=335.015s
+[1010/1400] bbeh_time_arithmetic#097 ok=False acc=111/194 tok=5066 steps=122 dur=762.399s
+[1011/1400] bbeh_web_of_lies#051 ok=True acc=13/17 tok=2857 steps=93 dur=82.164s
+[1012/1400] bbeh_web_of_lies#024 ok=False acc=13/18 tok=13116 steps=286 dur=371.575s
+[1013/1400] bbeh_web_of_lies#062 ok=True acc=14/19 tok=2952 steps=104 dur=84.888s
+[1014/1400] bbeh_web_of_lies#070 ok=True acc=15/20 tok=1729 steps=30 dur=49.623s
+[1015/1400] bbeh_time_arithmetic#185 ok=False acc=111/195 tok=4537 steps=137 dur=546.941s
+[1016/1400] bbeh_time_arithmetic#157 ok=True acc=112/196 tok=5393 steps=133 dur=646.02s
+[1017/1400] bbeh_time_arithmetic#093 ok=False acc=112/197 tok=7010 steps=275 dur=831.394s
+[1018/1400] bbeh_web_of_lies#067 ok=False acc=15/21 tok=3392 steps=137 dur=98.442s
+[1019/1400] bbeh_time_arithmetic#129 ok=True acc=113/198 tok=5858 steps=138 dur=740.695s
+[1020/1400] bbeh_web_of_lies#028 ok=False acc=15/22 tok=12861 steps=430 dur=364.163s
+[1021/1400] bbeh_web_of_lies#072 ok=True acc=16/23 tok=2657 steps=59 dur=74.685s
+[1022/1400] bbeh_web_of_lies#030 ok=False acc=16/24 tok=11933 steps=374 dur=347.177s
+[1023/1400] bbeh_web_of_lies#078 ok=True acc=17/25 tok=1695 steps=43 dur=48.491s
+[1024/1400] bbeh_web_of_lies#032 ok=False acc=17/26 tok=12475 steps=319 dur=353.078s
+[1025/1400] bbeh_web_of_lies#003 ok=False acc=17/27 tok=14838 steps=590 dur=567.815s
+[1026/1400] bbeh_time_arithmetic#189 ok=True acc=114/199 tok=7136 steps=213 dur=620.655s
+[1027/1400] bbeh_web_of_lies#040 ok=True acc=18/28 tok=7925 steps=272 dur=222.824s
+[1028/1400] bbeh_web_of_lies#066 ok=True acc=19/29 tok=6090 steps=136 dur=174.955s
+[1029/1400] bbeh_web_of_lies#047 ok=False acc=19/30 tok=8088 steps=146 dur=242.425s
+[1030/1400] bbeh_web_of_lies#058 ok=False acc=19/31 tok=8837 steps=326 dur=253.853s
+[1031/1400] bbeh_web_of_lies#060 ok=False acc=19/32 tok=9759 steps=215 dur=273.591s
+[1032/1400] bbeh_web_of_lies#011 ok=False acc=19/33 tok=15842 steps=476 dur=673.48s
+[1033/1400] bbeh_web_of_lies#001 ok=False acc=19/34 tok=10970 steps=303 dur=707.462s
+[1034/1400] bbeh_web_of_lies#052 ok=True acc=20/35 tok=11037 steps=290 dur=309.768s
+[1035/1400] bbeh_web_of_lies#044 ok=False acc=20/36 tok=11781 steps=253 dur=330.684s
+[1036/1400] bbeh_web_of_lies#035 ok=False acc=20/37 tok=11935 steps=244 dur=390.751s
+[1037/1400] bbeh_web_of_lies#054 ok=False acc=20/38 tok=11872 steps=319 dur=341.65s
+[1038/1400] bbeh_web_of_lies#039 ok=False acc=20/39 tok=12606 steps=441 dur=389.106s
+[1039/1400] bbeh_web_of_lies#091 ok=True acc=21/40 tok=1572 steps=27 dur=162.367s
+[1040/1400] bbeh_web_of_lies#056 ok=True acc=22/41 tok=13936 steps=696 dur=391.41s
+[1041/1400] bbeh_web_of_lies#043 ok=True acc=23/42 tok=13800 steps=692 dur=420.844s
+[1042/1400] bbeh_web_of_lies#031 ok=True acc=24/43 tok=14876 steps=755 dur=622.741s
+[1043/1400] bbeh_web_of_lies#068 ok=True acc=25/44 tok=14517 steps=404 dur=407.669s
+[1044/1400] bbeh_web_of_lies#083 ok=True acc=26/45 tok=4662 steps=96 dur=315.439s
+[1045/1400] bbeh_web_of_lies#064 ok=True acc=27/46 tok=16354 steps=648 dur=458.798s
+[1046/1400] bbeh_web_of_lies#036 ok=True acc=28/47 tok=18744 steps=718 dur=526.662s
+[1047/1400] bbeh_web_of_lies#004 ok=False acc=28/48 tok=31527 steps=1665 dur=890.388s
+[1048/1400] bbeh_web_of_lies#082 ok=False acc=28/49 tok=12948 steps=513 dur=372.73s
+[1049/1400] bbeh_web_of_lies#002 ok=False acc=28/50 tok=31494 steps=1981 dur=913.207s
+[1050/1400] bbeh_web_of_lies#014 ok=False acc=28/51 tok=31315 steps=1119 dur=907.474s
+[1051/1400] bbeh_web_of_lies#063 ok=False acc=28/52 tok=14774 steps=408 dur=534.148s
+[1052/1400] bbeh_web_of_lies#094 ok=False acc=28/53 tok=11601 steps=194 dur=333.497s
+[1053/1400] bbeh_web_of_lies#071 ok=False acc=28/54 tok=14899 steps=712 dur=611.224s
+[1054/1400] bbeh_web_of_lies#090 ok=False acc=28/55 tok=17672 steps=425 dur=510.349s
+[1055/1400] bbeh_web_of_lies#087 ok=False acc=28/56 tok=13091 steps=323 dur=562.572s
+[1056/1400] bbeh_web_of_lies#108 ok=False acc=28/57 tok=10935 steps=287 dur=308.649s
+[1057/1400] bbeh_web_of_lies#098 ok=False acc=28/58 tok=16718 steps=571 dur=483.958s
+[1058/1400] bbeh_web_of_lies#015 ok=False acc=28/59 tok=31545 steps=599 dur=1188.447s
+[1059/1400] bbeh_web_of_lies#104 ok=True acc=29/60 tok=15191 steps=415 dur=429.041s
+[1060/1400] bbeh_web_of_lies#120 ok=True acc=30/61 tok=2158 steps=65 dur=62.872s
+[1061/1400] bbeh_web_of_lies#099 ok=True acc=31/62 tok=5588 steps=200 dur=537.395s
+[1062/1400] bbeh_web_of_lies#048 ok=False acc=31/63 tok=31541 steps=2167 dur=890.434s
+[1063/1400] bbeh_web_of_lies#038 ok=False acc=31/64 tok=31632 steps=1002 dur=918.313s
+[1064/1400] bbeh_web_of_lies#042 ok=False acc=31/65 tok=31358 steps=1465 dur=909.951s
+[1065/1400] bbeh_web_of_lies#046 ok=False acc=31/66 tok=31362 steps=1908 dur=909.977s
+[1066/1400] bbeh_web_of_lies#122 ok=True acc=32/67 tok=2534 steps=43 dur=75.939s
+[1067/1400] bbeh_web_of_lies#061 ok=True acc=33/68 tok=1905 steps=52 dur=911.578s
+[1068/1400] bbeh_web_of_lies#027 ok=False acc=33/69 tok=31533 steps=600 dur=1185.096s
+[1069/1400] bbeh_time_arithmetic#117 ok=False acc=114/200 tok=31882 steps=49 dur=1602.047s
+[1070/1400] bbeh_web_of_lies#114 ok=True acc=34/70 tok=14833 steps=675 dur=435.813s
+[1071/1400] bbeh_web_of_lies#005 ok=False acc=34/71 tok=31751 steps=1158 dur=1386.285s
+[1072/1400] bbeh_web_of_lies#076 ok=False acc=34/72 tok=31431 steps=1206 dur=892.637s
+[1073/1400] bbeh_web_of_lies#074 ok=False acc=34/73 tok=31582 steps=2477 dur=917.292s
+[1074/1400] bbeh_web_of_lies#055 ok=False acc=34/74 tok=31577 steps=505 dur=1005.983s
+[1075/1400] bbeh_web_of_lies#080 ok=False acc=34/75 tok=31678 steps=2587 dur=899.871s
+[1076/1400] bbeh_web_of_lies#084 ok=False acc=34/76 tok=31606 steps=1932 dur=898.039s
+[1077/1400] bbeh_web_of_lies#059 ok=False acc=34/77 tok=31514 steps=872 dur=1041.036s
+[1078/1400] bbeh_web_of_lies#009 ok=False acc=34/78 tok=31215 steps=1272 dur=1455.373s
+[1079/1400] bbeh_web_of_lies#088 ok=False acc=34/79 tok=31564 steps=980 dur=897.765s
+[1080/1400] bbeh_web_of_lies#086 ok=False acc=34/80 tok=31568 steps=1846 dur=918.161s
+[1081/1400] bbeh_web_of_lies#106 ok=False acc=34/81 tok=22932 steps=1134 dur=670.559s
+[1082/1400] bbeh_web_of_lies#092 ok=False acc=34/82 tok=31678 steps=2418 dur=902.179s
+[1083/1400] bbeh_web_of_lies#013 ok=False acc=34/83 tok=31576 steps=1491 dur=1516.505s
+[1084/1400] bbeh_web_of_lies#144 ok=True acc=35/84 tok=1674 steps=34 dur=47.897s
+[1085/1400] bbeh_web_of_lies#025 ok=True acc=36/85 tok=19477 steps=863 dur=1477.626s
+[1086/1400] bbeh_web_of_lies#096 ok=False acc=36/86 tok=31427 steps=1003 dur=896.201s
+[1087/1400] bbeh_web_of_lies#069 ok=False acc=36/87 tok=10394 steps=370 dur=1187.169s
+[1088/1400] bbeh_web_of_lies#037 ok=False acc=36/88 tok=14297 steps=386 dur=1269.807s
+[1089/1400] bbeh_web_of_lies#073 ok=False acc=36/89 tok=9710 steps=221 dur=1154.024s
+[1090/1400] bbeh_web_of_lies#100 ok=False acc=36/90 tok=31407 steps=891 dur=896.757s
+[1091/1400] bbeh_web_of_lies#075 ok=False acc=36/91 tok=31455 steps=624 dur=1146.886s
+[1092/1400] bbeh_web_of_lies#057 ok=False acc=36/92 tok=13088 steps=385 dur=1263.351s
+[1093/1400] bbeh_web_of_lies#102 ok=False acc=36/93 tok=31382 steps=996 dur=915.443s
+[1094/1400] bbeh_web_of_lies#134 ok=True acc=37/94 tok=9819 steps=313 dur=286.385s
+[1095/1400] bbeh_web_of_lies#079 ok=False acc=37/95 tok=31513 steps=1887 dur=1156.428s
+[1096/1400] bbeh_web_of_lies#041 ok=False acc=37/96 tok=15425 steps=349 dur=1322.468s
+[1097/1400] bbeh_web_of_lies#124 ok=False acc=37/97 tok=14874 steps=580 dur=428.703s
+[1098/1400] bbeh_web_of_lies#111 ok=False acc=37/98 tok=15334 steps=486 dur=815.279s
+[1099/1400] bbeh_web_of_lies#021 ok=False acc=37/99 tok=31454 steps=913 dur=1691.412s
+[1100/1400] bbeh_web_of_lies#136 ok=True acc=38/100 tok=13796 steps=237 dur=393.725s
+[1101/1400] bbeh_web_of_lies#140 ok=True acc=39/101 tok=12538 steps=388 dur=357.493s
+[1102/1400] bbeh_web_of_lies#112 ok=False acc=39/102 tok=31406 steps=1619 dur=898.166s
+[1103/1400] bbeh_web_of_lies#110 ok=False acc=39/103 tok=31521 steps=847 dur=919.054s
+[1104/1400] bbeh_web_of_lies#053 ok=False acc=39/104 tok=18283 steps=709 dur=1420.638s
+[1105/1400] bbeh_web_of_lies#128 ok=False acc=39/105 tok=18443 steps=802 dur=529.331s
+[1106/1400] bbeh_web_of_lies#160 ok=True acc=40/106 tok=4635 steps=208 dur=131.417s
+[1107/1400] bbeh_web_of_lies#095 ok=False acc=40/107 tok=31666 steps=2041 dur=1151.529s
+[1108/1400] bbeh_web_of_lies#132 ok=False acc=40/108 tok=17882 steps=707 dur=511.818s
+[1109/1400] bbeh_web_of_lies#154 ok=True acc=41/109 tok=8551 steps=236 dur=246.884s
+[1110/1400] bbeh_web_of_lies#142 ok=False acc=41/110 tok=15717 steps=430 dur=456.416s
+[1111/1400] bbeh_web_of_lies#156 ok=False acc=41/111 tok=9482 steps=207 dur=269.019s
+[1112/1400] bbeh_web_of_lies#103 ok=False acc=41/112 tok=23704 steps=1313 dur=1152.246s
+[1113/1400] bbeh_web_of_lies#158 ok=False acc=41/113 tok=9318 steps=305 dur=269.863s
+[1114/1400] bbeh_web_of_lies#116 ok=False acc=41/114 tok=31563 steps=1192 dur=903.766s
+[1115/1400] bbeh_web_of_lies#148 ok=True acc=42/115 tok=14144 steps=541 dur=402.362s
+[1116/1400] bbeh_web_of_lies#147 ok=False acc=42/116 tok=7223 steps=220 dur=450.618s
+[1117/1400] bbeh_web_of_lies#118 ok=False acc=42/117 tok=31467 steps=639 dur=918.931s
+[1118/1400] bbeh_web_of_lies#146 ok=False acc=42/118 tok=18518 steps=650 dur=538.038s
+[1119/1400] bbeh_web_of_lies#115 ok=True acc=43/119 tok=24201 steps=1425 dur=1077.038s
+[1120/1400] bbeh_web_of_lies#179 ok=True acc=44/120 tok=3482 steps=79 dur=98.657s
+[1121/1400] bbeh_web_of_lies#123 ok=True acc=45/121 tok=15979 steps=544 dur=852.81s
+[1122/1400] bbeh_web_of_lies#170 ok=False acc=45/122 tok=10423 steps=192 dur=303.497s
+[1123/1400] bbeh_web_of_lies#164 ok=False acc=45/123 tok=12583 steps=574 dur=357.518s
+[1124/1400] bbeh_web_of_lies#152 ok=False acc=45/124 tok=19394 steps=772 dur=551.053s
+[1125/1400] bbeh_web_of_lies#182 ok=True acc=46/125 tok=3344 steps=72 dur=95.468s
+[1126/1400] bbeh_web_of_lies#186 ok=True acc=47/126 tok=1284 steps=25 dur=36.623s
+[1127/1400] bbeh_web_of_lies#126 ok=False acc=47/127 tok=31756 steps=1163 dur=923.643s
+[1128/1400] bbeh_web_of_lies#107 ok=False acc=47/128 tok=31570 steps=1116 dur=1361.941s
+[1129/1400] bbeh_web_of_lies#109 ok=True acc=48/129 tok=1766 steps=57 dur=1338.214s
+[1130/1400] bbeh_web_of_lies#166 ok=False acc=48/130 tok=14535 steps=555 dur=423.926s
+[1131/1400] bbeh_web_of_lies#130 ok=False acc=48/131 tok=31665 steps=1931 dur=921.119s
+[1132/1400] bbeh_web_of_lies#029 ok=False acc=48/132 tok=11569 steps=454 dur=2139.344s
+[1133/1400] bbeh_web_of_lies#081 ok=False acc=48/133 tok=31387 steps=1470 dur=1797.503s
+[1134/1400] bbeh_web_of_lies#085 ok=False acc=48/134 tok=31495 steps=2172 dur=1783.191s
+[1135/1400] bbeh_web_of_lies#138 ok=False acc=48/135 tok=31299 steps=1480 dur=910.578s
+[1136/1400] bbeh_web_of_lies#089 ok=False acc=48/136 tok=31502 steps=2052 dur=1757.107s
+[1137/1400] bbeh_web_of_lies#045 ok=False acc=48/137 tok=5562 steps=92 dur=1964.779s
+[1138/1400] bbeh_web_of_lies#172 ok=False acc=48/138 tok=16904 steps=624 dur=480.974s
+[1139/1400] bbeh_web_of_lies#151 ok=False acc=48/139 tok=14079 steps=639 dur=739.773s
+[1140/1400] bbeh_word_sorting#000 ok=False acc=0/1 tok=981 steps=16 dur=28.54s
+[1141/1400] bbeh_web_of_lies#097 ok=False acc=48/140 tok=17358 steps=815 dur=1692.427s
+[1142/1400] bbeh_web_of_lies#180 ok=True acc=49/141 tok=2018 steps=62 dur=360.626s
+[1143/1400] bbeh_web_of_lies#167 ok=True acc=50/142 tok=1464 steps=35 dur=621.362s
+[1144/1400] bbeh_word_sorting#002 ok=True acc=1/2 tok=3064 steps=137 dur=86.542s
+[1145/1400] bbeh_word_sorting#004 ok=True acc=2/3 tok=2820 steps=50 dur=82.638s
+[1146/1400] bbeh_web_of_lies#171 ok=True acc=51/143 tok=2578 steps=58 dur=630.996s
+[1147/1400] bbeh_web_of_lies#049 ok=False acc=51/144 tok=11163 steps=340 dur=2119.673s
+[1148/1400] bbeh_web_of_lies#119 ok=False acc=51/145 tok=31305 steps=981 dur=1343.716s
+[1149/1400] bbeh_web_of_lies#150 ok=False acc=51/146 tok=31779 steps=1610 dur=924.003s
+[1150/1400] bbeh_word_sorting#009 ok=False acc=2/4 tok=1789 steps=56 dur=51.32s
+[1151/1400] bbeh_word_sorting#011 ok=True acc=3/5 tok=843 steps=18 dur=24.719s
+[1152/1400] bbeh_word_sorting#006 ok=False acc=3/6 tok=3987 steps=252 dur=114.021s
+[1153/1400] bbeh_web_of_lies#185 ok=True acc=52/147 tok=2863 steps=76 dur=424.201s
+[1154/1400] bbeh_web_of_lies#149 ok=False acc=52/148 tok=8473 steps=191 dur=992.143s
+[1155/1400] bbeh_web_of_lies#192 ok=True acc=53/149 tok=13333 steps=384 dur=379.716s
+[1156/1400] bbeh_web_of_lies#159 ok=False acc=53/150 tok=9304 steps=165 dur=911.403s
+[1157/1400] bbeh_word_sorting#016 ok=False acc=3/7 tok=1250 steps=20 dur=35.671s
+[1158/1400] bbeh_word_sorting#015 ok=False acc=3/8 tok=2438 steps=113 dur=71.043s
+[1159/1400] bbeh_web_of_lies#127 ok=False acc=53/151 tok=31385 steps=1466 dur=1347.669s
+[1160/1400] bbeh_web_of_lies#196 ok=True acc=54/152 tok=10758 steps=260 dur=313.282s
+[1161/1400] bbeh_word_sorting#020 ok=True acc=4/9 tok=1624 steps=38 dur=46.199s
+[1162/1400] bbeh_web_of_lies#137 ok=False acc=54/153 tok=11237 steps=336 dur=1262.872s
+[1163/1400] bbeh_web_of_lies#131 ok=False acc=54/154 tok=31699 steps=2345 dur=1327.553s
+[1164/1400] bbeh_web_of_lies#188 ok=False acc=54/155 tok=3329 steps=95 dur=488.869s
+[1165/1400] bbeh_web_of_lies#135 ok=False acc=54/156 tok=31742 steps=2082 dur=1292.506s
+[1166/1400] bbeh_word_sorting#008 ok=False acc=4/10 tok=682 steps=18 dur=205.554s
+[1167/1400] bbeh_web_of_lies#197 ok=True acc=55/157 tok=1887 steps=43 dur=357.457s
+[1168/1400] bbeh_word_sorting#026 ok=False acc=4/11 tok=519 steps=8 dur=16.098s
+[1169/1400] bbeh_web_of_lies#139 ok=False acc=55/158 tok=31574 steps=1776 dur=1256.769s
+[1170/1400] bbeh_word_sorting#018 ok=False acc=4/12 tok=3370 steps=130 dur=98.296s
+[1171/1400] bbeh_web_of_lies#143 ok=False acc=55/159 tok=31441 steps=1248 dur=1233.079s
+[1172/1400] bbeh_word_sorting#025 ok=False acc=4/13 tok=1210 steps=20 dur=35.43s
+[1173/1400] bbeh_web_of_lies#162 ok=False acc=55/160 tok=31412 steps=3570 dur=915.382s
+[1174/1400] bbeh_word_sorting#005 ok=True acc=5/14 tok=2208 steps=34 dur=304.746s
+[1175/1400] bbeh_web_of_lies#077 ok=False acc=55/161 tok=14220 steps=254 dur=2206.876s
+[1176/1400] bbeh_word_sorting#029 ok=False acc=5/15 tok=1007 steps=21 dur=29.393s
+[1177/1400] bbeh_word_sorting#001 ok=False acc=5/16 tok=2914 steps=80 dur=355.35s
+[1178/1400] bbeh_word_sorting#023 ok=False acc=5/17 tok=2970 steps=147 dur=84.625s
+[1179/1400] bbeh_web_of_lies#168 ok=False acc=55/162 tok=31748 steps=2183 dur=903.145s
+[1180/1400] bbeh_web_of_lies#129 ok=False acc=55/163 tok=13993 steps=442 dur=1433.445s
+[1181/1400] bbeh_word_sorting#041 ok=False acc=5/18 tok=677 steps=12 dur=19.519s
+[1182/1400] bbeh_word_sorting#039 ok=False acc=5/19 tok=1134 steps=19 dur=32.54s
+[1183/1400] bbeh_word_sorting#030 ok=False acc=5/20 tok=2228 steps=45 dur=64.208s
+[1184/1400] bbeh_word_sorting#027 ok=True acc=6/21 tok=2672 steps=71 dur=76.49s
+[1185/1400] bbeh_word_sorting#037 ok=False acc=6/22 tok=1835 steps=33 dur=52.926s
+[1186/1400] bbeh_web_of_lies#125 ok=False acc=55/164 tok=14955 steps=552 dur=1482.649s
+[1187/1400] bbeh_word_sorting#033 ok=True acc=7/23 tok=2279 steps=65 dur=65.859s
+[1188/1400] bbeh_word_sorting#035 ok=True acc=8/24 tok=2176 steps=58 dur=62.228s
+[1189/1400] bbeh_word_sorting#045 ok=False acc=8/25 tok=573 steps=11 dur=17.141s
+[1190/1400] bbeh_word_sorting#034 ok=True acc=9/26 tok=2456 steps=80 dur=71.314s
+[1191/1400] bbeh_word_sorting#044 ok=True acc=10/27 tok=1138 steps=39 dur=32.954s
+[1192/1400] bbeh_word_sorting#050 ok=False acc=10/28 tok=756 steps=11 dur=21.928s
+[1193/1400] bbeh_word_sorting#046 ok=False acc=10/29 tok=1226 steps=31 dur=35.44s
+[1194/1400] bbeh_word_sorting#019 ok=False acc=10/30 tok=4155 steps=147 dur=189.225s
+[1195/1400] bbeh_word_sorting#054 ok=False acc=10/31 tok=1299 steps=22 dur=37.096s
+[1196/1400] bbeh_word_sorting#012 ok=False acc=10/32 tok=4977 steps=123 dur=271.748s
+[1197/1400] bbeh_word_sorting#052 ok=True acc=11/33 tok=1977 steps=75 dur=57.114s
+[1198/1400] bbeh_word_sorting#048 ok=True acc=12/34 tok=2360 steps=76 dur=68.254s
+[1199/1400] bbeh_word_sorting#022 ok=True acc=13/35 tok=5181 steps=130 dur=194.318s
+[1200/1400] bbeh_web_of_lies#169 ok=False acc=55/165 tok=5927 steps=219 dur=1002.443s
+[1201/1400] bbeh_word_sorting#058 ok=False acc=13/36 tok=833 steps=17 dur=24.551s
+[1202/1400] bbeh_word_sorting#062 ok=False acc=13/37 tok=616 steps=15 dur=18.147s
+[1203/1400] bbeh_web_of_lies#176 ok=False acc=55/166 tok=31435 steps=1188 dur=896.209s
+[1204/1400] bbeh_word_sorting#038 ok=True acc=14/38 tok=4628 steps=170 dur=142.737s
+[1205/1400] bbeh_word_sorting#049 ok=False acc=14/39 tok=2222 steps=32 dur=91.828s
+[1206/1400] bbeh_word_sorting#061 ok=True acc=15/40 tok=806 steps=12 dur=26.417s
+[1207/1400] bbeh_word_sorting#060 ok=True acc=16/41 tok=1253 steps=27 dur=36.221s
+[1208/1400] bbeh_web_of_lies#174 ok=False acc=55/167 tok=31552 steps=2669 dur=917.861s
+[1209/1400] bbeh_web_of_lies#198 ok=False acc=55/168 tok=18636 steps=719 dur=532.107s
+[1210/1400] bbeh_word_sorting#070 ok=True acc=17/42 tok=808 steps=13 dur=23.106s
+[1211/1400] bbeh_web_of_lies#141 ok=True acc=56/169 tok=17925 steps=816 dur=1423.107s
+[1212/1400] bbeh_word_sorting#072 ok=False acc=17/43 tok=679 steps=11 dur=19.817s
+[1213/1400] bbeh_word_sorting#042 ok=True acc=18/44 tok=4791 steps=131 dur=161.607s
+[1214/1400] bbeh_web_of_lies#117 ok=False acc=56/170 tok=21301 steps=936 dur=1795.804s
+[1215/1400] bbeh_word_sorting#069 ok=True acc=19/45 tok=1666 steps=25 dur=52.609s
+[1216/1400] bbeh_word_sorting#074 ok=True acc=20/46 tok=1052 steps=14 dur=30.116s
+[1217/1400] bbeh_word_sorting#066 ok=True acc=21/47 tok=2398 steps=76 dur=68.796s
+[1218/1400] bbeh_word_sorting#053 ok=False acc=21/48 tok=3746 steps=54 dur=145.574s
+[1219/1400] bbeh_word_sorting#076 ok=True acc=22/49 tok=1659 steps=43 dur=47.889s
+[1220/1400] bbeh_word_sorting#078 ok=False acc=22/50 tok=1480 steps=22 dur=42.412s
+[1221/1400] bbeh_word_sorting#080 ok=False acc=22/51 tok=1654 steps=43 dur=48.092s
+[1222/1400] bbeh_word_sorting#064 ok=False acc=22/52 tok=4441 steps=209 dur=128.917s
+[1223/1400] bbeh_web_of_lies#181 ok=False acc=56/171 tok=31429 steps=1059 dur=914.631s
+[1224/1400] bbeh_word_sorting#057 ok=True acc=23/53 tok=5921 steps=134 dur=212.999s
+[1225/1400] bbeh_web_of_lies#165 ok=True acc=57/172 tok=12676 steps=349 dur=1199.497s
+[1226/1400] bbeh_word_sorting#065 ok=False acc=23/54 tok=4489 steps=104 dur=164.73s
+[1227/1400] bbeh_word_sorting#077 ok=False acc=23/55 tok=1585 steps=40 dur=116.899s
+[1228/1400] bbeh_word_sorting#086 ok=False acc=23/56 tok=760 steps=13 dur=22.334s
+[1229/1400] bbeh_web_of_lies#093 ok=False acc=57/173 tok=19365 steps=918 dur=2365.023s
+[1230/1400] bbeh_word_sorting#084 ok=True acc=24/57 tok=2063 steps=67 dur=61.014s
+[1231/1400] bbeh_web_of_lies#184 ok=False acc=57/174 tok=31465 steps=1042 dur=916.027s
+[1232/1400] bbeh_word_sorting#088 ok=False acc=24/58 tok=1038 steps=31 dur=30.257s
+[1233/1400] bbeh_word_sorting#090 ok=True acc=25/59 tok=1044 steps=15 dur=29.961s
+[1234/1400] bbeh_word_sorting#081 ok=True acc=26/60 tok=2451 steps=79 dur=158.748s
+[1235/1400] bbeh_word_sorting#073 ok=True acc=27/61 tok=4207 steps=138 dur=195.172s
+[1236/1400] bbeh_word_sorting#096 ok=True acc=28/62 tok=1164 steps=35 dur=34.635s
+[1237/1400] bbeh_word_sorting#082 ok=True acc=29/63 tok=5000 steps=261 dur=143.47s
+[1238/1400] bbeh_word_sorting#085 ok=False acc=29/64 tok=2401 steps=49 dur=126.628s
+[1239/1400] bbeh_word_sorting#056 ok=True acc=30/65 tok=10849 steps=318 dur=316.132s
+[1240/1400] bbeh_word_sorting#092 ok=True acc=31/66 tok=2965 steps=101 dur=86.565s
+[1241/1400] bbeh_word_sorting#093 ok=True acc=32/67 tok=2813 steps=128 dur=86.002s
+[1242/1400] bbeh_word_sorting#095 ok=True acc=33/68 tok=2809 steps=58 dur=81.961s
+[1243/1400] bbeh_web_of_lies#190 ok=False acc=57/175 tok=31715 steps=2415 dur=923.581s
+[1244/1400] bbeh_word_sorting#097 ok=True acc=34/69 tok=2356 steps=49 dur=67.167s
+[1245/1400] bbeh_word_sorting#100 ok=True acc=35/70 tok=918 steps=17 dur=65.76s
+[1246/1400] bbeh_word_sorting#105 ok=True acc=36/71 tok=888 steps=13 dur=25.186s
+[1247/1400] bbeh_word_sorting#103 ok=False acc=36/72 tok=1421 steps=30 dur=41.192s
+[1248/1400] bbeh_web_of_lies#193 ok=False acc=57/176 tok=31645 steps=2010 dur=921.072s
+[1249/1400] bbeh_web_of_lies#155 ok=False acc=57/177 tok=31405 steps=1455 dur=1498.176s
+[1250/1400] bbeh_word_sorting#104 ok=False acc=36/73 tok=972 steps=14 dur=64.394s
+[1251/1400] bbeh_web_of_lies#173 ok=False acc=57/178 tok=13854 steps=650 dur=1257.234s
+[1252/1400] bbeh_word_sorting#109 ok=False acc=36/74 tok=1203 steps=19 dur=34.215s
+[1253/1400] bbeh_word_sorting#111 ok=False acc=36/75 tok=961 steps=17 dur=27.95s
+[1254/1400] bbeh_web_of_lies#113 ok=False acc=57/179 tok=15649 steps=434 dur=2250.626s
+[1255/1400] bbeh_word_sorting#107 ok=True acc=37/76 tok=1597 steps=33 dur=46.273s
+[1256/1400] bbeh_word_sorting#068 ok=False acc=37/77 tok=12561 steps=480 dur=365.931s
+[1257/1400] bbeh_word_sorting#113 ok=True acc=38/78 tok=1519 steps=40 dur=43.541s
+[1258/1400] bbeh_word_sorting#101 ok=False acc=38/79 tok=4500 steps=98 dur=128.36s
+[1259/1400] bbeh_word_sorting#117 ok=False acc=38/80 tok=1333 steps=23 dur=38.269s
+[1260/1400] bbeh_word_sorting#108 ok=True acc=39/81 tok=2331 steps=83 dur=78.576s
+[1261/1400] bbeh_word_sorting#115 ok=False acc=39/82 tok=1637 steps=31 dur=47.629s
+[1262/1400] bbeh_word_sorting#112 ok=True acc=40/83 tok=2073 steps=36 dur=63.922s
+[1263/1400] bbeh_word_sorting#124 ok=False acc=40/84 tok=964 steps=15 dur=27.646s
+[1264/1400] bbeh_word_sorting#122 ok=True acc=41/85 tok=1730 steps=46 dur=50.603s
+[1265/1400] bbeh_word_sorting#118 ok=True acc=42/86 tok=3325 steps=187 dur=96.888s
+[1266/1400] bbeh_word_sorting#126 ok=False acc=42/87 tok=1081 steps=24 dur=31.4s
+[1267/1400] bbeh_word_sorting#089 ok=False acc=42/88 tok=7788 steps=393 dur=277.469s
+[1268/1400] bbeh_word_sorting#021 ok=False acc=42/89 tok=593 steps=8 dur=672.65s
+[1269/1400] bbeh_word_sorting#119 ok=True acc=43/90 tok=1505 steps=43 dur=79.372s
+[1270/1400] bbeh_word_sorting#123 ok=False acc=43/91 tok=1568 steps=20 dur=76.945s
+[1271/1400] bbeh_word_sorting#040 ok=False acc=43/92 tok=577 steps=12 dur=583.223s
+[1272/1400] bbeh_word_sorting#017 ok=False acc=43/93 tok=1087 steps=13 dur=718.897s
+[1273/1400] bbeh_word_sorting#128 ok=False acc=43/94 tok=990 steps=17 dur=28.386s
+[1274/1400] bbeh_web_of_lies#183 ok=False acc=57/180 tok=11998 steps=274 dur=1210.727s
+[1275/1400] bbeh_word_sorting#043 ok=False acc=43/95 tok=1031 steps=20 dur=583.77s
+[1276/1400] bbeh_word_sorting#120 ok=True acc=44/96 tok=3594 steps=224 dur=102.636s
+[1277/1400] bbeh_word_sorting#010 ok=True acc=45/97 tok=1561 steps=56 dur=813.024s
+[1278/1400] bbeh_web_of_lies#145 ok=False acc=57/181 tok=31374 steps=993 dur=1793.516s
+[1279/1400] bbeh_word_sorting#055 ok=False acc=45/98 tok=665 steps=8 dur=544.021s
+[1280/1400] bbeh_word_sorting#136 ok=False acc=45/99 tok=778 steps=14 dur=22.419s
+[1281/1400] bbeh_word_sorting#083 ok=False acc=45/100 tok=639 steps=11 dur=391.65s
+[1282/1400] bbeh_word_sorting#059 ok=False acc=45/101 tok=968 steps=19 dur=521.149s
+[1283/1400] bbeh_word_sorting#024 ok=False acc=45/102 tok=1897 steps=64 dur=689.692s
+[1284/1400] bbeh_web_of_lies#187 ok=False acc=57/182 tok=10056 steps=397 dur=1166.317s
+[1285/1400] bbeh_word_sorting#007 ok=True acc=46/103 tok=2616 steps=85 dur=897.69s
+[1286/1400] bbeh_word_sorting#134 ok=True acc=47/104 tok=1878 steps=66 dur=54.748s
+[1287/1400] bbeh_word_sorting#014 ok=True acc=48/105 tok=2581 steps=113 dur=805.799s
+[1288/1400] bbeh_word_sorting#047 ok=False acc=48/106 tok=2171 steps=37 dur=611.404s
+[1289/1400] bbeh_word_sorting#075 ok=True acc=49/107 tok=1501 steps=34 dur=476.98s
+[1290/1400] bbeh_web_of_lies#191 ok=False acc=57/183 tok=24618 steps=1078 dur=1150.214s
+[1291/1400] bbeh_word_sorting#132 ok=True acc=50/108 tok=2550 steps=62 dur=73.096s
+[1292/1400] bbeh_web_of_lies#153 ok=False acc=57/184 tok=31597 steps=2 dur=1737.439s
+[1293/1400] bbeh_web_of_lies#163 ok=False acc=57/185 tok=31550 steps=1043 dur=1585.354s
+[1294/1400] bbeh_word_sorting#063 ok=True acc=51/109 tok=1992 steps=93 dur=546.555s
+[1295/1400] bbeh_word_sorting#148 ok=False acc=51/110 tok=901 steps=13 dur=25.932s
+[1296/1400] bbeh_word_sorting#036 ok=True acc=52/111 tok=2926 steps=71 dur=677.516s
+[1297/1400] bbeh_word_sorting#131 ok=True acc=53/112 tok=1415 steps=27 dur=85.504s
+[1298/1400] bbeh_word_sorting#135 ok=False acc=53/113 tok=903 steps=14 dur=77.332s
+[1299/1400] bbeh_word_sorting#032 ok=False acc=53/114 tok=3160 steps=126 dur=691.995s
+[1300/1400] bbeh_word_sorting#102 ok=True acc=54/115 tok=911 steps=23 dur=287.253s
+[1301/1400] bbeh_word_sorting#146 ok=False acc=54/116 tok=1734 steps=43 dur=50.107s
+[1302/1400] bbeh_word_sorting#139 ok=False acc=54/117 tok=1206 steps=21 dur=74.293s
+[1303/1400] bbeh_word_sorting#143 ok=True acc=55/118 tok=1222 steps=17 dur=59.234s
+[1304/1400] bbeh_word_sorting#159 ok=False acc=55/119 tok=655 steps=12 dur=18.891s
+[1305/1400] bbeh_word_sorting#150 ok=True acc=56/120 tok=1563 steps=26 dur=45.101s
+[1306/1400] bbeh_word_sorting#130 ok=True acc=57/121 tok=3995 steps=78 dur=116.113s
+[1307/1400] bbeh_word_sorting#116 ok=False acc=57/122 tok=5684 steps=156 dur=221.931s
+[1308/1400] bbeh_word_sorting#162 ok=False acc=57/123 tok=745 steps=14 dur=21.653s
+[1309/1400] bbeh_word_sorting#154 ok=False acc=57/124 tok=1330 steps=19 dur=38.548s
+[1310/1400] bbeh_web_of_lies#175 ok=False acc=57/186 tok=31626 steps=1796 dur=1470.322s
+[1311/1400] bbeh_word_sorting#067 ok=False acc=57/125 tok=3203 steps=88 dur=567.546s
+[1312/1400] bbeh_word_sorting#003 ok=False acc=57/126 tok=4724 steps=161 dur=1039.028s
+[1313/1400] bbeh_word_sorting#071 ok=True acc=58/127 tok=3198 steps=97 dur=557.731s
+[1314/1400] bbeh_word_sorting#163 ok=False acc=58/128 tok=1054 steps=17 dur=30.209s
+[1315/1400] bbeh_word_sorting#152 ok=False acc=58/129 tok=1955 steps=35 dur=55.798s
+[1316/1400] bbeh_word_sorting#138 ok=True acc=59/130 tok=3464 steps=199 dur=100.502s
+[1317/1400] bbeh_word_sorting#158 ok=False acc=59/131 tok=1604 steps=32 dur=46.611s
+[1318/1400] bbeh_word_sorting#140 ok=True acc=60/132 tok=3601 steps=119 dur=102.922s
+[1319/1400] bbeh_word_sorting#079 ok=True acc=61/133 tok=3278 steps=55 dur=513.761s
+[1320/1400] bbeh_web_of_lies#178 ok=False acc=57/187 tok=31587 steps=1303 dur=1428.773s
+[1321/1400] bbeh_word_sorting#164 ok=False acc=61/134 tok=1312 steps=21 dur=37.166s
+[1322/1400] bbeh_word_sorting#151 ok=True acc=62/135 tok=2302 steps=110 dur=65.821s
+[1323/1400] bbeh_word_sorting#168 ok=False acc=62/136 tok=974 steps=19 dur=27.649s
+[1324/1400] bbeh_word_sorting#176 ok=False acc=62/137 tok=791 steps=18 dur=22.529s
+[1325/1400] bbeh_word_sorting#110 ok=False acc=62/138 tok=1043 steps=16 dur=293.395s
+[1326/1400] bbeh_word_sorting#178 ok=False acc=62/139 tok=866 steps=18 dur=24.939s
+[1327/1400] bbeh_word_sorting#179 ok=True acc=63/140 tok=942 steps=13 dur=26.897s
+[1328/1400] bbeh_word_sorting#106 ok=False acc=63/141 tok=1395 steps=20 dur=319.683s
+[1329/1400] bbeh_word_sorting#156 ok=False acc=63/142 tok=2702 steps=57 dur=76.84s
+[1330/1400] bbeh_web_of_lies#189 ok=True acc=58/188 tok=11011 steps=336 dur=1253.683s
+[1331/1400] bbeh_word_sorting#144 ok=True acc=64/143 tok=4006 steps=107 dur=114.19s
+[1332/1400] bbeh_word_sorting#013 ok=False acc=64/144 tok=31790 steps=975 dur=908.898s
+[1333/1400] bbeh_word_sorting#127 ok=True acc=65/145 tok=5075 steps=179 dur=188.798s
+[1334/1400] bbeh_word_sorting#190 ok=True acc=66/146 tok=516 steps=11 dur=14.969s
+[1335/1400] bbeh_word_sorting#180 ok=True acc=67/147 tok=1343 steps=48 dur=38.254s
+[1336/1400] bbeh_word_sorting#182 ok=False acc=67/148 tok=1299 steps=22 dur=37.402s
+[1337/1400] bbeh_word_sorting#172 ok=False acc=67/149 tok=1984 steps=31 dur=56.457s
+[1338/1400] bbeh_word_sorting#187 ok=True acc=68/150 tok=950 steps=21 dur=27.527s
+[1339/1400] bbeh_word_sorting#194 ok=True acc=69/151 tok=594 steps=11 dur=16.993s
+[1340/1400] bbeh_word_sorting#087 ok=False acc=69/152 tok=3347 steps=138 dur=467.128s
+[1341/1400] bbeh_web_of_lies#033 ok=False acc=58/189 tok=31758 steps=1380 dur=3195.105s
+[1342/1400] bbeh_word_sorting#174 ok=False acc=69/153 tok=2075 steps=63 dur=59.836s
+[1343/1400] bbeh_word_sorting#175 ok=True acc=70/154 tok=2187 steps=60 dur=62.616s
+[1344/1400] bbeh_word_sorting#166 ok=True acc=71/155 tok=2874 steps=92 dur=82.967s
+[1345/1400] bbeh_word_sorting#191 ok=False acc=71/156 tok=1063 steps=25 dur=30.594s
+[1346/1400] bbeh_word_sorting#147 ok=True acc=72/157 tok=4265 steps=129 dur=135.992s
+[1347/1400] bbeh_word_sorting#125 ok=False acc=72/158 tok=954 steps=13 dur=255.482s
+[1348/1400] bbeh_word_sorting#188 ok=False acc=72/159 tok=1457 steps=26 dur=41.631s
+[1349/1400] bbeh_word_sorting#195 ok=False acc=72/160 tok=1032 steps=19 dur=29.438s
+[1350/1400] bbeh_word_sorting#094 ok=False acc=72/161 tok=3294 steps=139 dur=465.476s
+[1351/1400] bbeh_word_sorting#133 ok=False acc=72/162 tok=734 steps=14 dur=191.675s
+[1352/1400] bbeh_word_sorting#129 ok=False acc=72/163 tok=1140 steps=13 dur=213.314s
+[1353/1400] bbeh_word_sorting#196 ok=False acc=72/164 tok=1469 steps=22 dur=41.965s
+[1354/1400] bbeh_word_sorting#199 ok=False acc=72/165 tok=1379 steps=21 dur=39.177s
+[1355/1400] bbeh_word_sorting#186 ok=True acc=73/166 tok=2656 steps=89 dur=76.639s
+[1356/1400] bbeh_word_sorting#155 ok=False acc=73/167 tok=4859 steps=110 dur=138.83s
+[1357/1400] bbeh_word_sorting#184 ok=True acc=74/168 tok=2864 steps=146 dur=81.599s
+[1358/1400] bbeh_word_sorting#157 ok=True acc=75/169 tok=805 steps=14 dur=142.548s
+[1359/1400] bbeh_word_sorting#183 ok=False acc=75/170 tok=3254 steps=174 dur=92.84s
+[1360/1400] bbeh_word_sorting#091 ok=False acc=75/171 tok=4591 steps=166 dur=507.571s
+[1361/1400] bbeh_word_sorting#160 ok=True acc=76/172 tok=5012 steps=107 dur=142.458s
+[1362/1400] bbeh_word_sorting#198 ok=True acc=77/173 tok=2187 steps=57 dur=63.236s
+[1363/1400] bbeh_word_sorting#145 ok=False acc=77/174 tok=1403 steps=19 dur=188.355s
+[1364/1400] bbeh_word_sorting#161 ok=False acc=77/175 tok=933 steps=17 dur=143.857s
+[1365/1400] bbeh_word_sorting#170 ok=True acc=78/176 tok=4381 steps=124 dur=126.586s
+[1366/1400] bbeh_word_sorting#141 ok=True acc=79/177 tok=1668 steps=35 dur=206.804s
+[1367/1400] bbeh_web_of_lies#105 ok=False acc=58/190 tok=31278 steps=1045 dur=2710.422s
+[1368/1400] bbeh_word_sorting#192 ok=True acc=80/178 tok=2886 steps=41 dur=82.128s
+[1369/1400] bbeh_word_sorting#189 ok=False acc=80/179 tok=866 steps=19 dur=97.26s
+[1370/1400] bbeh_word_sorting#098 ok=False acc=80/180 tok=4495 steps=209 dur=467.417s
+[1371/1400] bbeh_word_sorting#114 ok=False acc=80/181 tok=3827 steps=119 dur=368.711s
+[1372/1400] bbeh_word_sorting#181 ok=False acc=80/182 tok=1525 steps=29 dur=132.59s
+[1373/1400] bbeh_web_of_lies#194 ok=False acc=58/191 tok=31420 steps=1265 dur=1327.736s
+[1374/1400] bbeh_word_sorting#137 ok=True acc=81/183 tok=3037 steps=93 dur=255.178s
+[1375/1400] bbeh_word_sorting#121 ok=False acc=81/184 tok=3876 steps=149 dur=353.24s
+[1376/1400] bbeh_word_sorting#185 ok=False acc=81/185 tok=1863 steps=31 dur=143.399s
+[1377/1400] bbeh_word_sorting#193 ok=True acc=82/186 tok=1687 steps=43 dur=125.594s
+[1378/1400] bbeh_word_sorting#149 ok=True acc=83/187 tok=2826 steps=93 dur=222.367s
+[1379/1400] bbeh_word_sorting#165 ok=False acc=83/188 tok=2373 steps=79 dur=185.244s
+[1380/1400] bbeh_word_sorting#031 ok=False acc=83/189 tok=31341 steps=849 dur=895.53s
+[1381/1400] bbeh_word_sorting#171 ok=True acc=84/190 tok=6564 steps=115 dur=187.486s
+[1382/1400] bbeh_word_sorting#167 ok=False acc=84/191 tok=7604 steps=236 dur=217.202s
+[1383/1400] bbeh_web_of_lies#101 ok=False acc=58/192 tok=31414 steps=911 dur=2865.448s
+[1384/1400] bbeh_word_sorting#051 ok=True acc=85/192 tok=9928 steps=632 dur=856.827s
+[1385/1400] bbeh_word_sorting#153 ok=True acc=86/193 tok=4082 steps=100 dur=258.194s
+[1386/1400] bbeh_web_of_lies#065 ok=False acc=58/193 tok=15203 steps=455 dur=3210.997s
+[1387/1400] bbeh_word_sorting#177 ok=False acc=86/194 tok=3103 steps=49 dur=216.047s
+[1388/1400] bbeh_word_sorting#169 ok=True acc=87/195 tok=3558 steps=106 dur=235.789s
+[1389/1400] bbeh_word_sorting#197 ok=False acc=87/196 tok=2860 steps=85 dur=188.806s
+[1390/1400] bbeh_web_of_lies#133 ok=False acc=58/194 tok=10200 steps=286 dur=2371.24s
+[1391/1400] bbeh_web_of_lies#157 ok=True acc=59/195 tok=14870 steps=539 dur=2224.427s
+[1392/1400] bbeh_web_of_lies#121 ok=False acc=59/196 tok=31490 steps=2471 dur=2698.254s
+[1393/1400] bbeh_word_sorting#099 ok=False acc=87/197 tok=29920 steps=1019 dur=866.34s
+[1394/1400] bbeh_web_of_lies#161 ok=True acc=60/197 tok=13307 steps=381 dur=2249.014s
+[1395/1400] bbeh_web_of_lies#177 ok=True acc=61/198 tok=15105 steps=431 dur=2235.827s
+[1396/1400] bbeh_word_sorting#142 ok=False acc=87/198 tok=31195 steps=1055 dur=899.359s
+[1397/1400] bbeh_word_sorting#028 ok=False acc=87/199 tok=31776 steps=720 dur=1548.078s
+[1398/1400] bbeh_word_sorting#173 ok=False acc=87/200 tok=32000 steps=53 dur=1039.091s
+[1399/1400] bbeh_web_of_lies#195 ok=True acc=62/199 tok=12602 steps=303 dur=2162.478s
+[1400/1400] bbeh_web_of_lies#199 ok=False acc=62/200 tok=31530 steps=4099 dur=2766.802s
+
+======================================================================
+DONE — Summary
+======================================================================
+
+Model : deepseek-ai/DeepSeek-R1-Distill-Qwen-32B
+Total : 1400 examples  |  Correct: 549  |  Overall accuracy: 39.2%
+Elapsed: 7721.4s
+
+Task                                    Acc  RespTok(med)  Steps(med)  TokPerStep(med)
+-------------------------------------------------------------------------------------
+  boolean_expressions                 39.5%        6048.0       219.0             15.0
+  causal_understanding                54.5%         567.5        11.0             52.0
+  dyck_languages                      17.5%        1688.5        52.0               20
+  multistep_arithmetic                31.5%        6927.0       265.5             22.0
+  time_arithmetic                     57.0%        2260.0        53.5             19.0
+  web_of_lies                         31.0%       14854.0       509.0               16
+  word_sorting                        43.5%        1870.5        43.0             25.0
+
+Response length (tokens) overall: {'min': 243, 'p25': 1250, 'median': 3308.5, 'mean': 6536.2, 'p75': 7223, 'p90': 16718, 'max': 32000}
+Steps per response overall      : {'min': 2, 'p25': 27, 'median': 89.0, 'mean': 238.2, 'p75': 255, 'p90': 616, 'max': 4099}
+Tokens per step overall         : {'min': 1, 'p25': 10, 'median': 17.0, 'mean': 26.5, 'p75': 31, 'p90': 51, 'max': 31504}
+
+Full results → runs/deepseek_r1_qwen32b/predictions.jsonl
+Summary JSON → runs/deepseek_r1_qwen32b/summary.json

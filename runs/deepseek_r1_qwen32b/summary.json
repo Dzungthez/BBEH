@@ -1,58 +1,343 @@
 {
   "model": "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
-  "concurrency": 32,
-  "max_tokens": 4096,
-  "num_predictions": 270,
-  "correct": 56,
-  "accuracy": 0.2074074074074074,
-  "elapsed_sec": 232.086,
-  "avg_sec_per_response": 0.86,
-  "avg_sec_per_successful_request": 25.781,
+  "ports": [
+    8000,
+    8001,
+    8002,
+    8003
+  ],
+  "concurrency": 64,
+  "max_tokens": 32000,
+  "max_context": 32768,
+  "context_safety_margin": 512,
+  "temperature": 0.6,
+  "num_examples": 1400,
+  "correct": 549,
+  "overall_accuracy": 0.3921,
+  "elapsed_sec": 7721.4,
+  "overall_response_length_tokens": {
+    "min": 243,
+    "p25": 1250,
+    "median": 3308.5,
+    "mean": 6536.2,
+    "p75": 7223,
+    "p90": 16718,
+    "max": 32000
+  },
+  "overall_response_length_chars": {
+    "min": 1083,
+    "p25": 4206,
+    "median": 9138.5,
+    "mean": 22046.9,
+    "p75": 19976,
+    "p90": 64359,
+    "max": 160089
+  },
+  "overall_steps_per_response": {
+    "min": 2,
+    "p25": 27,
+    "median": 89.0,
+    "mean": 238.2,
+    "p75": 255,
+    "p90": 616,
+    "max": 4099
+  },
+  "overall_tokens_per_step": {
+    "min": 1,
+    "p25": 10,
+    "median": 17.0,
+    "mean": 26.5,
+    "p75": 31,
+    "p90": 51,
+    "max": 31504
+  },
   "by_task": {
-    "bbeh_boardgame_qa": {
-      "correct": 5,
-      "total": 30,
-      "accuracy": 0.16666666666666666
-    },
     "bbeh_boolean_expressions": {
-      "correct": 2,
-      "total": 30,
-      "accuracy": 0.06666666666666667
+      "correct": 79,
+      "total": 200,
+      "accuracy": 0.395,
+      "response_length_tokens": {
+        "min": 1852,
+        "p25": 4931,
+        "median": 6048.0,
+        "mean": 7302.0,
+        "p75": 7696,
+        "p90": 10180,
+        "max": 31359
+      },
+      "response_length_chars": {
+        "min": 5930,
+        "p25": 14014,
+        "median": 18075.5,
+        "mean": 21744.6,
+        "p75": 22812,
+        "p90": 29719,
+        "max": 109908
+      },
+      "steps_per_response": {
+        "min": 19,
+        "p25": 150,
+        "median": 219.0,
+        "mean": 285.2,
+        "p75": 334,
+        "p90": 418,
+        "max": 2004
+      },
+      "tokens_per_step": {
+        "min": 1,
+        "p25": 9,
+        "median": 15.0,
+        "mean": 25.0,
+        "p75": 26,
+        "p90": 44,
+        "max": 30392
+      }
     },
     "bbeh_causal_understanding": {
-      "correct": 15,
-      "total": 30,
-      "accuracy": 0.5
+      "correct": 109,
+      "total": 200,
+      "accuracy": 0.545,
+      "response_length_tokens": {
+        "min": 243,
+        "p25": 457,
+        "median": 567.5,
+        "mean": 656.0,
+        "p75": 769,
+        "p90": 1033,
+        "max": 3121
+      },
+      "response_length_chars": {
+        "min": 1083,
+        "p25": 2079,
+        "median": 2597.5,
+        "mean": 2959.6,
+        "p75": 3523,
+        "p90": 4485,
+        "max": 13526
+      },
+      "steps_per_response": {
+        "min": 6,
+        "p25": 9,
+        "median": 11.0,
+        "mean": 12.7,
+        "p75": 14,
+        "p90": 19,
+        "max": 75
+      },
+      "tokens_per_step": {
+        "min": 1,
+        "p25": 35,
+        "median": 52.0,
+        "mean": 51.0,
+        "p75": 68,
+        "p90": 81,
+        "max": 159
+      }
     },
     "bbeh_dyck_languages": {
-      "correct": 6,
-      "total": 30,
-      "accuracy": 0.2
+      "correct": 35,
+      "total": 200,
+      "accuracy": 0.175,
+      "response_length_tokens": {
+        "min": 436,
+        "p25": 1108,
+        "median": 1688.5,
+        "mean": 2739.4,
+        "p75": 2937,
+        "p90": 4083,
+        "max": 31332
+      },
+      "response_length_chars": {
+        "min": 1671,
+        "p25": 4130,
+        "median": 5858.5,
+        "mean": 8406.3,
+        "p75": 9400,
+        "p90": 13328,
+        "max": 78807
+      },
+      "steps_per_response": {
+        "min": 7,
+        "p25": 33,
+        "median": 52.0,
+        "mean": 64.1,
+        "p75": 85,
+        "p90": 120,
+        "max": 400
+      },
+      "tokens_per_step": {
+        "min": 1,
+        "p25": 14,
+        "median": 20,
+        "mean": 41.2,
+        "p75": 32,
+        "p90": 58,
+        "max": 30927
+      }
     },
     "bbeh_multistep_arithmetic": {
-      "correct": 3,
-      "total": 30,
-      "accuracy": 0.1
-    },
-    "bbeh_spatial_reasoning": {
-      "correct": 4,
-      "total": 30,
-      "accuracy": 0.13333333333333333
+      "correct": 63,
+      "total": 200,
+      "accuracy": 0.315,
+      "response_length_tokens": {
+        "min": 2411,
+        "p25": 4375,
+        "median": 6927.0,
+        "mean": 11023.1,
+        "p75": 12050,
+        "p90": 31703,
+        "max": 31837
+      },
+      "response_length_chars": {
+        "min": 5378,
+        "p25": 9616,
+        "median": 15801.5,
+        "mean": 32244.4,
+        "p75": 28411,
+        "p90": 112558,
+        "max": 142171
+      },
+      "steps_per_response": {
+        "min": 19,
+        "p25": 159,
+        "median": 265.5,
+        "mean": 373.7,
+        "p75": 528,
+        "p90": 816,
+        "max": 1315
+      },
+      "tokens_per_step": {
+        "min": 1,
+        "p25": 11,
+        "median": 22.0,
+        "mean": 28.0,
+        "p75": 33,
+        "p90": 52,
+        "max": 28876
+      }
     },
     "bbeh_time_arithmetic": {
-      "correct": 11,
-      "total": 30,
-      "accuracy": 0.36666666666666664
+      "correct": 114,
+      "total": 200,
+      "accuracy": 0.57,
+      "response_length_tokens": {
+        "min": 766,
+        "p25": 1459,
+        "median": 2260.0,
+        "mean": 3274.3,
+        "p75": 4045,
+        "p90": 6471,
+        "max": 31882
+      },
+      "response_length_chars": {
+        "min": 1890,
+        "p25": 3622,
+        "median": 5973.0,
+        "mean": 8460.6,
+        "p75": 10188,
+        "p90": 15280,
+        "max": 131679
+      },
+      "steps_per_response": {
+        "min": 7,
+        "p25": 31,
+        "median": 53.5,
+        "mean": 93.3,
+        "p75": 108,
+        "p90": 184,
+        "max": 2464
+      },
+      "tokens_per_step": {
+        "min": 1,
+        "p25": 10,
+        "median": 19.0,
+        "mean": 29.4,
+        "p75": 36,
+        "p90": 62,
+        "max": 21231
+      }
     },
     "bbeh_web_of_lies": {
-      "correct": 1,
-      "total": 30,
-      "accuracy": 0.03333333333333333
+      "correct": 62,
+      "total": 200,
+      "accuracy": 0.31,
+      "response_length_tokens": {
+        "min": 1206,
+        "p25": 9759,
+        "median": 14854.0,
+        "mean": 17546.8,
+        "p75": 31420,
+        "p90": 31577,
+        "max": 31779
+      },
+      "response_length_chars": {
+        "min": 4567,
+        "p25": 39171,
+        "median": 59443.5,
+        "mean": 69910.2,
+        "p75": 123475,
+        "p90": 128441,
+        "max": 160089
+      },
+      "steps_per_response": {
+        "min": 2,
+        "p25": 236,
+        "median": 509.0,
+        "mean": 746.8,
+        "p75": 1059,
+        "p90": 1908,
+        "max": 4099
+      },
+      "tokens_per_step": {
+        "min": 1,
+        "p25": 10,
+        "median": 16,
+        "mean": 23.3,
+        "p75": 27,
+        "p90": 46,
+        "max": 31504
+      }
     },
     "bbeh_word_sorting": {
-      "correct": 9,
-      "total": 30,
-      "accuracy": 0.3
+      "correct": 87,
+      "total": 200,
+      "accuracy": 0.435,
+      "response_length_tokens": {
+        "min": 516,
+        "p25": 1063,
+        "median": 1870.5,
+        "mean": 3211.8,
+        "p75": 3203,
+        "p90": 4859,
+        "max": 32000
+      },
+      "response_length_chars": {
+        "min": 1941,
+        "p25": 3954,
+        "median": 6490.0,
+        "mean": 10602.2,
+        "p75": 10399,
+        "p90": 14732,
+        "max": 120106
+      },
+      "steps_per_response": {
+        "min": 8,
+        "p25": 19,
+        "median": 43.0,
+        "mean": 91.4,
+        "p75": 106,
+        "p90": 170,
+        "max": 1055
+      },
+      "tokens_per_step": {
+        "min": 1,
+        "p25": 11,
+        "median": 25.0,
+        "mean": 34.4,
+        "p75": 42,
+        "p90": 70,
+        "max": 28967
+      }
     }
   },
   "output_jsonl": "runs/deepseek_r1_qwen32b/predictions.jsonl"

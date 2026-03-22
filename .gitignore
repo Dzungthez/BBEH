@@ -31,3 +31,5 @@ experiments/multistep_react_verifier/logs/vllm_120b_nightly_test.log
 experiments/multistep_react_verifier/logs/vllm_397b_nightly_serve.log
 experiments/multistep_react_verifier/logs/vllm_397b_nightly_tp8_serve.log
 experiments/multistep_react_verifier/logs/vllm_397b_nightly_tp8_serve2.log
+runs/deepseek_r1_qwen32b/.nfs00000000c7e2976c00000001
+runs/deepseek_r1_qwen32b/.nfs00000000d6ea9f4200000002
