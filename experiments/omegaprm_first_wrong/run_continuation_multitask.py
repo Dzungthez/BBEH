@@ -21,6 +21,8 @@ import argparse
 import json
 import random
 import sys
+import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
 from itertools import cycle
 from pathlib import Path
@@ -197,6 +199,7 @@ def generate_once(
     timeout_sec: int,
     temperature: float,
     seed: int | None,
+    max_retries: int = 3,
 ) -> dict[str, Any]:
     safe_mt = safe_max_tokens(
         len(prompt_ids),
@@ -219,35 +222,50 @@ def generate_once(
         "temperature": temperature,
         "stop_token_ids": stop_token_ids,
         "repetition_detection": {
-            "max_pattern_size": 50,
+            "max_pattern_size": 100,
             "min_count": 3,
         },
     }
     if seed is not None:
         payload["seed"] = seed
 
-    resp = requests.post(
-        f"{base_url}/completions",
-        json=payload,
-        timeout=timeout_sec,
+    last_err: Exception | None = None
+    for attempt in range(1, max_retries + 1):
+        try:
+            resp = requests.post(
+                f"{base_url}/completions",
+                json=payload,
+                timeout=timeout_sec,
+            )
+            resp.raise_for_status()
+            data = resp.json()
+            choice = data["choices"][0]
+            text = str(choice["text"]).rstrip()
+            usage = data.get("usage", {})
+            return {
+                "text": text,
+                "prompt_tokens": usage.get("prompt_tokens"),
+                "completion_tokens": usage.get("completion_tokens", 0),
+                "finish_reason": choice.get("finish_reason", "stop") or "stop",
+            }
+        except Exception as exc:  # noqa: BLE001
+            last_err = exc
+            if attempt < max_retries:
+                time.sleep(2**attempt)
+    raise RuntimeError(
+        f"generate_once failed after {max_retries} retries: {last_err}"
     )
-    resp.raise_for_status()
-    data = resp.json()
-    choice = data["choices"][0]
-    text = str(choice["text"]).rstrip()
-    usage = data.get("usage", {})
-    return {
-        "text": text,
-        "prompt_tokens": usage.get("prompt_tokens"),
-        "completion_tokens": usage.get("completion_tokens", 0),
-        "finish_reason": choice.get("finish_reason", "stop") or "stop",
-    }
 
 
 def is_answer_correct(answer: str | None, target: str) -> bool:
     if answer is None:
         return False
     return answer.strip().lower() == target.strip().lower()
+
+
+def _is_incomplete_finish(finish_reason: str) -> bool:
+    """Return True if the rollout was cut short (no chance to produce an answer)."""
+    return finish_reason in ("length", "repetition")
 
 
 def compute_mc(
@@ -257,21 +275,18 @@ def compute_mc(
     prefix_steps: list[str] | None,
     num_rollouts: int,
     prompt_builder: PromptBuilder,
-    base_url_cycle: Any,
+    base_urls: list[str],
     args: argparse.Namespace,
     seed_base: int,
 ) -> dict[str, Any]:
-    rollout_records: list[dict[str, Any]] = []
-    correct_count = 0
-    truncated_no_answer = 0
+    prompt_ids = prompt_builder.build_prompt_token_ids(
+        question,
+        prefix_steps=prefix_steps,
+    )
 
-    for ridx in range(1, num_rollouts + 1):
-        prompt_ids = prompt_builder.build_prompt_token_ids(
-            question,
-            prefix_steps=prefix_steps,
-        )
+    def _do_rollout(ridx: int, base_url: str) -> dict[str, Any]:
         result = generate_once(
-            base_url=next(base_url_cycle),
+            base_url=base_url,
             model=args.model,
             prompt_ids=prompt_ids,
             stop_token_ids=prompt_builder.stop_token_ids,
@@ -284,34 +299,47 @@ def compute_mc(
         )
         answer = _extract_answer_from_rollout(result["text"])
         correct = is_answer_correct(answer, target)
-        is_trunc = result["finish_reason"] == "length"
-        if correct:
-            correct_count += 1
-        if is_trunc and answer is None:
-            truncated_no_answer += 1
-        rollout_records.append(
-            {
-                "rollout_index": ridx,
-                "answer": answer,
-                "is_correct": correct,
-                "finish_reason": result["finish_reason"],
-                "prompt_tokens": result["prompt_tokens"],
-                "completion_tokens": result["completion_tokens"],
-                "is_truncated": is_trunc,
-            }
-        )
+        incomplete = _is_incomplete_finish(result["finish_reason"])
+        return {
+            "rollout_index": ridx,
+            "answer": answer,
+            "is_correct": correct,
+            "finish_reason": result["finish_reason"],
+            "prompt_tokens": result["prompt_tokens"],
+            "completion_tokens": result["completion_tokens"],
+            "is_incomplete": incomplete,
+        }
 
-    scorable = num_rollouts - truncated_no_answer
-    if scorable > 0:
-        mc = correct_count / scorable
-    else:
-        mc = 0.0
+    # Build per-rollout (ridx, base_url) pairs, round-robin across URLs
+    url_iter = cycle(base_urls)
+    tasks = [(ridx, next(url_iter)) for ridx in range(1, num_rollouts + 1)]
+
+    rollout_records: list[dict[str, Any]] = []
+    max_workers = min(num_rollouts, len(base_urls))
+    max_workers = max(1, max_workers)
+    with ThreadPoolExecutor(max_workers=max_workers) as pool:
+        futures = {
+            pool.submit(_do_rollout, ridx, url): ridx
+            for ridx, url in tasks
+        }
+        for future in as_completed(futures):
+            rollout_records.append(future.result())
+
+    rollout_records.sort(key=lambda r: r["rollout_index"])
+
+    correct_count = sum(1 for r in rollout_records if r["is_correct"])
+    incomplete_no_answer = sum(
+        1 for r in rollout_records
+        if r["is_incomplete"] and not r["is_correct"]
+    )
+    scorable = num_rollouts - incomplete_no_answer
+    mc = correct_count / scorable if scorable > 0 else 0.0
 
     return {
         "mc": mc,
         "num_rollouts": num_rollouts,
         "correct_count": correct_count,
-        "truncated_no_answer": truncated_no_answer,
+        "incomplete_no_answer": incomplete_no_answer,
         "scorable": scorable,
         "rollouts": rollout_records,
     }
@@ -433,6 +461,7 @@ def main() -> None:
         }
 
         for sample_order, sample_idx in enumerate(selected, start=1):
+          try:
             ex = examples[sample_idx]
             question = normalize_question(ex["input"])
             target = str(ex["target"])
@@ -465,7 +494,7 @@ def main() -> None:
                 prefix_steps=None,
                 num_rollouts=args.num_rollouts_root,
                 prompt_builder=prompt_builder,
-                base_url_cycle=url_cycle,
+                base_urls=base_urls,
                 args=args,
                 seed_base=args.seed
                 + task_pos * 1_000_000
@@ -516,7 +545,7 @@ def main() -> None:
                 prefix_steps=mid_prefix,
                 num_rollouts=args.num_rollouts_mid,
                 prompt_builder=prompt_builder,
-                base_url_cycle=url_cycle,
+                base_urls=base_urls,
                 args=args,
                 seed_base=args.seed
                 + task_pos * 2_000_000
@@ -564,6 +593,17 @@ def main() -> None:
                 f"root_mc={root_mc_info['mc']:.3f} mid_mc={mid_mc_info['mc']:.3f}",
                 flush=True,
             )
+          except Exception as exc:  # noqa: BLE001
+            print(
+                f"  sample {sample_order}/{len(selected)} idx={sample_idx} "
+                f"ERROR: {exc}",
+                flush=True,
+            )
+            task_report["samples"].append({
+                "sample_index": sample_idx,
+                "sample_order": sample_order,
+                "error": str(exc),
+            })
 
         report["tasks"].append(task_report)
 

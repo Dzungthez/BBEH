@@ -297,7 +297,7 @@ class RolloutSample:
 
     @property
     def is_truncated(self) -> bool:
-        return self.finish_reason == "length"
+        return self.finish_reason in ("length", "repetition")
 
     @property
     def rollout_len_tokens(self) -> int:
@@ -332,7 +332,7 @@ class VLLMRolloutClient:
     seed: int | None = None
     max_context: int = 32768
     context_safety_margin: int = 512
-    repetition_max_pattern: int = 50
+    repetition_max_pattern: int = 100
     repetition_min_count: int = 3
 
     def __post_init__(self) -> None:

@@ -60,7 +60,7 @@ def generate(
         "temperature": temperature,
         "stop_token_ids": stop_token_ids,
         "repetition_detection": {
-            "max_pattern_size": 50,
+            "max_pattern_size": 100,
             "min_count": 3,
         },
     }
