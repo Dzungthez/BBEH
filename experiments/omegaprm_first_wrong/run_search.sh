@@ -56,6 +56,7 @@ REQUIRE_ROOT_MIXED="${REQUIRE_ROOT_MIXED:-false}"
 # Output
 OUT_DIR="${OUT_DIR:-experiments/omegaprm_first_wrong/logs}"
 OUT_PREFIX="${OUT_PREFIX:-omegaprm_search}"
+RESUME_TAG="${RESUME_TAG:-}"
 
 # ---------- build command ----------
 CMD=(
@@ -91,6 +92,8 @@ CMD=(
 if [[ "$REQUIRE_ROOT_MIXED" == "true" ]]; then
   CMD+=(--require-root-mixed)
 fi
+
+[[ -n "$RESUME_TAG" ]] && CMD+=(--resume-tag "$RESUME_TAG")
 
 echo "=== Running: ${CMD[*]}"
 echo ""

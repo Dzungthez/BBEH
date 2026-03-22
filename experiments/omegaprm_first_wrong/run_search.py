@@ -108,6 +108,15 @@ def parse_args() -> argparse.Namespace:
         "--out-dir", default="experiments/omegaprm_first_wrong/logs"
     )
     parser.add_argument("--out-prefix", default="omegaprm_first_wrong")
+    parser.add_argument(
+        "--resume-tag",
+        default="",
+        help=(
+            "Timestamp tag of a previous run to resume. "
+            "When set, loads existing per-task JSON files and skips "
+            "already-completed samples. Leave empty for a fresh run."
+        ),
+    )
     return parser.parse_args()
 
 
@@ -175,48 +184,58 @@ def select_indices(
     return sorted(random.sample(all_indices, args.num_samples_per_task))
 
 
-def _build_hallucination_dataset(report: dict[str, Any]) -> list[dict[str, Any]]:
-    dataset: list[dict[str, Any]] = []
-    entry_id = 0
-    for sample in report["samples"]:
-        for iteration_idx, item in enumerate(sample["selected_rollout_results"]):
-            if not item["found"]:
-                continue
-            all_steps: list[str] = item["all_steps"]
-            first_wrong_1based: int = item["first_wrong_step_index_1based"]
-            steps_labeled = []
-            for step_i, text in enumerate(all_steps):
-                step_idx_1based = step_i + 1
-                is_first_wrong = step_idx_1based == first_wrong_1based
-                is_cumulative = step_idx_1based >= first_wrong_1based
-                steps_labeled.append({
-                    "step_id": step_i,
-                    "text": text,
-                    "step_hallucination": is_first_wrong,
-                    "cumulative_hallucination": is_cumulative,
-                })
-            response_text = item.get("response_text") or "\n\n".join(all_steps)
-            answer = _extract_answer_from_rollout(response_text)
-            dataset.append({
-                "id": entry_id,
-                "subset": sample["task"],
-                "model": report["meta"]["model"],
-                "query": sample["question"],
-                "response": response_text,
-                "steps": steps_labeled,
-                "answer": answer,
-                "ground_truth": sample["target"],
-                "omegaprm_meta": {
-                    "sample_id": sample["sample_id"],
-                    "dataset_index": sample["dataset_index"],
-                    "root_mc": sample["root_mc"],
-                    "iteration": iteration_idx + 1,
-                    "rollout_source": item["selected_rollout_source"],
-                    "first_wrong_step_index_1based": first_wrong_1based,
-                },
+def _load_completed_indices(jsonl_path: Path) -> set[int]:
+    """Read a samples JSONL and return the set of dataset_index values."""
+    if not jsonl_path.exists():
+        return set()
+    done: set[int] = set()
+    for line in jsonl_path.read_text().splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            done.add(int(json.loads(line)["dataset_index"]))
+        except (json.JSONDecodeError, KeyError):
+            pass
+    return done
+
+
+def _build_hallucination_entries(sample: dict[str, Any]) -> list[dict[str, Any]]:
+    """Build hallucination dataset entries for a single sample."""
+    entries: list[dict[str, Any]] = []
+    for iteration_idx, item in enumerate(sample["selected_rollout_results"]):
+        if not item["found"]:
+            continue
+        all_steps: list[str] = item["all_steps"]
+        first_wrong_1based: int = item["first_wrong_step_index_1based"]
+        steps_labeled = []
+        for step_i, text in enumerate(all_steps):
+            step_idx_1based = step_i + 1
+            is_first_wrong = step_idx_1based == first_wrong_1based
+            is_cumulative = step_idx_1based >= first_wrong_1based
+            steps_labeled.append({
+                "step_id": step_i,
+                "text": text,
+                "step_hallucination": is_first_wrong,
+                "cumulative_hallucination": is_cumulative,
             })
-            entry_id += 1
-    return dataset
+        response_text = item.get("response_text") or "\n\n".join(all_steps)
+        answer = _extract_answer_from_rollout(response_text)
+        entries.append({
+            "subset": sample["task"],
+            "sample_id": sample["sample_id"],
+            "dataset_index": sample["dataset_index"],
+            "iteration": iteration_idx + 1,
+            "query": sample["question"],
+            "response": response_text,
+            "steps": steps_labeled,
+            "answer": answer,
+            "ground_truth": sample["target"],
+            "root_mc": sample["root_mc"],
+            "first_wrong_step_index_1based": first_wrong_1based,
+            "rollout_source": item["selected_rollout_source"],
+        })
+    return entries
 
 
 def main() -> None:
@@ -252,34 +271,29 @@ def main() -> None:
         max_parallel_requests=args.max_parallel_requests or None,
     )
 
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    out_json = out_dir / f"{args.out_prefix}_{timestamp}.json"
-    out_md = out_dir / f"{args.out_prefix}_{timestamp}.md"
+    timestamp = args.resume_tag or datetime.now().strftime("%Y%m%d_%H%M%S")
 
-    report: dict[str, Any] = {
-        "meta": {
-            "tasks": task_ids,
-            "predictions_jsonl": args.predictions_jsonl or None,
-            "model": args.model,
-            "tokenizer": tokenizer_name,
-            "chat_format": prompt_builder.chat_format,
-            "base_urls": base_urls,
-            "num_samples_per_task": args.num_samples_per_task,
-            "seed": args.seed,
-            "only_wrong_samples": args.only_wrong_samples,
-            "k_rollouts": args.k_rollouts,
-            "search_limit": args.search_limit,
-            "alpha": args.alpha,
-            "beta": args.beta,
-            "length_penalty_L": args.length_penalty_L,
-            "c_puct": args.c_puct,
-            "temperature": args.temperature,
-            "top_p": args.top_p,
-            "max_rollout_tokens": args.max_rollout_tokens,
-            "max_context": args.max_context,
-            "require_root_mixed": args.require_root_mixed,
-        },
-        "samples": [],
+    meta: dict[str, Any] = {
+        "tasks": task_ids,
+        "predictions_jsonl": args.predictions_jsonl or None,
+        "model": args.model,
+        "tokenizer": tokenizer_name,
+        "chat_format": prompt_builder.chat_format,
+        "base_urls": base_urls,
+        "num_samples_per_task": args.num_samples_per_task,
+        "seed": args.seed,
+        "only_wrong_samples": args.only_wrong_samples,
+        "k_rollouts": args.k_rollouts,
+        "search_limit": args.search_limit,
+        "alpha": args.alpha,
+        "beta": args.beta,
+        "length_penalty_L": args.length_penalty_L,
+        "c_puct": args.c_puct,
+        "temperature": args.temperature,
+        "top_p": args.top_p,
+        "max_rollout_tokens": args.max_rollout_tokens,
+        "max_context": args.max_context,
+        "require_root_mixed": args.require_root_mixed,
     }
 
     global_order = 0
@@ -293,14 +307,30 @@ def main() -> None:
     for task_id in task_ids:
         examples = load_examples(task_id)
         indices = select_indices(examples, task_id, args)
+
+        # Per-task output files (JSONL — one line per sample, append-friendly)
+        task_short = task_id.replace("bbeh_", "")
+        samples_path = out_dir / f"{args.out_prefix}_{task_short}_{timestamp}.jsonl"
+        hallu_path = out_dir / f"{args.out_prefix}_{task_short}_{timestamp}_hallu.jsonl"
+
+        # Resume: skip already-completed indices
+        done_indices = _load_completed_indices(samples_path)
+        pending = [i for i in indices if i not in done_indices]
         print(
             f"\n{'='*60}\n"
-            f"TASK: {task_id}  |  indices: {indices}\n"
+            f"TASK: {task_id}  |  indices: {indices}"
+            f"  |  done: {sorted(done_indices) if done_indices else '[]'}"
+            f"  |  pending: {pending}\n"
             f"{'='*60}",
             flush=True,
         )
 
-        for dataset_index in indices:
+        # Write meta header on first run
+        if not samples_path.exists():
+            with open(samples_path, "a") as f:
+                f.write(json.dumps({"_meta": meta}, ensure_ascii=False) + "\n")
+
+        for dataset_index in pending:
             global_order += 1
             raw_input = examples[dataset_index]["input"]
             question = (
@@ -385,7 +415,18 @@ def main() -> None:
                 "num_candidates_remaining": result.num_candidates_remaining,
                 "tree_summary": result.tree_summary,
             }
-            report["samples"].append(sample_report)
+
+            # Append sample to JSONL immediately
+            with open(samples_path, "a") as f:
+                f.write(json.dumps(sample_report, ensure_ascii=False) + "\n")
+
+            # Append hallu entries to JSONL immediately
+            hallu_entries = _build_hallucination_entries(sample_report)
+            if hallu_entries:
+                with open(hallu_path, "a") as f:
+                    for entry in hallu_entries:
+                        f.write(json.dumps(entry, ensure_ascii=False) + "\n")
+
             elapsed_total = time.time() - t_start
             remaining = total_samples - global_order
             avg_per_sample = elapsed_total / global_order
@@ -395,66 +436,21 @@ def main() -> None:
                 f"| root_mc={result.root_mc:.3f} "
                 f"| found_errors={found_count}"
                 f"/{len(result.selected_rollout_results)} "
+                f"| hallu={len(hallu_entries)} "
                 f"| elapsed={elapsed_total:.0f}s eta={eta_total:.0f}s",
                 flush=True,
             )
 
-    report["overall"] = {
-        "num_samples": kept_samples,
-        "skipped_root_filter": skipped_root_filter,
-    }
-    out_json.write_text(json.dumps(report, indent=2, ensure_ascii=False))
-
-    md_lines = [
-        "# OmegaPRM First-Wrong-Step Search",
-        "",
-        f"- Samples kept: `{kept_samples}`",
-        f"- Samples skipped (root filter): `{skipped_root_filter}`",
-        f"- Model: `{args.model}`",
-        f"- Base URLs: `{base_urls}`",
-        "",
-    ]
-    for sample in report["samples"]:
-        md_lines.append(
-            f"## [{sample['sample_id']}] {sample['task']} index {sample['dataset_index']}"
+        print(
+            f"  OUTPUT: {samples_path.name} | {hallu_path.name}",
+            flush=True,
         )
-        md_lines.append(f"- Target: `{sample['target']}`")
-        md_lines.append(f"- Root MC: `{sample['root_mc']:.3f}`")
-        md_lines.append(
-            f"- Errors found: "
-            f"`{sample['errors_found']}/{sample['search_iterations']}`"
-        )
-        md_lines.append(f"- Tree states: `{sample['num_states']}`")
-        md_lines.append(f"- Rollouts used: `{sample['num_rollouts_total']}`")
-        md_lines.append("")
 
-        for i, item in enumerate(sample["selected_rollout_results"], 1):
-            if not item["found"]:
-                continue
-            step_idx = item["first_wrong_step_index_1based"]
-            prev_idx = item["previous_step_index_1based"]
-            md_lines.append(f"### Iteration {i}: first wrong = step {step_idx}")
-            if item.get("previous_step_text"):
-                md_lines.append(f"**Step {prev_idx} (last correct, MC > 0):**")
-                md_lines.append("```")
-                md_lines.append(item["previous_step_text"])
-                md_lines.append("```")
-            if item.get("first_wrong_step_text"):
-                md_lines.append(f"**Step {step_idx} (first wrong, MC = 0):**")
-                md_lines.append("```")
-                md_lines.append(item["first_wrong_step_text"])
-                md_lines.append("```")
-            md_lines.append("")
-        md_lines.append("")
-    out_md.write_text("\n".join(md_lines), encoding="utf-8")
-
-    hallu_dataset = _build_hallucination_dataset(report)
-    out_hallu = out_dir / f"{args.out_prefix}_{timestamp}_hallu.json"
-    out_hallu.write_text(json.dumps(hallu_dataset, indent=2, ensure_ascii=False))
-
-    print(f"\nWROTE_JSON: {out_json}")
-    print(f"WROTE_MD: {out_md}")
-    print(f"WROTE_HALLU: {out_hallu} ({len(hallu_dataset)} entries)")
+    print(
+        f"\nDONE: {kept_samples} samples kept, "
+        f"{skipped_root_filter} skipped (root filter), "
+        f"{time.time() - t_start:.0f}s total"
+    )
 
 
 if __name__ == "__main__":
