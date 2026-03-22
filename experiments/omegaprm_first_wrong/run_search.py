@@ -9,26 +9,39 @@ from typing import Any
 
 from transformers import AutoTokenizer
 
-from experiments.multistep_react_verifier.arithmetic_tools import (
-    MultiStepArithmeticEngine,
-    validate_engine_on_multistep_dataset,
-)
 from experiments.omegaprm_first_wrong.rollout import PromptBuilder, VLLMRolloutClient
 from experiments.omegaprm_first_wrong.search import OmegaPRMFirstWrongSearch
 
 
-DEFAULT_PREDICTIONS = "runs/deepseek_r1_multistep_full/predictions.jsonl"
-DEFAULT_TASK_JSON = "bbeh/benchmark_tasks/bbeh_multistep_arithmetic/task.json"
 DEFAULT_MODEL = "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B"
+
+
+DEFAULT_TASKS = [
+    "bbeh_causal_understanding",
+    "bbeh_multistep_arithmetic",
+    "bbeh_time_arithmetic",
+    "bbeh_word_sorting",
+]
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="OmegaPRM-style first-wrong-step search for BBEH multistep arithmetic."
+        description="OmegaPRM-style first-wrong-step search for BBEH tasks."
     )
-    parser.add_argument("--predictions-jsonl", default=DEFAULT_PREDICTIONS)
-    parser.add_argument("--task-json", default=DEFAULT_TASK_JSON)
-    parser.add_argument("--num-samples", type=int, default=5)
+    parser.add_argument(
+        "--tasks",
+        default=",".join(DEFAULT_TASKS),
+        help="Comma-separated task ids (e.g. causal_understanding,multistep_arithmetic).",
+    )
+    parser.add_argument(
+        "--predictions-jsonl",
+        default="",
+        help=(
+            "Optional predictions file. When set with --only-wrong-samples, "
+            "only runs search on samples the model got wrong."
+        ),
+    )
+    parser.add_argument("--num-samples-per-task", type=int, default=5)
     parser.add_argument("--seed", type=int, default=20250322)
     parser.add_argument(
         "--only-wrong-samples",
@@ -40,11 +53,11 @@ def parse_args() -> argparse.Namespace:
         dest="only_wrong_samples",
         action="store_false",
     )
-    parser.set_defaults(only_wrong_samples=True)
+    parser.set_defaults(only_wrong_samples=False)
     parser.add_argument(
-        "--dataset-indices",
+        "--sample-indices",
         default="",
-        help="Comma-separated dataset indices to run instead of random sampling.",
+        help="Comma-separated example indices per task (e.g. 0,1,2,5,10).",
     )
     parser.add_argument("--model", default=DEFAULT_MODEL)
     parser.add_argument(
@@ -105,43 +118,54 @@ def parse_base_urls(args: argparse.Namespace) -> list[str]:
     ]
 
 
-def load_trace_rows(path: Path) -> list[dict[str, Any]]:
-    rows: list[dict[str, Any]] = []
-    for line in path.read_text().splitlines():
+def parse_task_ids(raw: str) -> list[str]:
+    tasks = [t.strip() for t in raw.split(",") if t.strip()]
+    return [t if t.startswith("bbeh_") else f"bbeh_{t}" for t in tasks]
+
+
+def load_examples(task_id: str) -> list[dict[str, Any]]:
+    task_path = Path("bbeh/benchmark_tasks") / task_id / "task.json"
+    if not task_path.exists():
+        raise FileNotFoundError(f"Task file not found: {task_path}")
+    return json.loads(task_path.read_text())["examples"]
+
+
+def load_wrong_indices(predictions_path: str, task_id: str) -> set[int]:
+    """Load indices of wrong predictions from a predictions JSONL file."""
+    wrong: set[int] = set()
+    for line in Path(predictions_path).read_text().splitlines():
         if not line.strip():
             continue
         row = json.loads(line)
-        if row.get("task") == "bbeh_multistep_arithmetic":
-            rows.append(row)
-    return rows
+        if row.get("task") == task_id and not bool(row.get("is_correct", False)):
+            wrong.add(int(row["index"]))
+    return wrong
 
 
-def select_rows(
-    rows: list[dict[str, Any]], args: argparse.Namespace
-) -> list[dict[str, Any]]:
-    if args.dataset_indices.strip():
-        chosen = {
+def select_indices(
+    examples: list[dict[str, Any]],
+    task_id: str,
+    args: argparse.Namespace,
+) -> list[int]:
+    """Select which example indices to run search on."""
+    if args.sample_indices.strip():
+        return [
             int(i.strip())
-            for i in args.dataset_indices.split(",")
+            for i in args.sample_indices.split(",")
             if i.strip()
-        }
-        selected = [r for r in rows if int(r["index"]) in chosen]
-        if not selected:
-            raise RuntimeError(
-                f"No rows found for dataset_indices={sorted(chosen)}"
-            )
-        return sorted(selected, key=lambda r: int(r["index"]))
+        ]
 
-    pool = rows
-    if args.only_wrong_samples:
-        pool = [r for r in rows if not bool(r.get("is_correct", False))]
-    if len(pool) < args.num_samples:
-        raise RuntimeError(
-            f"Not enough candidate rows: requested={args.num_samples}, "
-            f"available={len(pool)}"
-        )
+    all_indices = list(range(len(examples)))
+
+    if args.only_wrong_samples and args.predictions_jsonl.strip():
+        wrong = load_wrong_indices(args.predictions_jsonl, task_id)
+        all_indices = [i for i in all_indices if i in wrong]
+
+    if len(all_indices) <= args.num_samples_per_task:
+        return all_indices
+
     random.seed(args.seed)
-    return random.sample(pool, args.num_samples)
+    return sorted(random.sample(all_indices, args.num_samples_per_task))
 
 
 def main() -> None:
@@ -149,14 +173,7 @@ def main() -> None:
     out_dir = Path(args.out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    validation = validate_engine_on_multistep_dataset(args.task_json)
-    if validation["accuracy"] < 1.0:
-        raise RuntimeError(f"Arithmetic engine mismatch: {validation}")
-
-    task_data = json.loads(Path(args.task_json).read_text())
-    examples = task_data["examples"]
-    trace_rows = load_trace_rows(Path(args.predictions_jsonl))
-    selected_rows = select_rows(trace_rows, args)
+    task_ids = parse_task_ids(args.tasks)
     base_urls = parse_base_urls(args)
 
     # ---- tokenizer & prompt builder ----------------------------------------
@@ -189,13 +206,13 @@ def main() -> None:
 
     report: dict[str, Any] = {
         "meta": {
-            "predictions_jsonl": args.predictions_jsonl,
-            "task_json": args.task_json,
+            "tasks": task_ids,
+            "predictions_jsonl": args.predictions_jsonl or None,
             "model": args.model,
             "tokenizer": tokenizer_name,
-            "chat_format": args.chat_format,
+            "chat_format": prompt_builder.chat_format,
             "base_urls": base_urls,
-            "num_samples": len(selected_rows),
+            "num_samples_per_task": args.num_samples_per_task,
             "seed": args.seed,
             "only_wrong_samples": args.only_wrong_samples,
             "k_rollouts": args.k_rollouts,
@@ -209,97 +226,110 @@ def main() -> None:
             "max_rollout_tokens": args.max_rollout_tokens,
             "max_context": args.max_context,
             "require_root_mixed": args.require_root_mixed,
-            "engine_validation": validation,
         },
         "samples": [],
     }
 
+    global_order = 0
     skipped_root_filter = 0
     kept_samples = 0
-    for sample_order, row in enumerate(selected_rows, start=1):
-        dataset_index = int(row["index"])
-        raw_input = examples[dataset_index]["input"]
-        question = raw_input[len("Question: "):] if raw_input.startswith("Question: ") else raw_input
-        target = str(examples[dataset_index]["target"])
-        engine = MultiStepArithmeticEngine.from_question(question)
-        truth = engine.compute_named_values()
-        if str(truth["FINAL"]) != target:
-            raise RuntimeError(
-                f"Target mismatch at index {dataset_index}: "
-                f"{truth['FINAL']} vs {target}"
-            )
 
-        search = OmegaPRMFirstWrongSearch(
-            question=question,
-            target=target,
-            rollout_client=client,
-            k_rollouts=args.k_rollouts,
-            search_limit=args.search_limit,
-            alpha=args.alpha,
-            beta=args.beta,
-            length_penalty_L=args.length_penalty_L,
-            c_puct=args.c_puct,
-        )
-        result = search.run()
-
-        if result.root_mc == 0.0:
-            root_filter_status = "too_hard"
-        elif result.root_mc == 1.0:
-            root_filter_status = "too_easy"
-        else:
-            root_filter_status = "mixed"
-
-        if args.require_root_mixed and root_filter_status != "mixed":
-            skipped_root_filter += 1
-            print(
-                f"sample {sample_order}/{len(selected_rows)} "
-                f"| idx={dataset_index} "
-                f"| root_mc={result.root_mc:.3f} "
-                f"| skipped={root_filter_status}",
-                flush=True,
-            )
-            continue
-
-        kept_samples += 1
-        found_count = sum(
-            1 for r in result.selected_rollout_results if r.found
-        )
-        sample_report: dict[str, Any] = {
-            "sample_order": sample_order,
-            "dataset_index": dataset_index,
-            "target": target,
-            "source_is_correct": bool(row.get("is_correct", False)),
-            "root_mc": result.root_mc,
-            "root_filter_status": root_filter_status,
-            "search_iterations": len(result.selected_rollout_results),
-            "errors_found": found_count,
-            "selected_rollout_results": [
-                {
-                    "found": item.found,
-                    "first_wrong_step_index_1based": item.first_wrong_step_index_1based,
-                    "previous_step_index_1based": item.previous_step_index_1based,
-                    "selected_rollout_source": item.selected_rollout_source,
-                    "selected_rollout_num_steps": item.selected_rollout_num_steps,
-                    "search_path": [
-                        p.__dict__ for p in item.search_path
-                    ],
-                }
-                for item in result.selected_rollout_results
-            ],
-            "num_states": result.num_states,
-            "num_rollouts_total": result.num_rollouts_total,
-            "num_candidates_remaining": result.num_candidates_remaining,
-            "tree_summary": result.tree_summary,
-        }
-        report["samples"].append(sample_report)
+    for task_id in task_ids:
+        examples = load_examples(task_id)
+        indices = select_indices(examples, task_id, args)
         print(
-            f"sample {sample_order}/{len(selected_rows)} "
-            f"| idx={dataset_index} "
-            f"| root_mc={result.root_mc:.3f} "
-            f"| found_errors={found_count}"
-            f"/{len(result.selected_rollout_results)}",
+            f"\n{'='*60}\n"
+            f"TASK: {task_id}  |  indices: {indices}\n"
+            f"{'='*60}",
             flush=True,
         )
+
+        for dataset_index in indices:
+            global_order += 1
+            raw_input = examples[dataset_index]["input"]
+            question = (
+                raw_input[len("Question: "):]
+                if raw_input.startswith("Question: ")
+                else raw_input
+            )
+            target = str(examples[dataset_index]["target"])
+
+            try:
+                search = OmegaPRMFirstWrongSearch(
+                    question=question,
+                    target=target,
+                    rollout_client=client,
+                    k_rollouts=args.k_rollouts,
+                    search_limit=args.search_limit,
+                    alpha=args.alpha,
+                    beta=args.beta,
+                    length_penalty_L=args.length_penalty_L,
+                    c_puct=args.c_puct,
+                )
+                result = search.run()
+            except Exception as exc:
+                print(
+                    f"  ERROR at {task_id}[{dataset_index}]: {exc}",
+                    flush=True,
+                )
+                continue
+
+            if result.root_mc == 0.0:
+                root_filter_status = "too_hard"
+            elif result.root_mc == 1.0:
+                root_filter_status = "too_easy"
+            else:
+                root_filter_status = "mixed"
+
+            if args.require_root_mixed and root_filter_status != "mixed":
+                skipped_root_filter += 1
+                print(
+                    f"  [{global_order}] {task_id}[{dataset_index}] "
+                    f"| root_mc={result.root_mc:.3f} "
+                    f"| skipped={root_filter_status}",
+                    flush=True,
+                )
+                continue
+
+            kept_samples += 1
+            found_count = sum(
+                1 for r in result.selected_rollout_results if r.found
+            )
+            sample_report: dict[str, Any] = {
+                "global_order": global_order,
+                "task": task_id,
+                "dataset_index": dataset_index,
+                "target": target,
+                "root_mc": result.root_mc,
+                "root_filter_status": root_filter_status,
+                "search_iterations": len(result.selected_rollout_results),
+                "errors_found": found_count,
+                "selected_rollout_results": [
+                    {
+                        "found": item.found,
+                        "first_wrong_step_index_1based": item.first_wrong_step_index_1based,
+                        "previous_step_index_1based": item.previous_step_index_1based,
+                        "selected_rollout_source": item.selected_rollout_source,
+                        "selected_rollout_num_steps": item.selected_rollout_num_steps,
+                        "search_path": [
+                            p.__dict__ for p in item.search_path
+                        ],
+                    }
+                    for item in result.selected_rollout_results
+                ],
+                "num_states": result.num_states,
+                "num_rollouts_total": result.num_rollouts_total,
+                "num_candidates_remaining": result.num_candidates_remaining,
+                "tree_summary": result.tree_summary,
+            }
+            report["samples"].append(sample_report)
+            print(
+                f"  [{global_order}] {task_id}[{dataset_index}] "
+                f"| root_mc={result.root_mc:.3f} "
+                f"| found_errors={found_count}"
+                f"/{len(result.selected_rollout_results)}",
+                flush=True,
+            )
 
     report["overall"] = {
         "num_samples": kept_samples,
@@ -314,11 +344,12 @@ def main() -> None:
         f"- Samples skipped (root filter): `{skipped_root_filter}`",
         f"- Model: `{args.model}`",
         f"- Base URLs: `{base_urls}`",
-        f"- Source predictions: `{args.predictions_jsonl}`",
         "",
     ]
     for sample in report["samples"]:
-        md_lines.append(f"## Dataset index {sample['dataset_index']}")
+        md_lines.append(
+            f"## {sample['task']} index {sample['dataset_index']}"
+        )
         md_lines.append(f"- Root MC: `{sample['root_mc']:.3f}`")
         md_lines.append(
             f"- Search iterations: `{sample['search_iterations']}`"
@@ -332,7 +363,7 @@ def main() -> None:
         md_lines.append("")
     out_md.write_text("\n".join(md_lines), encoding="utf-8")
 
-    print(f"WROTE_JSON: {out_json}")
+    print(f"\nWROTE_JSON: {out_json}")
     print(f"WROTE_MD: {out_md}")
 
 
