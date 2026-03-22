@@ -54,7 +54,6 @@ class LocatedFirstWrong:
 @dataclass
 class SearchResult:
     root_mc: float
-    source_first_wrong: LocatedFirstWrong | None
     selected_rollout_results: list[LocatedFirstWrong]
     num_states: int
     num_rollouts_total: int
@@ -67,7 +66,6 @@ class OmegaPRMFirstWrongSearch:
         self,
         question: str,
         target: str,
-        source_steps: list[str],
         rollout_client: RolloutClient,
         k_rollouts: int = 8,
         search_limit: int = 20,
@@ -78,7 +76,6 @@ class OmegaPRMFirstWrongSearch:
     ):
         self.question = question
         self.target = str(target)
-        self.source_steps = [step.strip() for step in source_steps if step.strip()]
         self.rollout_client = rollout_client
         self.k_rollouts = k_rollouts
         self.search_limit = search_limit
@@ -95,14 +92,6 @@ class OmegaPRMFirstWrongSearch:
     def run(self) -> SearchResult:
         root_state = self._get_state(())
         root_mc = self._ensure_state_rollouts(root_state)
-
-        source_first_wrong: LocatedFirstWrong | None = None
-        if self.source_steps:
-            source_first_wrong = self._binary_search_rollout(
-                start_state=root_state,
-                rollout_steps=self.source_steps,
-                rollout_source="source_trace",
-            )
 
         selected_rollout_results: list[LocatedFirstWrong] = []
         while len(selected_rollout_results) < self.search_limit:
@@ -131,7 +120,6 @@ class OmegaPRMFirstWrongSearch:
 
         return SearchResult(
             root_mc=root_mc,
-            source_first_wrong=source_first_wrong,
             selected_rollout_results=selected_rollout_results,
             num_states=len(self.states),
             num_rollouts_total=self.num_rollouts_total,
@@ -160,7 +148,20 @@ class OmegaPRMFirstWrongSearch:
         if not state.rollouts:
             state.mc_estimate = 0.0
         else:
-            state.mc_estimate = sum(1 for rollout in state.rollouts if rollout.is_correct) / len(state.rollouts)
+            # Exclude truncated rollouts that produced no answer — they
+            # are *incomplete*, not wrong.  If all rollouts are truncated
+            # we fall back to treating them as wrong (MC=0).
+            scorable = [
+                r for r in state.rollouts
+                if not (r.is_truncated and not r.is_correct)
+            ]
+            if scorable:
+                state.mc_estimate = (
+                    sum(1 for r in scorable if r.is_correct)
+                    / len(scorable)
+                )
+            else:
+                state.mc_estimate = 0.0
 
         if 0.0 < state.mc_estimate < 1.0:
             for rollout in state.rollouts:

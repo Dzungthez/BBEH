@@ -13,7 +13,11 @@ _NUMBERED_BLOCK_RE = re.compile(
 def normalize_trace_text(trace: str) -> str:
     text = trace.replace("\r\n", "\n").strip()
     text = _THINK_OPEN_RE.sub("", text)
-    text = _THINK_CLOSE_RE.sub("\n", text)
+    # Only keep content before </think> — everything after is the
+    # final answer, not a reasoning step.
+    close_match = _THINK_CLOSE_RE.search(text)
+    if close_match:
+        text = text[: close_match.start()]
     return text.strip()
 
 
