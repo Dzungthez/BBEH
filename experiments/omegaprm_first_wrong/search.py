@@ -46,6 +46,10 @@ class LocatedFirstWrong:
     found: bool
     first_wrong_step_index_1based: int | None
     previous_step_index_1based: int | None
+    first_wrong_step_text: str | None
+    previous_step_text: str | None
+    all_steps: list[str]
+    response_text: str
     search_path: list[BinarySearchProbe]
     selected_rollout_source: str
     selected_rollout_num_steps: int
@@ -104,6 +108,7 @@ class OmegaPRMFirstWrongSearch:
                 start_state=state,
                 rollout_steps=list(candidate.continuation_steps),
                 rollout_source=candidate.source,
+                response_text=candidate.response_text,
             )
             selected_rollout_results.append(located)
 
@@ -215,12 +220,18 @@ class OmegaPRMFirstWrongSearch:
         start_state: SearchState,
         rollout_steps: list[str],
         rollout_source: str,
+        response_text: str = "",
     ) -> LocatedFirstWrong:
+        all_steps = list(start_state.prefix_steps) + rollout_steps
         if not rollout_steps:
             return LocatedFirstWrong(
                 found=False,
                 first_wrong_step_index_1based=None,
                 previous_step_index_1based=None,
+                first_wrong_step_text=None,
+                previous_step_text=None,
+                all_steps=all_steps,
+                response_text=response_text,
                 search_path=[],
                 selected_rollout_source=rollout_source,
                 selected_rollout_num_steps=0,
@@ -266,10 +277,22 @@ class OmegaPRMFirstWrongSearch:
         found = final_mc == 0.0
         first_wrong = len(prefix_base) + lo + 1 if found else None
         prev_index = first_wrong - 1 if found and first_wrong > 1 else None
+
+        first_wrong_text = None
+        prev_text = None
+        if found and first_wrong is not None:
+            first_wrong_text = all_steps[first_wrong - 1]  # 1-based → 0-based
+            if prev_index is not None and prev_index >= 1:
+                prev_text = all_steps[prev_index - 1]
+
         return LocatedFirstWrong(
             found=found,
             first_wrong_step_index_1based=first_wrong,
             previous_step_index_1based=prev_index,
+            first_wrong_step_text=first_wrong_text,
+            previous_step_text=prev_text,
+            all_steps=all_steps,
+            response_text=response_text,
             search_path=probes,
             selected_rollout_source=rollout_source,
             selected_rollout_num_steps=len(rollout_steps),

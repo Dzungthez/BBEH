@@ -268,7 +268,8 @@ def _extract_answer_from_rollout(text: str) -> str | None:
     Priority:
       1. Last ``\\boxed{...}`` in the text
       2. Text after ``</think>`` (first non-empty line)
-      3. ``None`` if nothing found
+      3. "The answer is ..." / "The final answer is ..." heuristics
+      4. ``None`` if nothing found
     """
     boxed = _extract_boxed_answer(text)
     if boxed is not None:
@@ -281,6 +282,25 @@ def _extract_answer_from_rollout(text: str) -> str | None:
             first_line = after.split("\n")[0].strip()
             if first_line:
                 return first_line
+
+    for prefix in ("The final answer is: ", "The final answer is ", "The answer is: ", "The answer is "):
+        if prefix in text:
+            answer = text.split(prefix)[-1].strip().split("\n")[0].strip()
+            if answer.endswith("."):
+                answer = answer[:-1]
+            if answer:
+                return answer
+
+    answer_match = re.search(r'the answer (?:would be|is)\s+["\']?([^"\'.\n]+)', text, re.IGNORECASE)
+    if answer_match:
+        return answer_match.group(1).strip()
+
+    lines = [ln.strip() for ln in text.strip().splitlines() if ln.strip()]
+    if lines:
+        last = lines[-1].rstrip(".")
+        if len(last) <= 120:
+            return last
+
     return None
 
 

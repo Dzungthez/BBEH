@@ -9,7 +9,7 @@ from typing import Any
 
 from transformers import AutoTokenizer
 
-from experiments.omegaprm_first_wrong.rollout import PromptBuilder, VLLMRolloutClient
+from experiments.omegaprm_first_wrong.rollout import PromptBuilder, VLLMRolloutClient, _extract_answer_from_rollout
 from experiments.omegaprm_first_wrong.search import OmegaPRMFirstWrongSearch
 
 
@@ -168,6 +168,50 @@ def select_indices(
     return sorted(random.sample(all_indices, args.num_samples_per_task))
 
 
+def _build_hallucination_dataset(report: dict[str, Any]) -> list[dict[str, Any]]:
+    dataset: list[dict[str, Any]] = []
+    entry_id = 0
+    for sample in report["samples"]:
+        for iteration_idx, item in enumerate(sample["selected_rollout_results"]):
+            if not item["found"]:
+                continue
+            all_steps: list[str] = item["all_steps"]
+            first_wrong_1based: int = item["first_wrong_step_index_1based"]
+            steps_labeled = []
+            for step_i, text in enumerate(all_steps):
+                step_idx_1based = step_i + 1
+                is_first_wrong = step_idx_1based == first_wrong_1based
+                is_cumulative = step_idx_1based >= first_wrong_1based
+                steps_labeled.append({
+                    "step_id": step_i,
+                    "text": text,
+                    "step_hallucination": is_first_wrong,
+                    "cumulative_hallucination": is_cumulative,
+                })
+            response_text = item.get("response_text") or "\n\n".join(all_steps)
+            answer = _extract_answer_from_rollout(response_text)
+            dataset.append({
+                "id": entry_id,
+                "subset": sample["task"],
+                "model": report["meta"]["model"],
+                "query": sample["question"],
+                "response": response_text,
+                "steps": steps_labeled,
+                "answer": answer,
+                "ground_truth": sample["target"],
+                "omegaprm_meta": {
+                    "sample_id": sample["sample_id"],
+                    "dataset_index": sample["dataset_index"],
+                    "root_mc": sample["root_mc"],
+                    "iteration": iteration_idx + 1,
+                    "rollout_source": item["selected_rollout_source"],
+                    "first_wrong_step_index_1based": first_wrong_1based,
+                },
+            })
+            entry_id += 1
+    return dataset
+
+
 def main() -> None:
     args = parse_args()
     out_dir = Path(args.out_dir)
@@ -295,10 +339,13 @@ def main() -> None:
             found_count = sum(
                 1 for r in result.selected_rollout_results if r.found
             )
+            sample_id = f"{task_id}:{dataset_index}"
             sample_report: dict[str, Any] = {
+                "sample_id": sample_id,
                 "global_order": global_order,
                 "task": task_id,
                 "dataset_index": dataset_index,
+                "question": question,
                 "target": target,
                 "root_mc": result.root_mc,
                 "root_filter_status": root_filter_status,
@@ -309,6 +356,10 @@ def main() -> None:
                         "found": item.found,
                         "first_wrong_step_index_1based": item.first_wrong_step_index_1based,
                         "previous_step_index_1based": item.previous_step_index_1based,
+                        "first_wrong_step_text": item.first_wrong_step_text,
+                        "previous_step_text": item.previous_step_text,
+                        "all_steps": item.all_steps,
+                        "response_text": item.response_text,
                         "selected_rollout_source": item.selected_rollout_source,
                         "selected_rollout_num_steps": item.selected_rollout_num_steps,
                         "search_path": [
@@ -348,12 +399,10 @@ def main() -> None:
     ]
     for sample in report["samples"]:
         md_lines.append(
-            f"## {sample['task']} index {sample['dataset_index']}"
+            f"## [{sample['sample_id']}] {sample['task']} index {sample['dataset_index']}"
         )
+        md_lines.append(f"- Target: `{sample['target']}`")
         md_lines.append(f"- Root MC: `{sample['root_mc']:.3f}`")
-        md_lines.append(
-            f"- Search iterations: `{sample['search_iterations']}`"
-        )
         md_lines.append(
             f"- Errors found: "
             f"`{sample['errors_found']}/{sample['search_iterations']}`"
@@ -361,10 +410,34 @@ def main() -> None:
         md_lines.append(f"- Tree states: `{sample['num_states']}`")
         md_lines.append(f"- Rollouts used: `{sample['num_rollouts_total']}`")
         md_lines.append("")
+
+        for i, item in enumerate(sample["selected_rollout_results"], 1):
+            if not item["found"]:
+                continue
+            step_idx = item["first_wrong_step_index_1based"]
+            prev_idx = item["previous_step_index_1based"]
+            md_lines.append(f"### Iteration {i}: first wrong = step {step_idx}")
+            if item.get("previous_step_text"):
+                md_lines.append(f"**Step {prev_idx} (last correct, MC > 0):**")
+                md_lines.append("```")
+                md_lines.append(item["previous_step_text"])
+                md_lines.append("```")
+            if item.get("first_wrong_step_text"):
+                md_lines.append(f"**Step {step_idx} (first wrong, MC = 0):**")
+                md_lines.append("```")
+                md_lines.append(item["first_wrong_step_text"])
+                md_lines.append("```")
+            md_lines.append("")
+        md_lines.append("")
     out_md.write_text("\n".join(md_lines), encoding="utf-8")
+
+    hallu_dataset = _build_hallucination_dataset(report)
+    out_hallu = out_dir / f"{args.out_prefix}_{timestamp}_hallu.json"
+    out_hallu.write_text(json.dumps(hallu_dataset, indent=2, ensure_ascii=False))
 
     print(f"\nWROTE_JSON: {out_json}")
     print(f"WROTE_MD: {out_md}")
+    print(f"WROTE_HALLU: {out_hallu} ({len(hallu_dataset)} entries)")
 
 
 if __name__ == "__main__":
