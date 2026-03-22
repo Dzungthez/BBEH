@@ -324,7 +324,8 @@ class VLLMRolloutClient:
     prompt_builder: PromptBuilder
     base_urls: list[str]
     model: str
-    temperature: float = 0.7
+    temperature: float = 0.6
+    top_p: float = 0.95
     max_tokens: int = 4096
     timeout_sec: int = 900
     max_retries: int = 4
@@ -377,6 +378,7 @@ class VLLMRolloutClient:
             "model": self.model,
             "prompt": prompt_ids,
             "temperature": self.temperature,
+            "top_p": self.top_p,
             "max_tokens": safe_max_tokens,
             "stop_token_ids": self.prompt_builder.stop_token_ids,
         }

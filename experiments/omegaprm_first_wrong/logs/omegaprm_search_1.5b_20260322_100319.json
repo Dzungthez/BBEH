@@ -1,0 +1,33 @@
+{
+  "meta": {
+    "predictions_jsonl": "runs/deepseek_r1_multistep_full/predictions.jsonl",
+    "task_json": "bbeh/benchmark_tasks/bbeh_multistep_arithmetic/task.json",
+    "model": "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
+    "tokenizer": "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
+    "chat_format": "auto",
+    "base_urls": [
+      "http://127.0.0.1:8000/v1"
+    ],
+    "num_samples": 5,
+    "seed": 20260322,
+    "only_wrong_samples": true,
+    "k_rollouts": 6,
+    "search_limit": 5,
+    "alpha": 0.5,
+    "beta": 0.9,
+    "length_penalty_L": 500,
+    "c_puct": 0.125,
+    "require_root_mixed": true,
+    "engine_validation": {
+      "total": 200,
+      "correct": 200,
+      "accuracy": 1.0,
+      "mismatches": []
+    }
+  },
+  "samples": [],
+  "overall": {
+    "num_samples": 0,
+    "skipped_root_filter": 5
+  }
+}

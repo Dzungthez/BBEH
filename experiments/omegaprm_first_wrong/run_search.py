@@ -64,8 +64,11 @@ def parse_args() -> argparse.Namespace:
         default="8000",
         help="Comma-separated ports used when --base-urls is empty.",
     )
-    parser.add_argument("--temperature", type=float, default=0.7)
-    parser.add_argument("--max-rollout-tokens", type=int, default=4096)
+    parser.add_argument("--temperature", type=float, default=0.6)
+    parser.add_argument("--top-p", type=float, default=0.95)
+    parser.add_argument("--max-rollout-tokens", type=int, default=16384)
+    parser.add_argument("--max-context", type=int, default=32768)
+    parser.add_argument("--context-margin", type=int, default=512)
     parser.add_argument("--timeout-sec", type=int, default=900)
     parser.add_argument("--k-rollouts", type=int, default=8)
     parser.add_argument("--search-limit", type=int, default=20)
@@ -173,8 +176,11 @@ def main() -> None:
         base_urls=base_urls,
         model=args.model,
         temperature=args.temperature,
+        top_p=args.top_p,
         max_tokens=args.max_rollout_tokens,
         timeout_sec=args.timeout_sec,
+        max_context=args.max_context,
+        context_safety_margin=args.context_margin,
     )
 
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -198,6 +204,10 @@ def main() -> None:
             "beta": args.beta,
             "length_penalty_L": args.length_penalty_L,
             "c_puct": args.c_puct,
+            "temperature": args.temperature,
+            "top_p": args.top_p,
+            "max_rollout_tokens": args.max_rollout_tokens,
+            "max_context": args.max_context,
             "require_root_mixed": args.require_root_mixed,
             "engine_validation": validation,
         },
@@ -208,7 +218,8 @@ def main() -> None:
     kept_samples = 0
     for sample_order, row in enumerate(selected_rows, start=1):
         dataset_index = int(row["index"])
-        question = examples[dataset_index]["input"]
+        raw_input = examples[dataset_index]["input"]
+        question = raw_input[len("Question: "):] if raw_input.startswith("Question: ") else raw_input
         target = str(examples[dataset_index]["target"])
         engine = MultiStepArithmeticEngine.from_question(question)
         truth = engine.compute_named_values()

@@ -104,7 +104,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--context-margin", type=int, default=512)
     parser.add_argument("--timeout-sec", type=int, default=300)
     parser.add_argument("--temperature-full", type=float, default=0.0)
-    parser.add_argument("--temperature-rollout", type=float, default=0.7)
+    parser.add_argument("--temperature-rollout", type=float, default=0.6)
+    parser.add_argument("--top-p", type=float, default=0.95)
     parser.add_argument("--num-rollouts-root", type=int, default=6)
     parser.add_argument("--num-rollouts-mid", type=int, default=6)
     parser.add_argument(
@@ -198,6 +199,7 @@ def generate_once(
     context_margin: int,
     timeout_sec: int,
     temperature: float,
+    top_p: float,
     seed: int | None,
     max_retries: int = 3,
 ) -> dict[str, Any]:
@@ -220,6 +222,7 @@ def generate_once(
         "prompt": prompt_ids,
         "max_tokens": safe_mt,
         "temperature": temperature,
+        "top_p": top_p,
         "stop_token_ids": stop_token_ids,
         "repetition_detection": {
             "max_pattern_size": 100,
@@ -295,6 +298,7 @@ def compute_mc(
             context_margin=args.context_margin,
             timeout_sec=args.timeout_sec,
             temperature=args.temperature_rollout,
+            top_p=args.top_p,
             seed=seed_base + ridx,
         )
         answer = _extract_answer_from_rollout(result["text"])
@@ -418,6 +422,7 @@ def main() -> None:
             "num_samples_per_task": args.num_samples_per_task,
             "temperature_full": args.temperature_full,
             "temperature_rollout": args.temperature_rollout,
+            "top_p": args.top_p,
             "num_rollouts_root": args.num_rollouts_root,
             "num_rollouts_mid": args.num_rollouts_mid,
             "require_root_mixed": args.require_root_mixed,
@@ -478,6 +483,7 @@ def main() -> None:
                 context_margin=args.context_margin,
                 timeout_sec=args.timeout_sec,
                 temperature=args.temperature_full,
+                top_p=args.top_p,
                 seed=args.seed + task_pos * 100_000 + sample_idx,
             )
             full_text = full_result["text"]
@@ -573,6 +579,7 @@ def main() -> None:
                 context_margin=args.context_margin,
                 timeout_sec=args.timeout_sec,
                 temperature=args.temperature_full,
+                top_p=args.top_p,
                 seed=args.seed + task_pos * 3_000_000 + sample_idx,
             )
             step1_answer = _extract_answer_from_rollout(step1_result["text"])

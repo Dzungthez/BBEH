@@ -58,6 +58,7 @@ def generate(
         "prompt": prompt_ids,
         "max_tokens": min(max_tokens, safe_mt),
         "temperature": temperature,
+        "top_p": 0.95,
         "stop_token_ids": stop_token_ids,
         "repetition_detection": {
             "max_pattern_size": 100,
