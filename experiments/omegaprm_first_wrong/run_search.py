@@ -367,79 +367,90 @@ def main() -> None:
             else:
                 root_filter_status = "mixed"
 
-            if args.require_root_mixed and root_filter_status != "mixed":
+            skipped = args.require_root_mixed and root_filter_status != "mixed"
+            hallu_count = 0
+
+            if skipped:
                 skipped_root_filter += 1
-                print(
-                    f"  [{global_order}] {task_id}[{dataset_index}] "
-                    f"| root_mc={result.root_mc:.3f} "
-                    f"| skipped={root_filter_status}",
-                    flush=True,
+                with open(samples_path, "a") as f:
+                    f.write(json.dumps({
+                        "dataset_index": dataset_index,
+                        "_skipped": root_filter_status,
+                        "root_mc": result.root_mc,
+                    }, ensure_ascii=False) + "\n")
+            else:
+                kept_samples += 1
+                found_count = sum(
+                    1 for r in result.selected_rollout_results if r.found
                 )
-                continue
+                sample_id = f"{task_id}:{dataset_index}"
+                sample_report: dict[str, Any] = {
+                    "sample_id": sample_id,
+                    "global_order": global_order,
+                    "task": task_id,
+                    "dataset_index": dataset_index,
+                    "question": question,
+                    "target": target,
+                    "root_mc": result.root_mc,
+                    "root_filter_status": root_filter_status,
+                    "search_iterations": len(result.selected_rollout_results),
+                    "errors_found": found_count,
+                    "selected_rollout_results": [
+                        {
+                            "found": item.found,
+                            "first_wrong_step_index_1based": item.first_wrong_step_index_1based,
+                            "previous_step_index_1based": item.previous_step_index_1based,
+                            "first_wrong_step_text": item.first_wrong_step_text,
+                            "previous_step_text": item.previous_step_text,
+                            "all_steps": item.all_steps,
+                            "response_text": item.response_text,
+                            "selected_rollout_source": item.selected_rollout_source,
+                            "selected_rollout_num_steps": item.selected_rollout_num_steps,
+                            "search_path": [
+                                p.__dict__ for p in item.search_path
+                            ],
+                        }
+                        for item in result.selected_rollout_results
+                    ],
+                    "num_states": result.num_states,
+                    "num_rollouts_total": result.num_rollouts_total,
+                    "num_candidates_remaining": result.num_candidates_remaining,
+                    "tree_summary": result.tree_summary,
+                }
+                with open(samples_path, "a") as f:
+                    f.write(json.dumps(sample_report, ensure_ascii=False) + "\n")
 
-            kept_samples += 1
-            found_count = sum(
-                1 for r in result.selected_rollout_results if r.found
-            )
-            sample_id = f"{task_id}:{dataset_index}"
-            sample_report: dict[str, Any] = {
-                "sample_id": sample_id,
-                "global_order": global_order,
-                "task": task_id,
-                "dataset_index": dataset_index,
-                "question": question,
-                "target": target,
-                "root_mc": result.root_mc,
-                "root_filter_status": root_filter_status,
-                "search_iterations": len(result.selected_rollout_results),
-                "errors_found": found_count,
-                "selected_rollout_results": [
-                    {
-                        "found": item.found,
-                        "first_wrong_step_index_1based": item.first_wrong_step_index_1based,
-                        "previous_step_index_1based": item.previous_step_index_1based,
-                        "first_wrong_step_text": item.first_wrong_step_text,
-                        "previous_step_text": item.previous_step_text,
-                        "all_steps": item.all_steps,
-                        "response_text": item.response_text,
-                        "selected_rollout_source": item.selected_rollout_source,
-                        "selected_rollout_num_steps": item.selected_rollout_num_steps,
-                        "search_path": [
-                            p.__dict__ for p in item.search_path
-                        ],
-                    }
-                    for item in result.selected_rollout_results
-                ],
-                "num_states": result.num_states,
-                "num_rollouts_total": result.num_rollouts_total,
-                "num_candidates_remaining": result.num_candidates_remaining,
-                "tree_summary": result.tree_summary,
-            }
-
-            # Append sample to JSONL immediately
-            with open(samples_path, "a") as f:
-                f.write(json.dumps(sample_report, ensure_ascii=False) + "\n")
-
-            # Append hallu entries to JSONL immediately
-            hallu_entries = _build_hallucination_entries(sample_report)
-            if hallu_entries:
-                with open(hallu_path, "a") as f:
-                    for entry in hallu_entries:
-                        f.write(json.dumps(entry, ensure_ascii=False) + "\n")
+                hallu_entries = _build_hallucination_entries(sample_report)
+                hallu_count = len(hallu_entries)
+                if hallu_entries:
+                    with open(hallu_path, "a") as f:
+                        for entry in hallu_entries:
+                            f.write(json.dumps(entry, ensure_ascii=False) + "\n")
 
             elapsed_total = time.time() - t_start
             remaining = total_samples - global_order
             avg_per_sample = elapsed_total / global_order
             eta_total = avg_per_sample * remaining
-            print(
-                f"  [{global_order}/{total_samples}] {task_id}[{dataset_index}] "
-                f"| root_mc={result.root_mc:.3f} "
-                f"| found_errors={found_count}"
-                f"/{len(result.selected_rollout_results)} "
-                f"| hallu={len(hallu_entries)} "
-                f"| elapsed={elapsed_total:.0f}s eta={eta_total:.0f}s",
-                flush=True,
-            )
+            if skipped:
+                print(
+                    f"  [{global_order}/{total_samples}] {task_id}[{dataset_index}] "
+                    f"| root_mc={result.root_mc:.3f} "
+                    f"| SKIPPED={root_filter_status} "
+                    f"| kept={kept_samples} "
+                    f"| elapsed={elapsed_total:.0f}s eta={eta_total:.0f}s",
+                    flush=True,
+                )
+            else:
+                print(
+                    f"  [{global_order}/{total_samples}] {task_id}[{dataset_index}] "
+                    f"| root_mc={result.root_mc:.3f} "
+                    f"| found={found_count}"
+                    f"/{len(result.selected_rollout_results)} "
+                    f"| hallu={hallu_count} "
+                    f"| kept={kept_samples} "
+                    f"| elapsed={elapsed_total:.0f}s eta={eta_total:.0f}s",
+                    flush=True,
+                )
 
         print(
             f"  OUTPUT: {samples_path.name} | {hallu_path.name}",
