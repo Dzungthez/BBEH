@@ -20,7 +20,9 @@ from __future__ import annotations
 
 import argparse
 import json
+import threading
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
 from pathlib import Path
 from typing import Any
@@ -72,6 +74,8 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--c-puct", type=float, default=0.125)
     p.add_argument("--out-prefix", default="verify_annotated")
     p.add_argument("--resume-tag", default="")
+    p.add_argument("--parallel-samples", type=int, default=1,
+                   help="Number of items to process in parallel (default: 1).")
     return p.parse_args()
 
 
@@ -175,16 +179,21 @@ def main() -> None:
             f.write(json.dumps({"_meta": meta}) + "\n")
 
     t_start = time.time()
-    correct_pred = 0
-    wrong_pred = 0
-    no_find = 0
+    _counter_lock = threading.Lock()
+    counters = {"correct_pred": 0, "wrong_pred": 0, "no_find": 0, "order": 0}
+    out_lock = threading.Lock()
+    eval_lock = threading.Lock()
 
-    for order, (list_idx, item) in enumerate(pending, 1):
+    def _process_one(list_idx: int, item: dict) -> None:
         item_id = item["id"]
         question = item["query"]
         target = item["ground_truth"]
-        human_first_wrong = item["first_wrong_step_index_1based"]  # None for correct traces
+        human_first_wrong = item["first_wrong_step_index_1based"]
         trace_label = item["trace_label"]
+
+        with _counter_lock:
+            counters["order"] += 1
+            order = counters["order"]
 
         print(
             f"\n[{order}/{len(pending)}] id={item_id} subset={item['subset']} "
@@ -208,7 +217,7 @@ def main() -> None:
             result = search.run()
         except Exception as exc:
             print(f"  ERROR: {exc}", flush=True)
-            continue
+            return
 
         rollout_results = [
             {
@@ -227,17 +236,19 @@ def main() -> None:
         predicted = majority_vote(rollout_results)
         found_count = sum(1 for r in rollout_results if r["found"])
 
-        # Evaluation vs human annotation
         if trace_label == 1 and human_first_wrong is not None:
             if predicted is None:
                 eval_tag = "no_find"
-                no_find += 1
+                with _counter_lock:
+                    counters["no_find"] += 1
             elif predicted == human_first_wrong:
                 eval_tag = "exact_match"
-                correct_pred += 1
+                with _counter_lock:
+                    counters["correct_pred"] += 1
             else:
                 eval_tag = f"off_by_{predicted - human_first_wrong:+d}"
-                wrong_pred += 1
+                with _counter_lock:
+                    counters["wrong_pred"] += 1
         else:
             eval_tag = "correct_trace"
 
@@ -261,8 +272,9 @@ def main() -> None:
             "num_rollouts_total": result.num_rollouts_total,
             "rollout_results": rollout_results,
         }
-        with open(out_path, "a") as f:
-            f.write(json.dumps(record, ensure_ascii=False) + "\n")
+        with out_lock:
+            with open(out_path, "a") as f:
+                f.write(json.dumps(record, ensure_ascii=False) + "\n")
 
         eval_record = {
             "id": item_id,
@@ -273,22 +285,39 @@ def main() -> None:
             "eval_tag": eval_tag,
             "root_mc": result.root_mc,
         }
-        with open(eval_path, "a") as f:
-            f.write(json.dumps(eval_record, ensure_ascii=False) + "\n")
+        with eval_lock:
+            with open(eval_path, "a") as f:
+                f.write(json.dumps(eval_record, ensure_ascii=False) + "\n")
 
         elapsed = time.time() - t_start
+        with _counter_lock:
+            snap = dict(counters)
         print(
-            f"  elapsed={elapsed:.0f}s | exact={correct_pred} wrong={wrong_pred} no_find={no_find}",
+            f"  elapsed={elapsed:.0f}s | exact={snap['correct_pred']} "
+            f"wrong={snap['wrong_pred']} no_find={snap['no_find']}",
             flush=True,
         )
 
-    total_wrong_traces = correct_pred + wrong_pred + no_find
+    n_workers = max(1, args.parallel_samples)
+    if n_workers == 1:
+        for list_idx, item in pending:
+            _process_one(list_idx, item)
+    else:
+        with ThreadPoolExecutor(max_workers=n_workers) as pool:
+            futures = {pool.submit(_process_one, li, it): it["id"] for li, it in pending}
+            for future in as_completed(futures):
+                exc = future.exception()
+                if exc is not None:
+                    iid = futures[future]
+                    print(f"  UNHANDLED ERROR id={iid}: {exc}", flush=True)
+
+    total_wrong_traces = counters["correct_pred"] + counters["wrong_pred"] + counters["no_find"]
     print(f"\n=== DONE ===")
     print(f"Wrong traces evaluated: {total_wrong_traces}")
     if total_wrong_traces > 0:
-        print(f"  exact_match : {correct_pred} ({100*correct_pred/total_wrong_traces:.1f}%)")
-        print(f"  wrong_pred  : {wrong_pred} ({100*wrong_pred/total_wrong_traces:.1f}%)")
-        print(f"  no_find     : {no_find} ({100*no_find/total_wrong_traces:.1f}%)")
+        print(f"  exact_match : {counters['correct_pred']} ({100*counters['correct_pred']/total_wrong_traces:.1f}%)")
+        print(f"  wrong_pred  : {counters['wrong_pred']} ({100*counters['wrong_pred']/total_wrong_traces:.1f}%)")
+        print(f"  no_find     : {counters['no_find']} ({100*counters['no_find']/total_wrong_traces:.1f}%)")
     print(f"Output: {out_path}")
     print(f"Eval  : {eval_path}")
 

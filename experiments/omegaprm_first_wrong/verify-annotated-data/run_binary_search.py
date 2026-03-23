@@ -18,7 +18,9 @@ from __future__ import annotations
 
 import argparse
 import json
+import threading
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
 from pathlib import Path
 from typing import Any
@@ -57,6 +59,8 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--resume-tag", default="")
     p.add_argument("--dry-run", action="store_true",
                    help="Print prompt text for first sample then exit, no model calls.")
+    p.add_argument("--parallel-samples", type=int, default=1,
+                   help="Number of items to process in parallel (default: 1).")
     return p.parse_args()
 
 
@@ -122,17 +126,28 @@ def binary_search_steps(
             mc_at_prefix(client, question, target, steps[:cp], k, dry_run=True)
         return {"predicted_first_wrong_1based": None, "probes": []}
 
-    # Invariant: mc(steps[:lo]) > 0, mc(steps[:hi+1]) = 0
-    # Initialize: probe the full sequence first to establish hi has mc=0
+    # Step 0: probe empty prefix to check if model can solve from scratch.
+    # Without this, we cannot distinguish "truly too hard" (root mc=0) from
+    # "step 1 is wrong" (root mc>0 but first step corrupts the chain).
+    root_mc = mc_at_prefix(client, question, target, [], k)
+    probes.append({"prefix_len": 0, "mc": root_mc})
+    print(f"    probe prefix_len=0/{len(steps)} mc={root_mc:.3f}  [root]", flush=True)
+
+    if root_mc == 0.0:
+        # Model cannot solve this question even without any steps → truly too hard.
+        return {"predicted_first_wrong_1based": None, "probes": probes, "all_mc_zero": True}
+
+    # Step 1: probe the full sequence to establish that an error exists.
     full_mc = mc_at_prefix(client, question, target, steps, k)
     probes.append({"prefix_len": len(steps), "mc": full_mc})
     print(f"    probe prefix_len={len(steps)}/{len(steps)} mc={full_mc:.3f}  [init]", flush=True)
 
     if full_mc > 0:
-        # Model always correct even with all steps — no error found
-        all_mc_zero = all(p["mc"] == 0.0 for p in probes)
-        return {"predicted_first_wrong_1based": None, "probes": probes, "all_mc_zero": all_mc_zero}
+        # Model is correct even with all steps — no error found.
+        return {"predicted_first_wrong_1based": None, "probes": probes, "all_mc_zero": False}
 
+    # Invariant: mc(steps[:lo]) > 0  (established: root_mc > 0 when lo=0)
+    #            mc(steps[:hi+1]) = 0 (established: full_mc = 0)
     lo, hi = 0, len(steps) - 1
     while lo < hi:
         mid = (lo + hi) // 2
@@ -145,10 +160,10 @@ def binary_search_steps(
         else:
             hi = mid
 
-    # lo == hi: first_wrong is at position lo (0-based) → 1-based = lo+1
+    # lo == hi: first_wrong is at position lo (0-based) → 1-based = lo+1.
+    # all_mc_zero is always False here since root_mc > 0.
     predicted = lo + 1
-    all_mc_zero = all(p["mc"] == 0.0 for p in probes)
-    return {"predicted_first_wrong_1based": predicted, "probes": probes, "all_mc_zero": all_mc_zero}
+    return {"predicted_first_wrong_1based": predicted, "probes": probes, "all_mc_zero": False}
 
 
 def load_split(split: str) -> list[dict]:
@@ -223,12 +238,19 @@ def main() -> None:
             f.write(json.dumps({"_meta": meta}) + "\n")
 
     t_start = time.time()
-    exact = wrong_pred = no_find = 0
+    _counter_lock = threading.Lock()
+    counters = {"exact": 0, "wrong_pred": 0, "no_find": 0, "order": 0}
+    out_lock = threading.Lock()
+    eval_lock = threading.Lock()
 
-    for order, (list_idx, item) in enumerate(pending, 1):
+    def _process_one(list_idx: int, item: dict) -> None:
         steps = [s["text"] for s in item["steps"]]
         human_fw = item["first_wrong_step_index_1based"]
         trace_label = item["trace_label"]
+
+        with _counter_lock:
+            counters["order"] += 1
+            order = counters["order"]
 
         print(
             f"\n[{order}/{len(pending)}] id={item['id']} subset={item['subset']} "
@@ -248,7 +270,7 @@ def main() -> None:
             )
         except Exception as exc:
             print(f"  ERROR: {exc}", flush=True)
-            continue
+            return
 
         if args.dry_run:
             print("Dry run done. Exiting.", flush=True)
@@ -263,13 +285,16 @@ def main() -> None:
                 eval_tag = "too_hard"
             elif predicted is None:
                 eval_tag = "no_find"
-                no_find += 1
+                with _counter_lock:
+                    counters["no_find"] += 1
             elif predicted == human_fw:
                 eval_tag = "exact_match"
-                exact += 1
+                with _counter_lock:
+                    counters["exact"] += 1
             else:
                 eval_tag = f"off_by_{predicted - human_fw:+d}"
-                wrong_pred += 1
+                with _counter_lock:
+                    counters["wrong_pred"] += 1
         else:
             eval_tag = "correct_trace"
 
@@ -292,26 +317,46 @@ def main() -> None:
             "n_probes": n_probes,
             "probes": result["probes"],
         }
-        with open(out_path, "a") as f:
-            f.write(json.dumps(record, ensure_ascii=False) + "\n")
+        with out_lock:
+            with open(out_path, "a") as f:
+                f.write(json.dumps(record, ensure_ascii=False) + "\n")
 
         eval_record = {k: record[k] for k in
                        ["id", "subset", "trace_label", "human_first_wrong_1based",
                         "predicted_first_wrong_1based", "eval_tag", "all_mc_zero", "n_steps", "n_probes"]}
-        with open(eval_path, "a") as f:
-            f.write(json.dumps(eval_record, ensure_ascii=False) + "\n")
+        with eval_lock:
+            with open(eval_path, "a") as f:
+                f.write(json.dumps(eval_record, ensure_ascii=False) + "\n")
 
         elapsed = time.time() - t_start
-        done_wrong = exact + wrong_pred + no_find
-        print(f"  elapsed={elapsed:.0f}s | exact={exact} wrong={wrong_pred} no_find={no_find}", flush=True)
+        with _counter_lock:
+            snap = dict(counters)
+        print(
+            f"  elapsed={elapsed:.0f}s | exact={snap['exact']} "
+            f"wrong={snap['wrong_pred']} no_find={snap['no_find']}",
+            flush=True,
+        )
 
-    total = exact + wrong_pred + no_find
+    n_workers = max(1, args.parallel_samples)
+    if n_workers == 1:
+        for list_idx, item in pending:
+            _process_one(list_idx, item)
+    else:
+        with ThreadPoolExecutor(max_workers=n_workers) as pool:
+            futures = {pool.submit(_process_one, li, it): it["id"] for li, it in pending}
+            for future in as_completed(futures):
+                exc = future.exception()
+                if exc is not None:
+                    iid = futures[future]
+                    print(f"  UNHANDLED ERROR id={iid}: {exc}", flush=True)
+
+    total = counters["exact"] + counters["wrong_pred"] + counters["no_find"]
     print(f"\n=== DONE ===")
     if total > 0:
         print(f"Wrong traces evaluated (excl. too_hard): {total}")
-        print(f"  exact_match : {exact} ({100*exact/total:.1f}%)")
-        print(f"  wrong_pred  : {wrong_pred} ({100*wrong_pred/total:.1f}%)")
-        print(f"  no_find     : {no_find} ({100*no_find/total:.1f}%)")
+        print(f"  exact_match : {counters['exact']} ({100*counters['exact']/total:.1f}%)")
+        print(f"  wrong_pred  : {counters['wrong_pred']} ({100*counters['wrong_pred']/total:.1f}%)")
+        print(f"  no_find     : {counters['no_find']} ({100*counters['no_find']/total:.1f}%)")
     print(f"Output: {out_path}")
     print(f"Eval  : {eval_path}")
 

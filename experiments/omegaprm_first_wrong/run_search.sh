@@ -57,6 +57,7 @@ REQUIRE_ROOT_MIXED="${REQUIRE_ROOT_MIXED:-true}"
 OUT_DIR="${OUT_DIR:-experiments/omegaprm_first_wrong/logs_qc}"
 OUT_PREFIX="${OUT_PREFIX:-omegaprm_search}"
 RESUME_TAG="${RESUME_TAG:-}"
+PARALLEL_SAMPLES="${PARALLEL_SAMPLES:-1}"
 
 # ---------- build command ----------
 CMD=(
@@ -82,6 +83,7 @@ CMD=(
   --c-puct "$C_PUCT"
   --out-dir "$OUT_DIR"
   --out-prefix "$OUT_PREFIX"
+  --parallel-samples "$PARALLEL_SAMPLES"
 )
 
 [[ -n "$TOKENIZER" ]]     && CMD+=(--tokenizer "$TOKENIZER")

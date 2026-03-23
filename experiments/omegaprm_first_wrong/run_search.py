@@ -3,7 +3,9 @@ from __future__ import annotations
 import argparse
 import json
 import random
+import threading
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
 from pathlib import Path
 from typing import Any
@@ -115,6 +117,16 @@ def parse_args() -> argparse.Namespace:
             "Timestamp tag of a previous run to resume. "
             "When set, loads existing per-task JSON files and skips "
             "already-completed samples. Leave empty for a fresh run."
+        ),
+    )
+    parser.add_argument(
+        "--parallel-samples",
+        type=int,
+        default=1,
+        help=(
+            "Number of samples to process in parallel within each task "
+            "(default: 1). Total concurrent vLLM requests = "
+            "parallel_samples * max_parallel_requests."
         ),
     )
     return parser.parse_args()
@@ -296,13 +308,14 @@ def main() -> None:
         "require_root_mixed": args.require_root_mixed,
     }
 
-    global_order = 0
     total_samples = sum(
         len(select_indices(load_examples(tid), tid, args)) for tid in task_ids
     )
-    skipped_root_filter = 0
-    kept_samples = 0
     t_start = time.time()
+
+    # Shared counters protected by a single lock
+    _counter_lock = threading.Lock()
+    counters = {"global_order": 0, "skipped": 0, "kept": 0}
 
     for task_id in task_ids:
         examples = load_examples(task_id)
@@ -330,8 +343,10 @@ def main() -> None:
             with open(samples_path, "a") as f:
                 f.write(json.dumps({"_meta": meta}, ensure_ascii=False) + "\n")
 
-        for dataset_index in pending:
-            global_order += 1
+        samples_lock = threading.Lock()
+        hallu_lock = threading.Lock()
+
+        def _process_one(dataset_index: int) -> None:
             raw_input = examples[dataset_index]["input"]
             question = (
                 raw_input[len("Question: "):]
@@ -358,7 +373,7 @@ def main() -> None:
                     f"  ERROR at {task_id}[{dataset_index}]: {exc}",
                     flush=True,
                 )
-                continue
+                return
 
             if result.root_mc == 0.0:
                 root_filter_status = "too_hard"
@@ -370,23 +385,31 @@ def main() -> None:
             skipped = args.require_root_mixed and root_filter_status != "mixed"
             hallu_count = 0
 
+            with _counter_lock:
+                counters["global_order"] += 1
+                order = counters["global_order"]
+                if skipped:
+                    counters["skipped"] += 1
+                else:
+                    counters["kept"] += 1
+                kept_snap = counters["kept"]
+
             if skipped:
-                skipped_root_filter += 1
-                with open(samples_path, "a") as f:
-                    f.write(json.dumps({
-                        "dataset_index": dataset_index,
-                        "_skipped": root_filter_status,
-                        "root_mc": result.root_mc,
-                    }, ensure_ascii=False) + "\n")
+                with samples_lock:
+                    with open(samples_path, "a") as f:
+                        f.write(json.dumps({
+                            "dataset_index": dataset_index,
+                            "_skipped": root_filter_status,
+                            "root_mc": result.root_mc,
+                        }, ensure_ascii=False) + "\n")
             else:
-                kept_samples += 1
                 found_count = sum(
                     1 for r in result.selected_rollout_results if r.found
                 )
                 sample_id = f"{task_id}:{dataset_index}"
                 sample_report: dict[str, Any] = {
                     "sample_id": sample_id,
-                    "global_order": global_order,
+                    "global_order": order,
                     "task": task_id,
                     "dataset_index": dataset_index,
                     "question": question,
@@ -417,40 +440,55 @@ def main() -> None:
                     "num_candidates_remaining": result.num_candidates_remaining,
                     "tree_summary": result.tree_summary,
                 }
-                with open(samples_path, "a") as f:
-                    f.write(json.dumps(sample_report, ensure_ascii=False) + "\n")
+                with samples_lock:
+                    with open(samples_path, "a") as f:
+                        f.write(json.dumps(sample_report, ensure_ascii=False) + "\n")
 
                 hallu_entries = _build_hallucination_entries(sample_report)
                 hallu_count = len(hallu_entries)
                 if hallu_entries:
-                    with open(hallu_path, "a") as f:
-                        for entry in hallu_entries:
-                            f.write(json.dumps(entry, ensure_ascii=False) + "\n")
+                    with hallu_lock:
+                        with open(hallu_path, "a") as f:
+                            for entry in hallu_entries:
+                                f.write(json.dumps(entry, ensure_ascii=False) + "\n")
 
             elapsed_total = time.time() - t_start
-            remaining = total_samples - global_order
-            avg_per_sample = elapsed_total / global_order
+            remaining = total_samples - order
+            avg_per_sample = elapsed_total / order
             eta_total = avg_per_sample * remaining
             if skipped:
                 print(
-                    f"  [{global_order}/{total_samples}] {task_id}[{dataset_index}] "
+                    f"  [{order}/{total_samples}] {task_id}[{dataset_index}] "
                     f"| root_mc={result.root_mc:.3f} "
                     f"| SKIPPED={root_filter_status} "
-                    f"| kept={kept_samples} "
+                    f"| kept={kept_snap} "
                     f"| elapsed={elapsed_total:.0f}s eta={eta_total:.0f}s",
                     flush=True,
                 )
             else:
                 print(
-                    f"  [{global_order}/{total_samples}] {task_id}[{dataset_index}] "
+                    f"  [{order}/{total_samples}] {task_id}[{dataset_index}] "
                     f"| root_mc={result.root_mc:.3f} "
                     f"| found={found_count}"
                     f"/{len(result.selected_rollout_results)} "
                     f"| hallu={hallu_count} "
-                    f"| kept={kept_samples} "
+                    f"| kept={kept_snap} "
                     f"| elapsed={elapsed_total:.0f}s eta={eta_total:.0f}s",
                     flush=True,
                 )
+
+        n_workers = max(1, args.parallel_samples)
+        if n_workers == 1:
+            for dataset_index in pending:
+                _process_one(dataset_index)
+        else:
+            with ThreadPoolExecutor(max_workers=n_workers) as pool:
+                futures = {pool.submit(_process_one, idx): idx for idx in pending}
+                for future in as_completed(futures):
+                    exc = future.exception()
+                    if exc is not None:
+                        idx = futures[future]
+                        print(f"  UNHANDLED ERROR at {task_id}[{idx}]: {exc}", flush=True)
 
         print(
             f"  OUTPUT: {samples_path.name} | {hallu_path.name}",
@@ -458,8 +496,8 @@ def main() -> None:
         )
 
     print(
-        f"\nDONE: {kept_samples} samples kept, "
-        f"{skipped_root_filter} skipped (root filter), "
+        f"\nDONE: {counters['kept']} samples kept, "
+        f"{counters['skipped']} skipped (root filter), "
         f"{time.time() - t_start:.0f}s total"
     )
 
