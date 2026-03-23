@@ -1,0 +1,1 @@
+{"_meta": {"split": "val", "model": "deepseek-ai/DeepSeek-R1-Distill-Llama-8B", "k_rollouts": 16, "base_urls": ["http://127.0.0.1:8000/v1"], "temperature": 0.6}}

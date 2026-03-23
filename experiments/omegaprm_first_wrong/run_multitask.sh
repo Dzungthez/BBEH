@@ -15,19 +15,19 @@ set -euo pipefail
 cd "$(dirname "$0")/../.."
 
 # ---------- defaults (override via env vars) ----------
-MODEL="${MODEL:-deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B}"
+MODEL="${MODEL:-deepseek-ai/DeepSeek-R1-Distill-Qwen-32B}"
 TOKENIZER="${TOKENIZER:-}"
 CHAT_FORMAT="${CHAT_FORMAT:-auto}"
 SYSTEM_PROMPT="${SYSTEM_PROMPT:-}"
 
 # Endpoints: set BASE_URLS directly, or PORTS for localhost
-PORTS="${PORTS:-8000}"
+PORTS="${PORTS:-8000,8001,8002,8003}"
 BASE_URLS="${BASE_URLS:-}"
 
 # Tasks & sampling
 TASKS="${TASKS:-causal_understanding,multistep_arithmetic,time_arithmetic,word_sorting}"
-SAMPLE_INDICES="${SAMPLE_INDICES:-0,1,2,5,10}"
-NUM_SAMPLES="${NUM_SAMPLES:-5}"
+SAMPLE_INDICES="${SAMPLE_INDICES:-}"
+NUM_SAMPLES="${NUM_SAMPLES:-1}"
 SEED="${SEED:-20260322}"
 
 # Generation
@@ -35,18 +35,18 @@ MAX_TOKENS="${MAX_TOKENS:-24576}"
 MAX_CONTEXT="${MAX_CONTEXT:-32768}"
 CONTEXT_MARGIN="${CONTEXT_MARGIN:-512}"
 TIMEOUT_SEC="${TIMEOUT_SEC:-300}"
-TEMPERATURE_FULL="${TEMPERATURE_FULL:-0.0}"
+TEMPERATURE_FULL="${TEMPERATURE_FULL:-0.7}"
 TEMPERATURE_ROLLOUT="${TEMPERATURE_ROLLOUT:-0.6}"
 TOP_P="${TOP_P:-0.95}"
-NUM_ROLLOUTS_ROOT="${NUM_ROLLOUTS_ROOT:-6}"
-NUM_ROLLOUTS_MID="${NUM_ROLLOUTS_MID:-6}"
+NUM_ROLLOUTS_ROOT="${NUM_ROLLOUTS_ROOT:-16}"
+NUM_ROLLOUTS_MID="${NUM_ROLLOUTS_MID:-16}"
 
 # Filtering
 REQUIRE_ROOT_MIXED="${REQUIRE_ROOT_MIXED:-true}"
 
 # Output
 OUT_DIR="${OUT_DIR:-experiments/omegaprm_first_wrong/logs}"
-OUT_PREFIX="${OUT_PREFIX:-continuation_4tasks}"
+OUT_PREFIX="${OUT_PREFIX:-continuation_4tasks_32b}"
 
 # ---------- build command ----------
 CMD=(
